@@ -1,0 +1,3342 @@
+[
+  {
+    "day": 41,
+    "title": "움직임과 상태 변화",
+    "subtitle": "짝을 이루는 자동사와 타동사",
+    "words": [
+      {
+        "word": "移す",
+        "reading": "うつす",
+        "meaning": "옮기다",
+        "example": "苗を大きな鉢に移した。",
+        "exampleReading": "なえをおおきなはちにうつした。",
+        "translation": "모종을 큰 화분으로 옮겼다."
+      },
+      {
+        "word": "移る",
+        "reading": "うつる",
+        "meaning": "옮겨 가다; 전염되다",
+        "example": "話題が急に別の問題へ移った。",
+        "exampleReading": "わだいがきゅうにべつのもんだいへうつった。",
+        "translation": "화제가 갑자기 다른 문제로 옮겨 갔다."
+      },
+      {
+        "word": "動かす",
+        "reading": "うごかす",
+        "meaning": "움직이다; 작동시키다",
+        "example": "この機械を動かすには電池が要る。",
+        "exampleReading": "このきかいをうごかすにはでんちがいる。",
+        "translation": "이 기계를 작동시키려면 건전지가 필요하다."
+      },
+      {
+        "word": "動く",
+        "reading": "うごく",
+        "meaning": "움직이다; 작동하다",
+        "example": "時計は古いが、まだ正確に動く。",
+        "exampleReading": "とけいはふるいが、まだせいかくにうごく。",
+        "translation": "시계는 낡았지만 아직 정확하게 작동한다."
+      },
+      {
+        "word": "戻す",
+        "reading": "もどす",
+        "meaning": "되돌리다",
+        "example": "使った道具は棚に戻してください。",
+        "exampleReading": "つかったどうぐはたなにもどしてください。",
+        "translation": "사용한 도구는 선반에 돌려놓아 주세요."
+      },
+      {
+        "word": "戻る",
+        "reading": "もどる",
+        "meaning": "돌아오다; 돌아가다",
+        "example": "忘れ物に気づいて駅へ戻った。",
+        "exampleReading": "わすれものにきづいてえきへもどった。",
+        "translation": "물건을 두고 온 것을 깨닫고 역으로 돌아갔다."
+      },
+      {
+        "word": "上げる",
+        "reading": "あげる",
+        "meaning": "올리다",
+        "example": "聞こえにくいので音量を少し上げた。",
+        "exampleReading": "きこえにくいのでおんりょうをすこしあげた。",
+        "translation": "잘 들리지 않아서 음량을 조금 올렸다."
+      },
+      {
+        "word": "上がる",
+        "reading": "あがる",
+        "meaning": "오르다",
+        "example": "練習を続けるうちに速度が上がった。",
+        "exampleReading": "れんしゅうをつづけるうちにそくどがあがった。",
+        "translation": "연습을 계속하는 동안 속도가 올랐다."
+      },
+      {
+        "word": "下げる",
+        "reading": "さげる",
+        "meaning": "내리다; 낮추다",
+        "example": "店は閉店前に商品の値段を下げた。",
+        "exampleReading": "みせはへいてんまえにしょうひんのねだんをさげた。",
+        "translation": "가게는 문을 닫기 전에 상품 가격을 내렸다."
+      },
+      {
+        "word": "下がる",
+        "reading": "さがる",
+        "meaning": "내려가다; 낮아지다",
+        "example": "雨の後は気温がかなり下がる。",
+        "exampleReading": "あめのあとはきおんがかなりさがる。",
+        "translation": "비가 온 뒤에는 기온이 꽤 내려간다."
+      },
+      {
+        "word": "倒す",
+        "reading": "たおす",
+        "meaning": "쓰러뜨리다",
+        "example": "猫が机の上の花瓶を倒した。",
+        "exampleReading": "ねこがつくえのうえのかびんをたおした。",
+        "translation": "고양이가 책상 위의 꽃병을 쓰러뜨렸다."
+      },
+      {
+        "word": "倒れる",
+        "reading": "たおれる",
+        "meaning": "쓰러지다",
+        "example": "強い風で庭の木が倒れた。",
+        "exampleReading": "つよいかぜでにわのきがたおれた。",
+        "translation": "강한 바람으로 정원의 나무가 쓰러졌다."
+      },
+      {
+        "word": "落とす",
+        "reading": "おとす",
+        "meaning": "떨어뜨리다; 빠뜨리다",
+        "example": "駅の階段で手袋を落としてしまった。",
+        "exampleReading": "えきのかいだんでてぶくろをおとしてしまった。",
+        "translation": "역 계단에서 장갑을 떨어뜨렸다."
+      },
+      {
+        "word": "落ちる",
+        "reading": "おちる",
+        "meaning": "떨어지다",
+        "example": "秋になると、この木の葉が落ちる。",
+        "exampleReading": "あきになると、このきのはがおちる。",
+        "translation": "가을이 되면 이 나무의 잎이 떨어진다."
+      },
+      {
+        "word": "飛ばす",
+        "reading": "とばす",
+        "meaning": "날리다; 건너뛰다",
+        "example": "難しい問題は一度飛ばして先へ進む。",
+        "exampleReading": "むずかしいもんだいはいちどとばしてさきへすすむ。",
+        "translation": "어려운 문제는 일단 건너뛰고 다음으로 넘어간다."
+      },
+      {
+        "word": "飛ぶ",
+        "reading": "とぶ",
+        "meaning": "날다",
+        "example": "窓の外を白い鳥が飛んでいる。",
+        "exampleReading": "まどのそとをしろいとりがとんでいる。",
+        "translation": "창밖으로 흰 새가 날고 있다."
+      },
+      {
+        "word": "沈める",
+        "reading": "しずめる",
+        "meaning": "가라앉히다",
+        "example": "重りを付けて容器を水に沈めた。",
+        "exampleReading": "おもりをつけてようきをみずにしずめた。",
+        "translation": "추를 달아서 용기를 물에 가라앉혔다."
+      },
+      {
+        "word": "沈む",
+        "reading": "しずむ",
+        "meaning": "가라앉다; 지다",
+        "example": "太陽が山の向こうに沈んだ。",
+        "exampleReading": "たいようがやまのむこうにしずんだ。",
+        "translation": "해가 산 너머로 졌다."
+      },
+      {
+        "word": "浮かべる",
+        "reading": "うかべる",
+        "meaning": "띄우다; 표정 등을 짓다",
+        "example": "彼女は安心した笑みを浮かべた。",
+        "exampleReading": "かのじょはあんしんしたえみをうかべた。",
+        "translation": "그녀는 안심한 미소를 지었다."
+      },
+      {
+        "word": "浮かぶ",
+        "reading": "うかぶ",
+        "meaning": "뜨다; 떠오르다",
+        "example": "散歩中にいい考えが浮かんだ。",
+        "exampleReading": "さんぽちゅうにいいかんがえがうかんだ。",
+        "translation": "산책 중에 좋은 생각이 떠올랐다."
+      }
+    ]
+  },
+  {
+    "day": 42,
+    "title": "다루고 바꾸기",
+    "subtitle": "수량과 형태를 바꾸는 동사",
+    "words": [
+      {
+        "word": "扱う",
+        "reading": "あつかう",
+        "meaning": "다루다; 취급하다",
+        "example": "割れやすいので丁寧に扱ってください。",
+        "exampleReading": "われやすいのでていねいにあつかってください。",
+        "translation": "깨지기 쉬우니 조심스럽게 다뤄 주세요."
+      },
+      {
+        "word": "整える",
+        "reading": "ととのえる",
+        "meaning": "정돈하다; 갖추다",
+        "example": "発表の前に資料を整えた。",
+        "exampleReading": "はっぴょうのまえにしりょうをととのえた。",
+        "translation": "발표 전에 자료를 정리했다."
+      },
+      {
+        "word": "整う",
+        "reading": "ととのう",
+        "meaning": "정돈되다; 갖춰지다",
+        "example": "ようやく出発の準備が整った。",
+        "exampleReading": "ようやくしゅっぱつのじゅんびがととのった。",
+        "translation": "드디어 출발 준비가 갖춰졌다."
+      },
+      {
+        "word": "組み立てる",
+        "reading": "くみたてる",
+        "meaning": "조립하다; 구성하다",
+        "example": "説明書を見ながら棚を組み立てる。",
+        "exampleReading": "せつめいしょをみながらたなをくみたてる。",
+        "translation": "설명서를 보면서 선반을 조립한다."
+      },
+      {
+        "word": "分解する",
+        "reading": "ぶんかいする",
+        "meaning": "분해하다",
+        "example": "修理のために時計を分解した。",
+        "exampleReading": "しゅうりのためにとけいをぶんかいした。",
+        "translation": "수리를 위해 시계를 분해했다."
+      },
+      {
+        "word": "交換する",
+        "reading": "こうかんする",
+        "meaning": "교환하다; 교체하다",
+        "example": "切れた電球を新しいものと交換する。",
+        "exampleReading": "きれたでんきゅうをあたらしいものとこうかんする。",
+        "translation": "수명이 다한 전구를 새것으로 교체한다."
+      },
+      {
+        "word": "加える",
+        "reading": "くわえる",
+        "meaning": "더하다; 추가하다",
+        "example": "味を見てから塩を少し加えた。",
+        "exampleReading": "あじをみてからしおをすこしくわえた。",
+        "translation": "맛을 본 뒤 소금을 조금 더했다."
+      },
+      {
+        "word": "加わる",
+        "reading": "くわわる",
+        "meaning": "더해지다; 참가하다",
+        "example": "来月から新しい仲間が加わる。",
+        "exampleReading": "らいげつからあたらしいなかまがくわわる。",
+        "translation": "다음 달부터 새로운 동료가 합류한다."
+      },
+      {
+        "word": "減らす",
+        "reading": "へらす",
+        "meaning": "줄이다",
+        "example": "ごみを減らす工夫を家族で考えた。",
+        "exampleReading": "ごみをへらすくふうをかぞくでかんがえた。",
+        "translation": "쓰레기를 줄일 방법을 가족끼리 생각했다."
+      },
+      {
+        "word": "減る",
+        "reading": "へる",
+        "meaning": "줄다",
+        "example": "運動を始めてから体重が少し減った。",
+        "exampleReading": "うんどうをはじめてからたいじゅうがすこしへった。",
+        "translation": "운동을 시작한 뒤 체중이 조금 줄었다."
+      },
+      {
+        "word": "延ばす",
+        "reading": "のばす",
+        "meaning": "연장하다; 미루다",
+        "example": "雨のため大会を一週間延ばした。",
+        "exampleReading": "あめのためたいかいをいっしゅうかんのばした。",
+        "translation": "비 때문에 대회를 일주일 미뤘다."
+      },
+      {
+        "word": "延びる",
+        "reading": "のびる",
+        "meaning": "연장되다; 미뤄지다",
+        "example": "工事が遅れて開店日が延びた。",
+        "exampleReading": "こうじがおくれてかいてんびがのびた。",
+        "translation": "공사가 늦어져 개점일이 미뤄졌다."
+      },
+      {
+        "word": "縮める",
+        "reading": "ちぢめる",
+        "meaning": "줄이다; 단축하다",
+        "example": "練習で百メートルの記録を縮めた。",
+        "exampleReading": "れんしゅうでひゃくめえとるのきろくをちぢめた。",
+        "translation": "연습으로 백 미터 기록을 단축했다."
+      },
+      {
+        "word": "縮む",
+        "reading": "ちぢむ",
+        "meaning": "줄어들다; 오그라들다",
+        "example": "熱い湯で洗うと布が縮む。",
+        "exampleReading": "あついゆであらうとぬのがちぢむ。",
+        "translation": "뜨거운 물로 빨면 천이 줄어든다."
+      },
+      {
+        "word": "広げる",
+        "reading": "ひろげる",
+        "meaning": "펼치다; 넓히다",
+        "example": "床に地図を広げて道を調べた。",
+        "exampleReading": "ゆかにちずをひろげてみちをしらべた。",
+        "translation": "바닥에 지도를 펼치고 길을 알아봤다."
+      },
+      {
+        "word": "広がる",
+        "reading": "ひろがる",
+        "meaning": "펼쳐지다; 퍼지다",
+        "example": "焼きたてのパンの香りが部屋に広がる。",
+        "exampleReading": "やきたてのぱんのかおりがへやにひろがる。",
+        "translation": "갓 구운 빵의 향이 방 안에 퍼진다."
+      },
+      {
+        "word": "固める",
+        "reading": "かためる",
+        "meaning": "굳히다; 확고히 하다",
+        "example": "話し合って今後の方針を固めた。",
+        "exampleReading": "はなしあってこんごのほうしんをかためた。",
+        "translation": "의논해서 앞으로의 방침을 확정했다."
+      },
+      {
+        "word": "固まる",
+        "reading": "かたまる",
+        "meaning": "굳다; 굳어지다",
+        "example": "冷蔵庫に入れるとゼリーが固まる。",
+        "exampleReading": "れいぞうこにいれるとぜりいがかたまる。",
+        "translation": "냉장고에 넣으면 젤리가 굳는다."
+      },
+      {
+        "word": "混ぜる",
+        "reading": "まぜる",
+        "meaning": "섞다",
+        "example": "粉と水をむらなく混ぜてください。",
+        "exampleReading": "こなとみずをむらなくまぜてください。",
+        "translation": "가루와 물을 고르게 섞어 주세요."
+      },
+      {
+        "word": "混ざる",
+        "reading": "まざる",
+        "meaning": "섞이다",
+        "example": "この袋には違う種類の豆が混ざっている。",
+        "exampleReading": "このふくろにはちがうしゅるいのまめがまざっている。",
+        "translation": "이 봉지에는 다른 종류의 콩이 섞여 있다."
+      }
+    ]
+  },
+  {
+    "day": 43,
+    "title": "진행과 성취",
+    "subtitle": "끝까지 해내는 과정",
+    "words": [
+      {
+        "word": "進める",
+        "reading": "すすめる",
+        "meaning": "진행하다; 앞으로 나아가게 하다",
+        "example": "皆の意見を聞きながら計画を進める。",
+        "exampleReading": "みなのいけんをききながらけいかくをすすめる。",
+        "translation": "모두의 의견을 들으면서 계획을 진행한다."
+      },
+      {
+        "word": "進む",
+        "reading": "すすむ",
+        "meaning": "나아가다; 진행되다",
+        "example": "話し合いは予想より順調に進んだ。",
+        "exampleReading": "はなしあいはよそうよりじゅんちょうにすすんだ。",
+        "translation": "논의는 예상보다 순조롭게 진행됐다."
+      },
+      {
+        "word": "達する",
+        "reading": "たっする",
+        "meaning": "도달하다; 달하다",
+        "example": "応募者はついに千人に達した。",
+        "exampleReading": "おうぼしゃはついにせんにんにたっした。",
+        "translation": "지원자가 마침내 천 명에 달했다."
+      },
+      {
+        "word": "達成する",
+        "reading": "たっせいする",
+        "meaning": "달성하다",
+        "example": "全員の協力で今年の目標を達成した。",
+        "exampleReading": "ぜんいんのきょうりょくでことしのもくひょうをたっせいした。",
+        "translation": "전원의 협력으로 올해의 목표를 달성했다."
+      },
+      {
+        "word": "果たす",
+        "reading": "はたす",
+        "meaning": "다하다; 이루다",
+        "example": "最後まで自分の役割を果たしたい。",
+        "exampleReading": "さいごまでじぶんのやくわりをはたしたい。",
+        "translation": "마지막까지 자신의 역할을 다하고 싶다."
+      },
+      {
+        "word": "遂げる",
+        "reading": "とげる",
+        "meaning": "이루다; 완수하다",
+        "example": "この町は十年で大きな発展を遂げた。",
+        "exampleReading": "このまちはじゅうねんでおおきなはってんをとげた。",
+        "translation": "이 마을은 십 년 동안 크게 발전했다."
+      },
+      {
+        "word": "乗り越える",
+        "reading": "のりこえる",
+        "meaning": "극복하다; 넘어가다",
+        "example": "仲間と共に困難を乗り越えた。",
+        "exampleReading": "なかまとともにこんなんをのりこえた。",
+        "translation": "동료와 함께 어려움을 극복했다."
+      },
+      {
+        "word": "追いつく",
+        "reading": "おいつく",
+        "meaning": "따라잡다",
+        "example": "毎日練習して先輩に追いつきたい。",
+        "exampleReading": "まいにちれんしゅうしてせんぱいにおいつきたい。",
+        "translation": "매일 연습해서 선배를 따라잡고 싶다."
+      },
+      {
+        "word": "追い越す",
+        "reading": "おいこす",
+        "meaning": "앞지르다; 추월하다",
+        "example": "坂道で後ろの自転車に追い越された。",
+        "exampleReading": "さかみちでうしろのじてんしゃにおいこされた。",
+        "translation": "언덕길에서 뒤의 자전거에 추월당했다."
+      },
+      {
+        "word": "目指す",
+        "reading": "めざす",
+        "meaning": "목표로 삼다; 지향하다",
+        "example": "誰もが使いやすい製品を目指す。",
+        "exampleReading": "だれもがつかいやすいせいひんをめざす。",
+        "translation": "누구나 쓰기 쉬운 제품을 목표로 한다."
+      },
+      {
+        "word": "努める",
+        "reading": "つとめる",
+        "meaning": "힘쓰다; 노력하다",
+        "example": "客の希望を丁寧に聞くよう努めている。",
+        "exampleReading": "きゃくのきぼうをていねいにきくようつとめている。",
+        "translation": "고객의 희망을 세심하게 들으려고 노력하고 있다."
+      },
+      {
+        "word": "取り組む",
+        "reading": "とりくむ",
+        "meaning": "몰두하다; 적극적으로 임하다",
+        "example": "地域全体で節電に取り組んでいる。",
+        "exampleReading": "ちいきぜんたいでせつでんにとりくんでいる。",
+        "translation": "지역 전체가 절전에 힘쓰고 있다."
+      },
+      {
+        "word": "積み重ねる",
+        "reading": "つみかさねる",
+        "meaning": "쌓아 올리다; 거듭하다",
+        "example": "小さな成功を積み重ねて自信をつけた。",
+        "exampleReading": "ちいさなせいこうをつみかさねてじしんをつけた。",
+        "translation": "작은 성공을 쌓아 자신감을 얻었다."
+      },
+      {
+        "word": "継続する",
+        "reading": "けいぞくする",
+        "meaning": "계속하다; 지속하다",
+        "example": "無理のない方法で学習を継続する。",
+        "exampleReading": "むりのないほうほうでがくしゅうをけいぞくする。",
+        "translation": "무리 없는 방법으로 학습을 계속한다."
+      },
+      {
+        "word": "仕上げる",
+        "reading": "しあげる",
+        "meaning": "마무리하다; 완성하다",
+        "example": "明日の朝までに原稿を仕上げます。",
+        "exampleReading": "あしたのあさまでにげんこうをしあげます。",
+        "translation": "내일 아침까지 원고를 마무리하겠습니다."
+      },
+      {
+        "word": "完成する",
+        "reading": "かんせいする",
+        "meaning": "완성하다; 완성되다",
+        "example": "何度も直して、ようやく作品が完成した。",
+        "exampleReading": "なんどもなおして、ようやくさくひんがかんせいした。",
+        "translation": "여러 번 고쳐서 드디어 작품이 완성됐다."
+      },
+      {
+        "word": "間に合う",
+        "reading": "まにあう",
+        "meaning": "시간에 맞다; 늦지 않다",
+        "example": "今すぐ出れば最終電車に間に合う。",
+        "exampleReading": "いますぐでればさいしゅうでんしゃにまにあう。",
+        "translation": "지금 바로 나가면 막차 시간에 맞출 수 있다."
+      },
+      {
+        "word": "間に合わせる",
+        "reading": "まにあわせる",
+        "meaning": "시간에 맞추다; 임시로 때우다",
+        "example": "修理を開店時間に間に合わせた。",
+        "exampleReading": "しゅうりをかいてんじかんにまにあわせた。",
+        "translation": "수리를 개점 시간에 맞춰 끝냈다."
+      },
+      {
+        "word": "実現する",
+        "reading": "じつげんする",
+        "meaning": "실현하다; 실현되다",
+        "example": "長年の夢がついに実現した。",
+        "exampleReading": "ながねんのゆめがついにじつげんした。",
+        "translation": "오랜 꿈이 마침내 실현됐다."
+      },
+      {
+        "word": "成し遂げる",
+        "reading": "なしとげる",
+        "meaning": "완수하다; 성취하다",
+        "example": "一人では成し遂げられない仕事だった。",
+        "exampleReading": "ひとりではなしとげられないしごとだった。",
+        "translation": "혼자서는 완수할 수 없는 일이었다."
+      }
+    ]
+  },
+  {
+    "day": 44,
+    "title": "이해와 판단",
+    "subtitle": "보고 생각하고 알아차리기",
+    "words": [
+      {
+        "word": "気づく",
+        "reading": "きづく",
+        "meaning": "알아차리다; 깨닫다",
+        "example": "送信した後で数字の誤りに気づいた。",
+        "exampleReading": "そうしんしたあとですうじのあやまりにきづいた。",
+        "translation": "전송한 뒤 숫자의 오류를 알아차렸다."
+      },
+      {
+        "word": "認める",
+        "reading": "みとめる",
+        "meaning": "인정하다; 허가하다",
+        "example": "自分の失敗を認める勇気も必要だ。",
+        "exampleReading": "じぶんのしっぱいをみとめるゆうきもひつようだ。",
+        "translation": "자신의 실패를 인정할 용기도 필요하다."
+      },
+      {
+        "word": "見抜く",
+        "reading": "みぬく",
+        "meaning": "간파하다; 꿰뚫어 보다",
+        "example": "経験豊かな先生は原因をすぐ見抜いた。",
+        "exampleReading": "けいけんゆたかなせんせいはげんいんをすぐみぬいた。",
+        "translation": "경험이 풍부한 선생님은 원인을 바로 간파했다."
+      },
+      {
+        "word": "見分ける",
+        "reading": "みわける",
+        "meaning": "분간하다; 구별하다",
+        "example": "この二枚の絵を見分けるのは難しい。",
+        "exampleReading": "このにまいのえをみわけるのはむずかしい。",
+        "translation": "이 두 장의 그림을 구별하기는 어렵다."
+      },
+      {
+        "word": "察する",
+        "reading": "さっする",
+        "meaning": "짐작하다; 헤아리다",
+        "example": "表情から相手の気持ちを察した。",
+        "exampleReading": "ひょうじょうからあいてのきもちをさっした。",
+        "translation": "표정에서 상대의 마음을 짐작했다."
+      },
+      {
+        "word": "悟る",
+        "reading": "さとる",
+        "meaning": "깨닫다; 알아차리다",
+        "example": "返事を聞いて、説得は無理だと悟った。",
+        "exampleReading": "へんじをきいて、せっとくはむりだとさとった。",
+        "translation": "대답을 듣고 설득은 무리라는 것을 깨달았다."
+      },
+      {
+        "word": "疑う",
+        "reading": "うたがう",
+        "meaning": "의심하다",
+        "example": "正しそうな情報も一度は疑ってみる。",
+        "exampleReading": "ただしそうなじょうほうもいちどはうたがってみる。",
+        "translation": "옳아 보이는 정보도 한 번은 의심해 본다."
+      },
+      {
+        "word": "確かめる",
+        "reading": "たしかめる",
+        "meaning": "확인하다",
+        "example": "出かける前に窓の鍵を確かめた。",
+        "exampleReading": "でかけるまえにまどのかぎをたしかめた。",
+        "translation": "외출하기 전에 창문 잠금을 확인했다."
+      },
+      {
+        "word": "判断する",
+        "reading": "はんだんする",
+        "meaning": "판단하다",
+        "example": "見た目だけで人を判断してはいけない。",
+        "exampleReading": "みためだけでひとをはんだんしてはいけない。",
+        "translation": "겉모습만으로 사람을 판단해서는 안 된다."
+      },
+      {
+        "word": "見なす",
+        "reading": "みなす",
+        "meaning": "간주하다; 여기다",
+        "example": "締切後の申し込みは無効と見なします。",
+        "exampleReading": "しめきりごのもうしこみはむこうとみなします。",
+        "translation": "마감 후의 신청은 무효로 간주합니다."
+      },
+      {
+        "word": "思い込む",
+        "reading": "おもいこむ",
+        "meaning": "굳게 믿다; 단정하다",
+        "example": "集合は午後だと思い込んでいた。",
+        "exampleReading": "しゅうごうはごごだとおもいこんでいた。",
+        "translation": "모이는 시간이 오후라고 굳게 믿고 있었다."
+      },
+      {
+        "word": "思い浮かべる",
+        "reading": "おもいうかべる",
+        "meaning": "머릿속에 떠올리다",
+        "example": "目を閉じて故郷の景色を思い浮かべた。",
+        "exampleReading": "めをとじてふるさとのけしきをおもいうかべた。",
+        "translation": "눈을 감고 고향의 풍경을 떠올렸다."
+      },
+      {
+        "word": "振り返る",
+        "reading": "ふりかえる",
+        "meaning": "뒤돌아보다; 되돌아보다",
+        "example": "一週間の学習を振り返ってみよう。",
+        "exampleReading": "いっしゅうかんのがくしゅうをふりかえってみよう。",
+        "translation": "일주일 동안의 학습을 돌아보자."
+      },
+      {
+        "word": "受け止める",
+        "reading": "うけとめる",
+        "meaning": "받아 내다; 받아들이다",
+        "example": "厳しい意見も冷静に受け止めた。",
+        "exampleReading": "きびしいいけんもれいせいにうけとめた。",
+        "translation": "엄격한 의견도 차분하게 받아들였다."
+      },
+      {
+        "word": "捉える",
+        "reading": "とらえる",
+        "meaning": "포착하다; 파악하다",
+        "example": "この説明は問題の本質を捉えている。",
+        "exampleReading": "このせつめいはもんだいのほんしつをとらえている。",
+        "translation": "이 설명은 문제의 본질을 파악하고 있다."
+      },
+      {
+        "word": "把握する",
+        "reading": "はあくする",
+        "meaning": "파악하다",
+        "example": "作業を始める前に全体の流れを把握する。",
+        "exampleReading": "さぎょうをはじめるまえにぜんたいのながれをはあくする。",
+        "translation": "작업을 시작하기 전에 전체 흐름을 파악한다."
+      },
+      {
+        "word": "納得する",
+        "reading": "なっとくする",
+        "meaning": "납득하다",
+        "example": "具体的な数字を見て、ようやく納得した。",
+        "exampleReading": "ぐたいてきなすうじをみて、ようやくなっとくした。",
+        "translation": "구체적인 숫자를 보고서야 납득했다."
+      },
+      {
+        "word": "思いつく",
+        "reading": "おもいつく",
+        "meaning": "문득 생각나다",
+        "example": "帰り道で新しい題名を思いついた。",
+        "exampleReading": "かえりみちであたらしいだいめいをおもいついた。",
+        "translation": "돌아오는 길에 새로운 제목이 떠올랐다."
+      },
+      {
+        "word": "勘違いする",
+        "reading": "かんちがいする",
+        "meaning": "착각하다",
+        "example": "曜日を勘違いして一日早く来てしまった。",
+        "exampleReading": "ようびをかんちがいしていちにちはやくきてしまった。",
+        "translation": "요일을 착각해서 하루 일찍 와 버렸다."
+      },
+      {
+        "word": "予測する",
+        "reading": "よそくする",
+        "meaning": "예측하다",
+        "example": "過去の記録から来月の売り上げを予測する。",
+        "exampleReading": "かこのきろくかららいげつのうりあげをよそくする。",
+        "translation": "과거 기록으로 다음 달 매출을 예측한다."
+      }
+    ]
+  },
+  {
+    "day": 45,
+    "title": "사람을 대하는 동사",
+    "subtitle": "부탁과 격려에서 신뢰까지",
+    "words": [
+      {
+        "word": "頼む",
+        "reading": "たのむ",
+        "meaning": "부탁하다; 주문하다",
+        "example": "隣の人に荷物を見ていてほしいと頼んだ。",
+        "exampleReading": "となりのひとににもつをみていてほしいとたのんだ。",
+        "translation": "옆 사람에게 짐을 봐 달라고 부탁했다."
+      },
+      {
+        "word": "頼る",
+        "reading": "たよる",
+        "meaning": "의지하다; 기대다",
+        "example": "困った時は遠慮せず周りを頼っていい。",
+        "exampleReading": "こまったときはえんりょせずまわりをたよっていい。",
+        "translation": "힘들 때는 사양하지 말고 주변에 의지해도 된다."
+      },
+      {
+        "word": "任せる",
+        "reading": "まかせる",
+        "meaning": "맡기다",
+        "example": "料理が得意な兄に夕食を任せた。",
+        "exampleReading": "りょうりがとくいなあににゆうしょくをまかせた。",
+        "translation": "요리를 잘하는 형에게 저녁 식사를 맡겼다."
+      },
+      {
+        "word": "断る",
+        "reading": "ことわる",
+        "meaning": "거절하다; 미리 알리다",
+        "example": "予定が重なったので招待を断った。",
+        "exampleReading": "よていがかさなったのでしょうたいをことわった。",
+        "translation": "일정이 겹쳐서 초대를 거절했다."
+      },
+      {
+        "word": "誘う",
+        "reading": "さそう",
+        "meaning": "권유하다; 함께하자고 하다",
+        "example": "久しぶりに友人を映画に誘った。",
+        "exampleReading": "ひさしぶりにゆうじんをえいがにさそった。",
+        "translation": "오랜만에 친구에게 영화를 보러 가자고 했다."
+      },
+      {
+        "word": "勧める",
+        "reading": "すすめる",
+        "meaning": "권하다; 추천하다",
+        "example": "店員に勧められたお茶を買ってみた。",
+        "exampleReading": "てんいんにすすめられたおちゃをかってみた。",
+        "translation": "점원이 추천한 차를 사 봤다."
+      },
+      {
+        "word": "励ます",
+        "reading": "はげます",
+        "meaning": "격려하다; 북돋우다",
+        "example": "試験に落ちた友人を励ました。",
+        "exampleReading": "しけんにおちたゆうじんをはげました。",
+        "translation": "시험에 떨어진 친구를 격려했다."
+      },
+      {
+        "word": "慰める",
+        "reading": "なぐさめる",
+        "meaning": "위로하다",
+        "example": "泣いている弟を優しく慰めた。",
+        "exampleReading": "ないているおとうとをやさしくなぐさめた。",
+        "translation": "울고 있는 남동생을 다정하게 위로했다."
+      },
+      {
+        "word": "からかう",
+        "reading": "からかう",
+        "meaning": "놀리다",
+        "example": "人の苦手なことをからかうのはよくない。",
+        "exampleReading": "ひとのにがてなことをからかうのはよくない。",
+        "translation": "남이 잘 못하는 일을 놀리는 것은 좋지 않다."
+      },
+      {
+        "word": "責める",
+        "reading": "せめる",
+        "meaning": "나무라다; 탓하다",
+        "example": "失敗した人を責める前に原因を考えよう。",
+        "exampleReading": "しっぱいしたひとをせめるまえにげんいんをかんがえよう。",
+        "translation": "실패한 사람을 탓하기 전에 원인을 생각하자."
+      },
+      {
+        "word": "許す",
+        "reading": "ゆるす",
+        "meaning": "용서하다; 허락하다",
+        "example": "事情を聞いて友人の遅刻を許した。",
+        "exampleReading": "じじょうをきいてゆうじんのちこくをゆるした。",
+        "translation": "사정을 듣고 친구의 지각을 용서했다."
+      },
+      {
+        "word": "謝る",
+        "reading": "あやまる",
+        "meaning": "사과하다",
+        "example": "約束を忘れたことを正直に謝った。",
+        "exampleReading": "やくそくをわすれたことをしょうじきにあやまった。",
+        "translation": "약속을 잊은 것을 솔직하게 사과했다."
+      },
+      {
+        "word": "譲る",
+        "reading": "ゆずる",
+        "meaning": "양보하다; 넘겨주다",
+        "example": "電車でお年寄りに席を譲った。",
+        "exampleReading": "でんしゃでおとしよりにせきをゆずった。",
+        "translation": "전철에서 어르신께 자리를 양보했다."
+      },
+      {
+        "word": "支える",
+        "reading": "ささえる",
+        "meaning": "지탱하다; 뒷받침하다",
+        "example": "家族の言葉が挑戦する私を支えた。",
+        "exampleReading": "かぞくのことばがちょうせんするわたしをささえた。",
+        "translation": "가족의 말이 도전하는 나를 지탱해 주었다."
+      },
+      {
+        "word": "裏切る",
+        "reading": "うらぎる",
+        "meaning": "배신하다; 기대를 저버리다",
+        "example": "応援してくれる人の信頼を裏切りたくない。",
+        "exampleReading": "おうえんしてくれるひとのしんらいをうらぎりたくない。",
+        "translation": "응원해 주는 사람의 신뢰를 저버리고 싶지 않다."
+      },
+      {
+        "word": "尊敬する",
+        "reading": "そんけいする",
+        "meaning": "존경하다",
+        "example": "約束を必ず守る祖父を尊敬している。",
+        "exampleReading": "やくそくをかならずまもるそふをそんけいしている。",
+        "translation": "약속을 반드시 지키는 할아버지를 존경한다."
+      },
+      {
+        "word": "敬う",
+        "reading": "うやまう",
+        "meaning": "공경하다; 존중하다",
+        "example": "互いの文化を敬う心を大切にしたい。",
+        "exampleReading": "たがいのぶんかをうやまうこころをたいせつにしたい。",
+        "translation": "서로의 문화를 존중하는 마음을 소중히 하고 싶다."
+      },
+      {
+        "word": "付き合う",
+        "reading": "つきあう",
+        "meaning": "사귀다; 함께 어울리다",
+        "example": "買い物に付き合ってくれてありがとう。",
+        "exampleReading": "かいものにつきあってくれてありがとう。",
+        "translation": "쇼핑에 함께 가 줘서 고마워."
+      },
+      {
+        "word": "見守る",
+        "reading": "みまもる",
+        "meaning": "지켜보다",
+        "example": "親は子どもの成長を温かく見守っている。",
+        "exampleReading": "おやはこどものせいちょうをあたたかくみまもっている。",
+        "translation": "부모는 아이의 성장을 따뜻하게 지켜보고 있다."
+      },
+      {
+        "word": "打ち明ける",
+        "reading": "うちあける",
+        "meaning": "털어놓다; 고백하다",
+        "example": "ずっと抱えていた悩みを友人に打ち明けた。",
+        "exampleReading": "ずっとかかえていたなやみをゆうじんにうちあけた。",
+        "translation": "줄곧 안고 있던 고민을 친구에게 털어놓았다."
+      }
+    ]
+  },
+  {
+    "day": 46,
+    "title": "복합동사 ①",
+    "subtitle": "取り・引き로 넓히는 표현",
+    "words": [
+      {
+        "word": "取り上げる",
+        "reading": "とりあげる",
+        "meaning": "다루다; 집어 들다; 빼앗다",
+        "example": "今日の授業では環境問題を取り上げる。",
+        "exampleReading": "きょうのじゅぎょうではかんきょうもんだいをとりあげる。",
+        "translation": "오늘 수업에서는 환경 문제를 다룬다."
+      },
+      {
+        "word": "取り入れる",
+        "reading": "とりいれる",
+        "meaning": "도입하다; 받아들이다",
+        "example": "利用者の意見を設計に取り入れた。",
+        "exampleReading": "りようしゃのいけんをせっけいにとりいれた。",
+        "translation": "이용자의 의견을 설계에 반영했다."
+      },
+      {
+        "word": "取り出す",
+        "reading": "とりだす",
+        "meaning": "꺼내다",
+        "example": "かばんから折り畳み傘を取り出した。",
+        "exampleReading": "かばんからおりたたみがさをとりだした。",
+        "translation": "가방에서 접이식 우산을 꺼냈다."
+      },
+      {
+        "word": "取り替える",
+        "reading": "とりかえる",
+        "meaning": "바꾸다; 교체하다",
+        "example": "汚れたシーツを新しいものに取り替えた。",
+        "exampleReading": "よごれたしいつをあたらしいものにとりかえた。",
+        "translation": "더러워진 시트를 새것으로 바꿨다."
+      },
+      {
+        "word": "取り消す",
+        "reading": "とりけす",
+        "meaning": "취소하다",
+        "example": "予定が変わったので予約を取り消した。",
+        "exampleReading": "よていがかわったのでよやくをとりけした。",
+        "translation": "일정이 바뀌어서 예약을 취소했다."
+      },
+      {
+        "word": "取り戻す",
+        "reading": "とりもどす",
+        "meaning": "되찾다; 회복하다",
+        "example": "休暇を取って心の余裕を取り戻した。",
+        "exampleReading": "きゅうかをとってこころのよゆうをとりもどした。",
+        "translation": "휴가를 내서 마음의 여유를 되찾았다."
+      },
+      {
+        "word": "取り寄せる",
+        "reading": "とりよせる",
+        "meaning": "주문하여 받아 보다",
+        "example": "専門店から珍しい調味料を取り寄せた。",
+        "exampleReading": "せんもんてんからめずらしいちょうみりょうをとりよせた。",
+        "translation": "전문점에서 희귀한 조미료를 주문해 받았다."
+      },
+      {
+        "word": "取り付ける",
+        "reading": "とりつける",
+        "meaning": "설치하다; 부착하다",
+        "example": "玄関に新しい照明を取り付けた。",
+        "exampleReading": "げんかんにあたらしいしょうめいをとりつけた。",
+        "translation": "현관에 새 조명을 달았다."
+      },
+      {
+        "word": "取り扱う",
+        "reading": "とりあつかう",
+        "meaning": "취급하다; 다루다",
+        "example": "この店では海外の雑誌も取り扱っている。",
+        "exampleReading": "このみせではかいがいのざっしもとりあつかっている。",
+        "translation": "이 가게에서는 해외 잡지도 취급한다."
+      },
+      {
+        "word": "取り除く",
+        "reading": "とりのぞく",
+        "meaning": "제거하다; 없애다",
+        "example": "野菜の傷んだ部分を取り除いた。",
+        "exampleReading": "やさいのいたんだぶぶんをとりのぞいた。",
+        "translation": "채소의 상한 부분을 제거했다."
+      },
+      {
+        "word": "引き受ける",
+        "reading": "ひきうける",
+        "meaning": "맡다; 떠맡다",
+        "example": "経験は浅いが司会を引き受けた。",
+        "exampleReading": "けいけんはあさいがしかいをひきうけた。",
+        "translation": "경험은 적지만 사회를 맡았다."
+      },
+      {
+        "word": "引き継ぐ",
+        "reading": "ひきつぐ",
+        "meaning": "인계받다; 이어받다",
+        "example": "前任者から仕事を引き継いだ。",
+        "exampleReading": "ぜんにんしゃからしごとをひきついだ。",
+        "translation": "전임자에게서 업무를 인계받았다."
+      },
+      {
+        "word": "引き返す",
+        "reading": "ひきかえす",
+        "meaning": "되돌아가다",
+        "example": "道が凍っていたので途中で引き返した。",
+        "exampleReading": "みちがこおっていたのでとちゅうでひきかえした。",
+        "translation": "길이 얼어 있어서 도중에 되돌아갔다."
+      },
+      {
+        "word": "引き出す",
+        "reading": "ひきだす",
+        "meaning": "끌어내다; 인출하다",
+        "example": "先生は質問で生徒の考えを引き出した。",
+        "exampleReading": "せんせいはしつもんでせいとのかんがえをひきだした。",
+        "translation": "선생님은 질문으로 학생의 생각을 끌어냈다."
+      },
+      {
+        "word": "引き止める",
+        "reading": "ひきとめる",
+        "meaning": "만류하다; 붙잡다",
+        "example": "帰ろうとする友人を玄関で引き止めた。",
+        "exampleReading": "かえろうとするゆうじんをげんかんでひきとめた。",
+        "translation": "돌아가려는 친구를 현관에서 붙잡았다."
+      },
+      {
+        "word": "引き下げる",
+        "reading": "ひきさげる",
+        "meaning": "인하하다; 낮추다",
+        "example": "店は配送料を引き下げた。",
+        "exampleReading": "みせははいそうりょうをひきさげた。",
+        "translation": "가게는 배송료를 인하했다."
+      },
+      {
+        "word": "引き上げる",
+        "reading": "ひきあげる",
+        "meaning": "인상하다; 끌어 올리다",
+        "example": "工場は製品の安全基準を引き上げた。",
+        "exampleReading": "こうじょうはせいひんのあんぜんきじゅんをひきあげた。",
+        "translation": "공장은 제품의 안전 기준을 높였다."
+      },
+      {
+        "word": "引き伸ばす",
+        "reading": "ひきのばす",
+        "meaning": "확대하다; 질질 끌다",
+        "example": "写真を引き伸ばして壁に飾った。",
+        "exampleReading": "しゃしんをひきのばしてかべにかざった。",
+        "translation": "사진을 확대해서 벽에 걸었다."
+      },
+      {
+        "word": "引き分ける",
+        "reading": "ひきわける",
+        "meaning": "비기다; 무승부가 되다",
+        "example": "練習試合は最後まで得点がなく引き分けた。",
+        "exampleReading": "れんしゅうじあいはさいごまでとくてんがなくひきわけた。",
+        "translation": "연습 경기는 끝까지 득점이 없어 비겼다."
+      },
+      {
+        "word": "引き取る",
+        "reading": "ひきとる",
+        "meaning": "인수하다; 거두다",
+        "example": "修理が終わった自転車を店で引き取った。",
+        "exampleReading": "しゅうりがおわったじてんしゃをみせでひきとった。",
+        "translation": "수리가 끝난 자전거를 가게에서 찾아왔다."
+      }
+    ]
+  },
+  {
+    "day": 47,
+    "title": "복합동사 ②",
+    "subtitle": "見・差し・打ち의 여러 뜻",
+    "words": [
+      {
+        "word": "見上げる",
+        "reading": "みあげる",
+        "meaning": "올려다보다",
+        "example": "夜空を見上げると星がよく見えた。",
+        "exampleReading": "よぞらをみあげるとほしがよくみえた。",
+        "translation": "밤하늘을 올려다보니 별이 잘 보였다."
+      },
+      {
+        "word": "見下ろす",
+        "reading": "みおろす",
+        "meaning": "내려다보다",
+        "example": "展望台から港を見下ろした。",
+        "exampleReading": "てんぼうだいからみなとをみおろした。",
+        "translation": "전망대에서 항구를 내려다봤다."
+      },
+      {
+        "word": "見送る",
+        "reading": "みおくる",
+        "meaning": "배웅하다; 보류하다",
+        "example": "駅まで留学する友人を見送りに行った。",
+        "exampleReading": "えきまでりゅうがくするゆうじんをみおくりにいった。",
+        "translation": "역까지 유학 가는 친구를 배웅하러 갔다."
+      },
+      {
+        "word": "見直す",
+        "reading": "みなおす",
+        "meaning": "재검토하다; 다시 보다",
+        "example": "毎月の支出を見直して無駄を減らす。",
+        "exampleReading": "まいつきのししゅつをみなおしてむだをへらす。",
+        "translation": "매달 지출을 재검토해서 낭비를 줄인다."
+      },
+      {
+        "word": "見落とす",
+        "reading": "みおとす",
+        "meaning": "못 보고 지나치다; 간과하다",
+        "example": "小さな注意書きを見落としてしまった。",
+        "exampleReading": "ちいさなちゅういがきをみおとしてしまった。",
+        "translation": "작은 주의 문구를 못 보고 지나쳤다."
+      },
+      {
+        "word": "見合わせる",
+        "reading": "みあわせる",
+        "meaning": "보류하다; 마주 보다",
+        "example": "強風のため船の運航を見合わせている。",
+        "exampleReading": "きょうふうのためふねのうんこうをみあわせている。",
+        "translation": "강풍 때문에 선박 운항을 보류하고 있다."
+      },
+      {
+        "word": "見つめる",
+        "reading": "みつめる",
+        "meaning": "응시하다; 바라보다",
+        "example": "子どもは水槽の魚をじっと見つめていた。",
+        "exampleReading": "こどもはすいそうのさかなをじっとみつめていた。",
+        "translation": "아이는 수조의 물고기를 가만히 바라보고 있었다."
+      },
+      {
+        "word": "見渡す",
+        "reading": "みわたす",
+        "meaning": "둘러보다; 멀리 내다보다",
+        "example": "丘の上から町全体を見渡せる。",
+        "exampleReading": "おかのうえからまちぜんたいをみわたせる。",
+        "translation": "언덕 위에서 마을 전체를 내려다볼 수 있다."
+      },
+      {
+        "word": "見返す",
+        "reading": "みかえす",
+        "meaning": "다시 보다; 보란 듯이 성공하다",
+        "example": "旅の写真を見返して思い出を語った。",
+        "exampleReading": "たびのしゃしんをみかえしておもいでをかたった。",
+        "translation": "여행 사진을 다시 보며 추억을 이야기했다."
+      },
+      {
+        "word": "見掛ける",
+        "reading": "みかける",
+        "meaning": "우연히 보다; 눈에 띄다",
+        "example": "今朝、駅前で昔の同級生を見掛けた。",
+        "exampleReading": "けさ、えきまえでむかしのどうきゅうせいをみかけた。",
+        "translation": "오늘 아침 역 앞에서 옛 동급생을 우연히 봤다."
+      },
+      {
+        "word": "差し出す",
+        "reading": "さしだす",
+        "meaning": "내밀다; 제출하다",
+        "example": "困っている人にそっと手を差し出した。",
+        "exampleReading": "こまっているひとにそっとてをさしだした。",
+        "translation": "곤란해하는 사람에게 살며시 손을 내밀었다."
+      },
+      {
+        "word": "差し込む",
+        "reading": "さしこむ",
+        "meaning": "꽂아 넣다; 빛이 들어오다",
+        "example": "朝の日差しが窓から差し込んだ。",
+        "exampleReading": "あさのひざしがまどからさしこんだ。",
+        "translation": "아침 햇살이 창문으로 들어왔다."
+      },
+      {
+        "word": "差し引く",
+        "reading": "さしひく",
+        "meaning": "차감하다; 공제하다",
+        "example": "売り上げから材料費を差し引いた。",
+        "exampleReading": "うりあげからざいりょうひをさしひいた。",
+        "translation": "매출에서 재료비를 뺐다."
+      },
+      {
+        "word": "差し支える",
+        "reading": "さしつかえる",
+        "meaning": "지장이 생기다",
+        "example": "夜更かしすると明日の仕事に差し支える。",
+        "exampleReading": "よふかしするとあしたのしごとにさしつかえる。",
+        "translation": "밤늦게까지 깨어 있으면 내일 일에 지장이 생긴다."
+      },
+      {
+        "word": "打ち消す",
+        "reading": "うちけす",
+        "meaning": "부정하다; 없애다",
+        "example": "新しい発表が不安を打ち消した。",
+        "exampleReading": "あたらしいはっぴょうがふあんをうちけした。",
+        "translation": "새로운 발표가 불안을 없애 주었다."
+      },
+      {
+        "word": "打ち合わせる",
+        "reading": "うちあわせる",
+        "meaning": "사전에 의논하다",
+        "example": "本番の前に進行を詳しく打ち合わせた。",
+        "exampleReading": "ほんばんのまえにしんこうをくわしくうちあわせた。",
+        "translation": "본행사 전에 진행을 자세히 의논했다."
+      },
+      {
+        "word": "打ち込む",
+        "reading": "うちこむ",
+        "meaning": "몰두하다; 입력하다",
+        "example": "学生時代は演劇に打ち込んでいた。",
+        "exampleReading": "がくせいじだいはえんげきにうちこんでいた。",
+        "translation": "학창 시절에는 연극에 몰두하고 있었다."
+      },
+      {
+        "word": "打ち切る",
+        "reading": "うちきる",
+        "meaning": "중단하다; 끝내다",
+        "example": "時間が来たので質疑応答を打ち切った。",
+        "exampleReading": "じかんがきたのでしつぎおうとうをうちきった。",
+        "translation": "시간이 되어서 질의응답을 마쳤다."
+      },
+      {
+        "word": "打ち出す",
+        "reading": "うちだす",
+        "meaning": "내세우다; 제시하다",
+        "example": "市は新たな子育て支援策を打ち出した。",
+        "exampleReading": "しはあらたなこそだてしえんさくをうちだした。",
+        "translation": "시는 새로운 육아 지원책을 내놓았다."
+      },
+      {
+        "word": "打ち解ける",
+        "reading": "うちとける",
+        "meaning": "마음을 터놓다; 친해지다",
+        "example": "一緒に料理をして、すぐに打ち解けた。",
+        "exampleReading": "いっしょにりょうりをして、すぐにうちとけた。",
+        "translation": "함께 요리하면서 금세 친해졌다."
+      }
+    ]
+  },
+  {
+    "day": 48,
+    "title": "복합동사 ③",
+    "subtitle": "행동의 시작과 연결",
+    "words": [
+      {
+        "word": "立ち上がる",
+        "reading": "たちあがる",
+        "meaning": "일어서다; 일어나다",
+        "example": "名前を呼ばれて静かに立ち上がった。",
+        "exampleReading": "なまえをよばれてしずかにたちあがった。",
+        "translation": "이름이 불려서 조용히 일어섰다."
+      },
+      {
+        "word": "立ち寄る",
+        "reading": "たちよる",
+        "meaning": "잠깐 들르다",
+        "example": "帰りに図書館へ立ち寄って本を返した。",
+        "exampleReading": "かえりにとしょかんへたちよってほんをかえした。",
+        "translation": "돌아오는 길에 도서관에 들러 책을 반납했다."
+      },
+      {
+        "word": "立ち止まる",
+        "reading": "たちどまる",
+        "meaning": "멈춰 서다",
+        "example": "美しい花に気づいて立ち止まった。",
+        "exampleReading": "うつくしいはなにきづいてたちどまった。",
+        "translation": "아름다운 꽃을 발견하고 멈춰 섰다."
+      },
+      {
+        "word": "立て直す",
+        "reading": "たてなおす",
+        "meaning": "재건하다; 바로잡다",
+        "example": "休憩を取って学習計画を立て直した。",
+        "exampleReading": "きゅうけいをとってがくしゅうけいかくをたてなおした。",
+        "translation": "휴식한 뒤 학습 계획을 다시 세웠다."
+      },
+      {
+        "word": "受け取る",
+        "reading": "うけとる",
+        "meaning": "받다; 이해하다",
+        "example": "配達員から小包を受け取った。",
+        "exampleReading": "はいたついんからこづつみをうけとった。",
+        "translation": "배달원에게서 소포를 받았다."
+      },
+      {
+        "word": "受け入れる",
+        "reading": "うけいれる",
+        "meaning": "받아들이다; 수용하다",
+        "example": "その学校は毎年留学生を受け入れている。",
+        "exampleReading": "そのがっこうはまいとしりゅうがくせいをうけいれている。",
+        "translation": "그 학교는 매년 유학생을 받아들이고 있다."
+      },
+      {
+        "word": "受け持つ",
+        "reading": "うけもつ",
+        "meaning": "담당하다; 맡다",
+        "example": "今年は先生が二つのクラスを受け持つ。",
+        "exampleReading": "ことしはせんせいがふたつのくらすをうけもつ。",
+        "translation": "올해는 선생님이 두 학급을 맡는다."
+      },
+      {
+        "word": "受け継ぐ",
+        "reading": "うけつぐ",
+        "meaning": "계승하다; 물려받다",
+        "example": "祖母から受け継いだ味を守っている。",
+        "exampleReading": "そぼからうけついだあじをまもっている。",
+        "translation": "할머니에게서 물려받은 맛을 지키고 있다."
+      },
+      {
+        "word": "書き直す",
+        "reading": "かきなおす",
+        "meaning": "다시 쓰다; 고쳐 쓰다",
+        "example": "伝わりにくい部分を書き直した。",
+        "exampleReading": "つたわりにくいぶぶんをかきなおした。",
+        "translation": "뜻이 잘 전달되지 않는 부분을 고쳐 썼다."
+      },
+      {
+        "word": "書き込む",
+        "reading": "かきこむ",
+        "meaning": "써넣다; 기입하다",
+        "example": "予定表に面接の時間を書き込んだ。",
+        "exampleReading": "よていひょうにめんせつのじかんをかきこんだ。",
+        "translation": "일정표에 면접 시간을 써넣었다."
+      },
+      {
+        "word": "読み取る",
+        "reading": "よみとる",
+        "meaning": "읽어 내다; 이해하다",
+        "example": "図から気温の変化を読み取る。",
+        "exampleReading": "ずからきおんのへんかをよみとる。",
+        "translation": "도표에서 기온의 변화를 읽어 낸다."
+      },
+      {
+        "word": "読み返す",
+        "reading": "よみかえす",
+        "meaning": "다시 읽다",
+        "example": "送る前に手紙を何度も読み返した。",
+        "exampleReading": "おくるまえにてがみをなんどもよみかえした。",
+        "translation": "보내기 전에 편지를 몇 번이나 다시 읽었다."
+      },
+      {
+        "word": "話し合う",
+        "reading": "はなしあう",
+        "meaning": "서로 이야기하다; 의논하다",
+        "example": "役割の分担を全員で話し合った。",
+        "exampleReading": "やくわりのぶんたんをぜんいんではなしあった。",
+        "translation": "역할 분담을 모두 함께 의논했다."
+      },
+      {
+        "word": "申し込む",
+        "reading": "もうしこむ",
+        "meaning": "신청하다",
+        "example": "料理教室に友人と二人で申し込んだ。",
+        "exampleReading": "りょうりきょうしつにゆうじんとふたりでもうしこんだ。",
+        "translation": "요리 수업에 친구와 둘이 신청했다."
+      },
+      {
+        "word": "申し出る",
+        "reading": "もうしでる",
+        "meaning": "자청하다; 제의하다",
+        "example": "荷物の多い客に手伝いを申し出た。",
+        "exampleReading": "にもつのおおいきゃくにてつだいをもうしでた。",
+        "translation": "짐이 많은 손님에게 돕겠다고 나섰다."
+      },
+      {
+        "word": "呼びかける",
+        "reading": "よびかける",
+        "meaning": "호소하다; 말을 걸다",
+        "example": "市は住民に節水を呼びかけている。",
+        "exampleReading": "しはじゅうみんにせっすいをよびかけている。",
+        "translation": "시는 주민에게 절수를 호소하고 있다."
+      },
+      {
+        "word": "呼び出す",
+        "reading": "よびだす",
+        "meaning": "불러내다; 호출하다",
+        "example": "係員が館内放送で持ち主を呼び出した。",
+        "exampleReading": "かかりいんがかんないほうそうでもちぬしをよびだした。",
+        "translation": "직원이 관내 방송으로 주인을 호출했다."
+      },
+      {
+        "word": "払い戻す",
+        "reading": "はらいもどす",
+        "meaning": "환불하다",
+        "example": "中止になった公演の代金を払い戻します。",
+        "exampleReading": "ちゅうしになったこうえんのだいきんをはらいもどします。",
+        "translation": "취소된 공연의 대금을 환불해 드립니다."
+      },
+      {
+        "word": "使い果たす",
+        "reading": "つかいはたす",
+        "meaning": "다 써 버리다; 소진하다",
+        "example": "旅行で貯金を使い果たしてしまった。",
+        "exampleReading": "りょこうでちょきんをつかいはたしてしまった。",
+        "translation": "여행으로 저축한 돈을 다 써 버렸다."
+      },
+      {
+        "word": "食い違う",
+        "reading": "くいちがう",
+        "meaning": "엇갈리다; 일치하지 않다",
+        "example": "二人の説明が細かい点で食い違っている。",
+        "exampleReading": "ふたりのせつめいがこまかいてんでくいちがっている。",
+        "translation": "두 사람의 설명이 세부적인 점에서 엇갈린다."
+      }
+    ]
+  },
+  {
+    "day": 49,
+    "title": "형태와 감각",
+    "subtitle": "상태를 구체적으로 표현하기",
+    "words": [
+      {
+        "word": "粗い",
+        "reading": "あらい",
+        "meaning": "거칠다; 성기다",
+        "example": "この布は目が粗く、風をよく通す。",
+        "exampleReading": "このぬのはめがあらく、かぜをよくとおす。",
+        "translation": "이 천은 짜임이 성겨서 바람이 잘 통한다."
+      },
+      {
+        "word": "荒い",
+        "reading": "あらい",
+        "meaning": "거칠다; 난폭하다",
+        "example": "息が荒いので、少し休んだ方がいい。",
+        "exampleReading": "いきがあらいので、すこしやすんだほうがいい。",
+        "translation": "숨이 거치니 조금 쉬는 것이 좋다."
+      },
+      {
+        "word": "厚い",
+        "reading": "あつい",
+        "meaning": "두껍다; 두텁다",
+        "example": "厚い辞書を毎日持ち歩くのは大変だ。",
+        "exampleReading": "あついじしょをまいにちもちあるくのはたいへんだ。",
+        "translation": "두꺼운 사전을 매일 들고 다니기는 힘들다."
+      },
+      {
+        "word": "薄い",
+        "reading": "うすい",
+        "meaning": "얇다; 연하다",
+        "example": "味が薄ければ、しょうゆを足してください。",
+        "exampleReading": "あじがうすければ、しょうゆをたしてください。",
+        "translation": "맛이 싱거우면 간장을 더해 주세요."
+      },
+      {
+        "word": "深い",
+        "reading": "ふかい",
+        "meaning": "깊다",
+        "example": "この川は見た目より深いので注意しよう。",
+        "exampleReading": "このかわはみためよりふかいのでちゅういしよう。",
+        "translation": "이 강은 보기보다 깊으니 주의하자."
+      },
+      {
+        "word": "浅い",
+        "reading": "あさい",
+        "meaning": "얕다",
+        "example": "昨夜は眠りが浅く、何度も目が覚めた。",
+        "exampleReading": "さくやはねむりがあさく、なんどもめがさめた。",
+        "translation": "어젯밤은 잠이 얕아서 여러 번 깼다."
+      },
+      {
+        "word": "鋭い",
+        "reading": "するどい",
+        "meaning": "날카롭다; 예리하다",
+        "example": "会議で彼女は鋭い質問をした。",
+        "exampleReading": "かいぎでかのじょはするどいしつもんをした。",
+        "translation": "회의에서 그녀는 예리한 질문을 했다."
+      },
+      {
+        "word": "鈍い",
+        "reading": "にぶい",
+        "meaning": "둔하다; 무디다",
+        "example": "寝不足のせいか、今日は反応が鈍い。",
+        "exampleReading": "ねぶそくのせいか、きょうははんのうがにぶい。",
+        "translation": "잠이 부족해서인지 오늘은 반응이 둔하다."
+      },
+      {
+        "word": "緩い",
+        "reading": "ゆるい",
+        "meaning": "느슨하다; 완만하다",
+        "example": "ふたが緩いと中身がこぼれてしまう。",
+        "exampleReading": "ふたがゆるいとなかみがこぼれてしまう。",
+        "translation": "뚜껑이 느슨하면 내용물이 쏟아진다."
+      },
+      {
+        "word": "きつい",
+        "reading": "きつい",
+        "meaning": "꽉 끼다; 힘들다; 세다",
+        "example": "この靴は幅がきつくて足が痛い。",
+        "exampleReading": "このくつははばがきつくてあしがいたい。",
+        "translation": "이 신발은 폭이 좁게 끼어서 발이 아프다."
+      },
+      {
+        "word": "硬い",
+        "reading": "かたい",
+        "meaning": "딱딱하다; 단단하다",
+        "example": "パンが硬くなったので少し温めた。",
+        "exampleReading": "ぱんがかたくなったのですこしあたためた。",
+        "translation": "빵이 딱딱해져서 조금 데웠다."
+      },
+      {
+        "word": "柔らかい",
+        "reading": "やわらかい",
+        "meaning": "부드럽다; 연하다",
+        "example": "柔らかい布で画面を拭いてください。",
+        "exampleReading": "やわらかいぬのでがめんをふいてください。",
+        "translation": "부드러운 천으로 화면을 닦아 주세요."
+      },
+      {
+        "word": "重たい",
+        "reading": "おもたい",
+        "meaning": "무겁다",
+        "example": "雨でぬれた上着が重たい。",
+        "exampleReading": "あめでぬれたうわぎがおもたい。",
+        "translation": "비에 젖은 겉옷이 무겁다."
+      },
+      {
+        "word": "軽い",
+        "reading": "かるい",
+        "meaning": "가볍다",
+        "example": "旅行には軽い靴を選んだ。",
+        "exampleReading": "りょこうにはかるいくつをえらんだ。",
+        "translation": "여행용으로 가벼운 신발을 골랐다."
+      },
+      {
+        "word": "険しい",
+        "reading": "けわしい",
+        "meaning": "험하다; 험상궂다",
+        "example": "山頂までは険しい道が続く。",
+        "exampleReading": "さんちょうまではけわしいみちがつづく。",
+        "translation": "산 정상까지는 험한 길이 이어진다."
+      },
+      {
+        "word": "平たい",
+        "reading": "ひらたい",
+        "meaning": "평평하다; 납작하다",
+        "example": "平たい皿に野菜を並べた。",
+        "exampleReading": "ひらたいさらにやさいをならべた。",
+        "translation": "평평한 접시에 채소를 늘어놓았다."
+      },
+      {
+        "word": "細長い",
+        "reading": "ほそながい",
+        "meaning": "가늘고 길다",
+        "example": "細長い箱に花が入っていた。",
+        "exampleReading": "ほそながいはこにはながはいっていた。",
+        "translation": "가늘고 긴 상자에 꽃이 들어 있었다."
+      },
+      {
+        "word": "蒸し暑い",
+        "reading": "むしあつい",
+        "meaning": "무덥다",
+        "example": "雨の前で、今日は特に蒸し暑い。",
+        "exampleReading": "あめのまえで、きょうはとくにむしあつい。",
+        "translation": "비가 오기 전이라 오늘은 특히 무덥다."
+      },
+      {
+        "word": "肌寒い",
+        "reading": "はださむい",
+        "meaning": "쌀쌀하다",
+        "example": "日が沈むと急に肌寒くなった。",
+        "exampleReading": "ひがしずむときゅうにはださむくなった。",
+        "translation": "해가 지자 갑자기 쌀쌀해졌다."
+      },
+      {
+        "word": "眩しい",
+        "reading": "まぶしい",
+        "meaning": "눈부시다",
+        "example": "雪に反射した光が眩しい。",
+        "exampleReading": "ゆきにはんしゃしたひかりがまぶしい。",
+        "translation": "눈에 반사된 빛이 눈부시다."
+      }
+    ]
+  },
+  {
+    "day": 50,
+    "title": "성격과 태도",
+    "subtitle": "사람의 행동을 묘사하기",
+    "words": [
+      {
+        "word": "図々しい",
+        "reading": "ずうずうしい",
+        "meaning": "뻔뻔하다",
+        "example": "何度もお金を借りるなんて図々しい。",
+        "exampleReading": "なんどもおかねをかりるなんてずうずうしい。",
+        "translation": "몇 번이나 돈을 빌리다니 뻔뻔하다."
+      },
+      {
+        "word": "厚かましい",
+        "reading": "あつかましい",
+        "meaning": "뻔뻔하다; 염치없다",
+        "example": "厚かましいお願いですが、少し手伝っていただけますか。",
+        "exampleReading": "あつかましいおねがいですが、すこしてつだっていただけますか。",
+        "translation": "염치없는 부탁이지만 조금 도와주시겠어요?"
+      },
+      {
+        "word": "素早い",
+        "reading": "すばやい",
+        "meaning": "재빠르다",
+        "example": "店員の素早い対応に助けられた。",
+        "exampleReading": "てんいんのすばやいたいおうにたすけられた。",
+        "translation": "점원의 재빠른 대응 덕에 도움을 받았다."
+      },
+      {
+        "word": "しつこい",
+        "reading": "しつこい",
+        "meaning": "끈질기다; 집요하다; 느끼하다",
+        "example": "しつこい勧誘は客を困らせる。",
+        "exampleReading": "しつこいかんゆうはきゃくをこまらせる。",
+        "translation": "집요한 권유는 손님을 곤란하게 한다."
+      },
+      {
+        "word": "ずるい",
+        "reading": "ずるい",
+        "meaning": "교활하다; 치사하다",
+        "example": "自分だけ先に答えを見るのはずるい。",
+        "exampleReading": "じぶんだけさきにこたえをみるのはずるい。",
+        "translation": "자기만 먼저 답을 보는 것은 치사하다."
+      },
+      {
+        "word": "慎重",
+        "reading": "しんちょう",
+        "meaning": "신중함",
+        "example": "大切な契約なので慎重に確認した。",
+        "exampleReading": "たいせつなけいやくなのでしんちょうにかくにんした。",
+        "translation": "중요한 계약이라 신중하게 확인했다."
+      },
+      {
+        "word": "素直",
+        "reading": "すなお",
+        "meaning": "솔직함; 고분고분함",
+        "example": "分からないことは素直に質問しよう。",
+        "exampleReading": "わからないことはすなおにしつもんしよう。",
+        "translation": "모르는 것은 솔직하게 질문하자."
+      },
+      {
+        "word": "謙虚",
+        "reading": "けんきょ",
+        "meaning": "겸허함; 겸손함",
+        "example": "成功しても謙虚な姿勢を忘れない。",
+        "exampleReading": "せいこうしてもけんきょなしせいをわすれない。",
+        "translation": "성공해도 겸손한 자세를 잊지 않는다."
+      },
+      {
+        "word": "誠実",
+        "reading": "せいじつ",
+        "meaning": "성실함; 진실됨",
+        "example": "彼の誠実な返事に安心した。",
+        "exampleReading": "かれのせいじつなへんじにあんしんした。",
+        "translation": "그의 진실한 답변에 안심했다."
+      },
+      {
+        "word": "率直",
+        "reading": "そっちょく",
+        "meaning": "솔직함; 거리낌 없음",
+        "example": "率直な感想を聞かせてください。",
+        "exampleReading": "そっちょくなかんそうをきかせてください。",
+        "translation": "솔직한 감상을 들려주세요."
+      },
+      {
+        "word": "頑固",
+        "reading": "がんこ",
+        "meaning": "완고함; 고집이 셈",
+        "example": "祖父は頑固だが、家族思いだ。",
+        "exampleReading": "そふはがんこだが、かぞくおもいだ。",
+        "translation": "할아버지는 고집이 세지만 가족을 생각한다."
+      },
+      {
+        "word": "臆病",
+        "reading": "おくびょう",
+        "meaning": "겁이 많음",
+        "example": "臆病な猫は物音ですぐ隠れる。",
+        "exampleReading": "おくびょうなねこはものおとですぐかくれる。",
+        "translation": "겁 많은 고양이는 소리가 나면 바로 숨는다."
+      },
+      {
+        "word": "強引",
+        "reading": "ごういん",
+        "meaning": "억지로 밀어붙임",
+        "example": "強引な進め方では協力を得られない。",
+        "exampleReading": "ごういんなすすめかたではきょうりょくをえられない。",
+        "translation": "억지로 밀어붙이는 방식으로는 협력을 얻을 수 없다."
+      },
+      {
+        "word": "いい加減",
+        "reading": "いいかげん",
+        "meaning": "적당함; 무책임함; 대충함",
+        "example": "確認せずにいい加減な返事をしないで。",
+        "exampleReading": "かくにんせずにいいかげんなへんじをしないで。",
+        "translation": "확인하지 않고 대충 대답하지 마."
+      },
+      {
+        "word": "真面目",
+        "reading": "まじめ",
+        "meaning": "성실함; 진지함",
+        "example": "真面目な話なので、最後まで聞いてほしい。",
+        "exampleReading": "まじめなはなしなので、さいごまできいてほしい。",
+        "translation": "진지한 이야기라 끝까지 들어 줬으면 한다."
+      },
+      {
+        "word": "積極的",
+        "reading": "せっきょくてき",
+        "meaning": "적극적임",
+        "example": "新しい活動にも積極的に参加している。",
+        "exampleReading": "あたらしいかつどうにもせっきょくてきにさんかしている。",
+        "translation": "새로운 활동에도 적극적으로 참여하고 있다."
+      },
+      {
+        "word": "消極的",
+        "reading": "しょうきょくてき",
+        "meaning": "소극적임",
+        "example": "彼は最初、計画に消極的だった。",
+        "exampleReading": "かれはさいしょ、けいかくにしょうきょくてきだった。",
+        "translation": "그는 처음에는 계획에 소극적이었다."
+      },
+      {
+        "word": "生意気",
+        "reading": "なまいき",
+        "meaning": "건방짐; 주제넘음",
+        "example": "生意気な言い方になってしまい、反省した。",
+        "exampleReading": "なまいきないいかたになってしまい、はんせいした。",
+        "translation": "건방진 말투가 되어 버려서 반성했다."
+      },
+      {
+        "word": "欲張り",
+        "reading": "よくばり",
+        "meaning": "욕심쟁이; 욕심이 많음",
+        "example": "全部欲しがるなんて欲張りだね。",
+        "exampleReading": "ぜんぶほしがるなんてよくばりだね。",
+        "translation": "전부 갖고 싶어 하다니 욕심쟁이네."
+      },
+      {
+        "word": "面倒くさい",
+        "reading": "めんどうくさい",
+        "meaning": "귀찮다; 성가시다",
+        "example": "面倒くさくても記録を残しておこう。",
+        "exampleReading": "めんどうくさくてもきろくをのこしておこう。",
+        "translation": "귀찮아도 기록을 남겨 두자."
+      }
+    ]
+  },
+  {
+    "day": 51,
+    "title": "평가와 가치",
+    "subtitle": "좋고 나쁨을 세밀하게 말하기",
+    "words": [
+      {
+        "word": "懐かしい",
+        "reading": "なつかしい",
+        "meaning": "그립다; 정겹다",
+        "example": "この歌を聞くと学生時代が懐かしい。",
+        "exampleReading": "このうたをきくとがくせいじだいがなつかしい。",
+        "translation": "이 노래를 들으면 학창 시절이 그립다."
+      },
+      {
+        "word": "頼もしい",
+        "reading": "たのもしい",
+        "meaning": "믿음직하다; 든든하다",
+        "example": "助言してくれる先輩はとても頼もしい。",
+        "exampleReading": "じょげんしてくれるせんぱいはとてもたのもしい。",
+        "translation": "조언해 주는 선배는 매우 든든하다."
+      },
+      {
+        "word": "望ましい",
+        "reading": "のぞましい",
+        "meaning": "바람직하다",
+        "example": "応募前に実際の職場を見学するのが望ましい。",
+        "exampleReading": "おうぼまえにじっさいのしょくばをけんがくするのがのぞましい。",
+        "translation": "지원 전에 실제 직장을 견학하는 것이 바람직하다."
+      },
+      {
+        "word": "好ましい",
+        "reading": "このましい",
+        "meaning": "바람직하다; 호감이 가다",
+        "example": "周囲への気配りができる点は好ましい。",
+        "exampleReading": "しゅういへのきくばりができるてんはこのましい。",
+        "translation": "주변을 배려할 수 있다는 점은 호감이 간다."
+      },
+      {
+        "word": "疑わしい",
+        "reading": "うたがわしい",
+        "meaning": "의심스럽다",
+        "example": "出所が不明なので、情報の正確さは疑わしい。",
+        "exampleReading": "しゅっしょがふめいなので、じょうほうのせいかくさはうたがわしい。",
+        "translation": "출처가 불분명해서 정보의 정확성이 의심스럽다."
+      },
+      {
+        "word": "怪しい",
+        "reading": "あやしい",
+        "meaning": "수상하다; 미심쩍다",
+        "example": "知らない番号から怪しい電話が来た。",
+        "exampleReading": "しらないばんごうからあやしいでんわがきた。",
+        "translation": "모르는 번호에서 수상한 전화가 왔다."
+      },
+      {
+        "word": "くだらない",
+        "reading": "くだらない",
+        "meaning": "시시하다; 하찮다",
+        "example": "くだらない冗談で皆が笑ってしまった。",
+        "exampleReading": "くだらないじょうだんでみながわらってしまった。",
+        "translation": "시시한 농담에 모두 웃어 버렸다."
+      },
+      {
+        "word": "ばかばかしい",
+        "reading": "ばかばかしい",
+        "meaning": "어처구니없다; 터무니없다",
+        "example": "同じ書類を三度も書くのはばかばかしい。",
+        "exampleReading": "おなじしょるいをさんどもかくのはばかばかしい。",
+        "translation": "같은 서류를 세 번이나 쓰는 것은 어처구니없다."
+      },
+      {
+        "word": "惜しい",
+        "reading": "おしい",
+        "meaning": "아깝다; 아쉽다",
+        "example": "あと一点で合格だったので惜しい。",
+        "exampleReading": "あといってんでごうかくだったのでおしい。",
+        "translation": "일 점만 더 받으면 합격이었는데 아쉽다."
+      },
+      {
+        "word": "等しい",
+        "reading": "ひとしい",
+        "meaning": "같다; 동등하다",
+        "example": "この二つの容器は容量が等しい。",
+        "exampleReading": "このふたつのようきはようりょうがひとしい。",
+        "translation": "이 두 용기는 용량이 같다."
+      },
+      {
+        "word": "著しい",
+        "reading": "いちじるしい",
+        "meaning": "현저하다; 두드러지다",
+        "example": "この分野では技術の進歩が著しい。",
+        "exampleReading": "このぶんやではぎじゅつのしんぽがいちじるしい。",
+        "translation": "이 분야에서는 기술의 진보가 두드러진다."
+      },
+      {
+        "word": "乏しい",
+        "reading": "とぼしい",
+        "meaning": "부족하다; 빈약하다",
+        "example": "経験は乏しいが、学ぶ意欲は強い。",
+        "exampleReading": "けいけんはとぼしいが、まなぶいよくはつよい。",
+        "translation": "경험은 부족하지만 배우려는 의욕은 강하다."
+      },
+      {
+        "word": "豊か",
+        "reading": "ゆたか",
+        "meaning": "풍부함; 풍요로움",
+        "example": "想像力が豊かな子どもに驚かされた。",
+        "exampleReading": "そうぞうりょくがゆたかなこどもにおどろかされた。",
+        "translation": "상상력이 풍부한 아이에게 놀랐다."
+      },
+      {
+        "word": "貴重",
+        "reading": "きちょう",
+        "meaning": "귀중함",
+        "example": "地元の人から貴重な話を聞けた。",
+        "exampleReading": "じもとのひとからきちょうなはなしをきけた。",
+        "translation": "현지인에게 귀중한 이야기를 들을 수 있었다."
+      },
+      {
+        "word": "有利",
+        "reading": "ゆうり",
+        "meaning": "유리함",
+        "example": "駅に近いことは店にとって有利だ。",
+        "exampleReading": "えきにちかいことはみせにとってゆうりだ。",
+        "translation": "역에서 가깝다는 점은 가게에 유리하다."
+      },
+      {
+        "word": "不利",
+        "reading": "ふり",
+        "meaning": "불리함",
+        "example": "情報が少ない側は交渉で不利になる。",
+        "exampleReading": "じょうほうがすくないがわはこうしょうでふりになる。",
+        "translation": "정보가 적은 쪽은 협상에서 불리해진다."
+      },
+      {
+        "word": "優秀",
+        "reading": "ゆうしゅう",
+        "meaning": "우수함",
+        "example": "優秀な人材が安心して働ける職場を作る。",
+        "exampleReading": "ゆうしゅうなじんざいがあんしんしてはたらけるしょくばをつくる。",
+        "translation": "우수한 인재가 안심하고 일할 수 있는 직장을 만든다."
+      },
+      {
+        "word": "上等",
+        "reading": "じょうとう",
+        "meaning": "고급임; 품질이 좋음",
+        "example": "特別な日に上等なお茶を開けた。",
+        "exampleReading": "とくべつなひにじょうとうなおちゃをあけた。",
+        "translation": "특별한 날에 고급 차를 뜯었다."
+      },
+      {
+        "word": "適切",
+        "reading": "てきせつ",
+        "meaning": "적절함",
+        "example": "状況に応じて適切な言葉を選ぼう。",
+        "exampleReading": "じょうきょうにおうじててきせつなことばをえらぼう。",
+        "translation": "상황에 맞춰 적절한 말을 고르자."
+      },
+      {
+        "word": "妥当",
+        "reading": "だとう",
+        "meaning": "타당함",
+        "example": "材料費を考えると、この値段は妥当だ。",
+        "exampleReading": "ざいりょうひをかんがえると、このねだんはだとうだ。",
+        "translation": "재료비를 생각하면 이 가격은 타당하다."
+      }
+    ]
+  },
+  {
+    "day": 52,
+    "title": "추상적인 성질",
+    "subtitle": "독해에서 만나는 형용동사",
+    "words": [
+      {
+        "word": "曖昧",
+        "reading": "あいまい",
+        "meaning": "애매함; 모호함",
+        "example": "曖昧な返事では予定を決められない。",
+        "exampleReading": "あいまいなへんじではよていをきめられない。",
+        "translation": "애매한 답변으로는 일정을 정할 수 없다."
+      },
+      {
+        "word": "明確",
+        "reading": "めいかく",
+        "meaning": "명확함",
+        "example": "目標を明確にすると行動しやすい。",
+        "exampleReading": "もくひょうをめいかくにするとこうどうしやすい。",
+        "translation": "목표를 명확히 하면 행동하기 쉽다."
+      },
+      {
+        "word": "複雑",
+        "reading": "ふくざつ",
+        "meaning": "복잡함",
+        "example": "仕組みが複雑なので図で説明する。",
+        "exampleReading": "しくみがふくざつなのでずでせつめいする。",
+        "translation": "구조가 복잡해서 그림으로 설명한다."
+      },
+      {
+        "word": "単純",
+        "reading": "たんじゅん",
+        "meaning": "단순함",
+        "example": "単純な作業でも集中力が必要だ。",
+        "exampleReading": "たんじゅんなさぎょうでもしゅうちゅうりょくがひつようだ。",
+        "translation": "단순한 작업에도 집중력이 필요하다."
+      },
+      {
+        "word": "微妙",
+        "reading": "びみょう",
+        "meaning": "미묘함",
+        "example": "二つの色には微妙な違いがある。",
+        "exampleReading": "ふたつのいろにはびみょうなちがいがある。",
+        "translation": "두 색에는 미묘한 차이가 있다."
+      },
+      {
+        "word": "重大",
+        "reading": "じゅうだい",
+        "meaning": "중대함",
+        "example": "重大な変更は全員に知らせる必要がある。",
+        "exampleReading": "じゅうだいなへんこうはぜんいんにしらせるひつようがある。",
+        "translation": "중대한 변경은 모두에게 알릴 필요가 있다."
+      },
+      {
+        "word": "深刻",
+        "reading": "しんこく",
+        "meaning": "심각함",
+        "example": "人手不足がますます深刻になっている。",
+        "exampleReading": "ひとでぶそくがますますしんこくになっている。",
+        "translation": "일손 부족이 점점 심각해지고 있다."
+      },
+      {
+        "word": "厄介",
+        "reading": "やっかい",
+        "meaning": "성가심; 골치 아픔",
+        "example": "原因が分からない故障は厄介だ。",
+        "exampleReading": "げんいんがわからないこしょうはやっかいだ。",
+        "translation": "원인을 모르는 고장은 골치 아프다."
+      },
+      {
+        "word": "面倒",
+        "reading": "めんどう",
+        "meaning": "번거로움; 돌봄",
+        "example": "手続きが面倒なので、改善してほしい。",
+        "exampleReading": "てつづきがめんどうなので、かいぜんしてほしい。",
+        "translation": "절차가 번거로우니 개선해 주었으면 한다."
+      },
+      {
+        "word": "余計",
+        "reading": "よけい",
+        "meaning": "불필요함; 쓸데없음; 더함",
+        "example": "余計な心配をかけてしまってごめん。",
+        "exampleReading": "よけいなしんぱいをかけてしまってごめん。",
+        "translation": "쓸데없는 걱정을 끼쳐서 미안해."
+      },
+      {
+        "word": "無駄",
+        "reading": "むだ",
+        "meaning": "헛됨; 낭비",
+        "example": "早めに調べれば無駄な出費を防げる。",
+        "exampleReading": "はやめにしらべればむだなしゅっぴをふせげる。",
+        "translation": "미리 알아보면 불필요한 지출을 막을 수 있다."
+      },
+      {
+        "word": "無難",
+        "reading": "ぶなん",
+        "meaning": "무난함",
+        "example": "初対面の人には丁寧な表現が無難だ。",
+        "exampleReading": "しょたいめんのひとにはていねいなひょうげんがぶなんだ。",
+        "translation": "처음 만난 사람에게는 정중한 표현이 무난하다."
+      },
+      {
+        "word": "確実",
+        "reading": "かくじつ",
+        "meaning": "확실함",
+        "example": "小さな目標から確実に達成していこう。",
+        "exampleReading": "ちいさなもくひょうからかくじつにたっせいしていこう。",
+        "translation": "작은 목표부터 확실하게 달성해 나가자."
+      },
+      {
+        "word": "不確か",
+        "reading": "ふたしか",
+        "meaning": "불확실함",
+        "example": "不確かな記憶だけで判断するのは危険だ。",
+        "exampleReading": "ふたしかなきおくだけではんだんするのはきけんだ。",
+        "translation": "불확실한 기억만으로 판단하는 것은 위험하다."
+      },
+      {
+        "word": "有効",
+        "reading": "ゆうこう",
+        "meaning": "유효함; 효과적임",
+        "example": "この券は発行日から一か月間有効です。",
+        "exampleReading": "このけんははっこうびからいっかげつかんゆうこうです。",
+        "translation": "이 표는 발행일로부터 한 달 동안 유효합니다."
+      },
+      {
+        "word": "無効",
+        "reading": "むこう",
+        "meaning": "무효임",
+        "example": "署名のない申請書は無効になります。",
+        "exampleReading": "しょめいのないしんせいしょはむこうになります。",
+        "translation": "서명이 없는 신청서는 무효가 됩니다."
+      },
+      {
+        "word": "柔軟",
+        "reading": "じゅうなん",
+        "meaning": "유연함",
+        "example": "急な変更にも柔軟に対応した。",
+        "exampleReading": "きゅうなへんこうにもじゅうなんにたいおうした。",
+        "translation": "갑작스러운 변경에도 유연하게 대응했다."
+      },
+      {
+        "word": "頑丈",
+        "reading": "がんじょう",
+        "meaning": "튼튼함; 견고함",
+        "example": "この机は頑丈で長く使えそうだ。",
+        "exampleReading": "このつくえはがんじょうでながくつかえそうだ。",
+        "translation": "이 책상은 튼튼해서 오래 쓸 수 있을 것 같다."
+      },
+      {
+        "word": "適度",
+        "reading": "てきど",
+        "meaning": "적당한 정도; 알맞음",
+        "example": "集中するためには適度な休憩も大切だ。",
+        "exampleReading": "しゅうちゅうするためにはてきどなきゅうけいもたいせつだ。",
+        "translation": "집중하려면 적당한 휴식도 중요하다."
+      },
+      {
+        "word": "公平",
+        "reading": "こうへい",
+        "meaning": "공평함",
+        "example": "審査員は公平な立場で作品を選んだ。",
+        "exampleReading": "しんさいんはこうへいなたちばでさくひんをえらんだ。",
+        "translation": "심사위원은 공평한 입장에서 작품을 골랐다."
+      }
+    ]
+  },
+  {
+    "day": 53,
+    "title": "정도와 빈도",
+    "subtitle": "얼마나 자주, 얼마나 많이",
+    "words": [
+      {
+        "word": "かなり",
+        "reading": "かなり",
+        "meaning": "상당히; 꽤",
+        "example": "駅まで歩くとかなり時間がかかる。",
+        "exampleReading": "えきまであるくとかなりじかんがかかる。",
+        "translation": "역까지 걸으면 꽤 시간이 걸린다."
+      },
+      {
+        "word": "相当",
+        "reading": "そうとう",
+        "meaning": "상당히; 상당함",
+        "example": "完成までには相当な努力が必要だ。",
+        "exampleReading": "かんせいまでにはそうとうなどりょくがひつようだ。",
+        "translation": "완성까지는 상당한 노력이 필요하다."
+      },
+      {
+        "word": "比較的",
+        "reading": "ひかくてき",
+        "meaning": "비교적",
+        "example": "平日の午前中は比較的すいている。",
+        "exampleReading": "へいじつのごぜんちゅうはひかくてきすいている。",
+        "translation": "평일 오전에는 비교적 한산하다."
+      },
+      {
+        "word": "やや",
+        "reading": "やや",
+        "meaning": "약간; 조금",
+        "example": "この問題は前の問題よりやや難しい。",
+        "exampleReading": "このもんだいはまえのもんだいよりややむずかしい。",
+        "translation": "이 문제는 앞 문제보다 약간 어렵다."
+      },
+      {
+        "word": "多少",
+        "reading": "たしょう",
+        "meaning": "다소; 조금",
+        "example": "条件が変われば結果も多少変わる。",
+        "exampleReading": "じょうけんがかわればけっかもたしょうかわる。",
+        "translation": "조건이 바뀌면 결과도 다소 달라진다."
+      },
+      {
+        "word": "わずか",
+        "reading": "わずか",
+        "meaning": "겨우; 조금; 아주 적음",
+        "example": "閉店まで残りわずか十分だった。",
+        "exampleReading": "へいてんまでのこりわずかじゅっぷんだった。",
+        "translation": "폐점까지 남은 시간은 겨우 십 분이었다."
+      },
+      {
+        "word": "少々",
+        "reading": "しょうしょう",
+        "meaning": "조금; 잠시",
+        "example": "ただいま確認しますので少々お待ちください。",
+        "exampleReading": "ただいまかくにんしますのでしょうしょうおまちください。",
+        "translation": "지금 확인하겠으니 잠시 기다려 주세요."
+      },
+      {
+        "word": "大いに",
+        "reading": "おおいに",
+        "meaning": "크게; 대단히",
+        "example": "今回の経験は今後の仕事に大いに役立つ。",
+        "exampleReading": "こんかいのけいけんはこんごのしごとにおおいにやくだつ。",
+        "translation": "이번 경험은 앞으로의 일에 크게 도움이 된다."
+      },
+      {
+        "word": "極めて",
+        "reading": "きわめて",
+        "meaning": "극히; 매우",
+        "example": "この地域で雪が降るのは極めて珍しい。",
+        "exampleReading": "このちいきでゆきがふるのはきわめてめずらしい。",
+        "translation": "이 지역에 눈이 내리는 것은 매우 드물다."
+      },
+      {
+        "word": "しばしば",
+        "reading": "しばしば",
+        "meaning": "종종; 자주",
+        "example": "祖父は旅の思い出をしばしば話す。",
+        "exampleReading": "そふはたびのおもいでをしばしばはなす。",
+        "translation": "할아버지는 여행의 추억을 종종 이야기한다."
+      },
+      {
+        "word": "たびたび",
+        "reading": "たびたび",
+        "meaning": "여러 번; 자주",
+        "example": "同じ質問をたびたび受ける。",
+        "exampleReading": "おなじしつもんをたびたびうける。",
+        "translation": "같은 질문을 여러 번 받는다."
+      },
+      {
+        "word": "頻繁に",
+        "reading": "ひんぱんに",
+        "meaning": "빈번하게; 자주",
+        "example": "この路線のバスは頻繁に来る。",
+        "exampleReading": "このろせんのばすはひんぱんにくる。",
+        "translation": "이 노선의 버스는 자주 온다."
+      },
+      {
+        "word": "絶えず",
+        "reading": "たえず",
+        "meaning": "끊임없이",
+        "example": "駅前には絶えず人が行き交っている。",
+        "exampleReading": "えきまえにはたえずひとがいきかっている。",
+        "translation": "역 앞에는 사람들이 끊임없이 오가고 있다."
+      },
+      {
+        "word": "常に",
+        "reading": "つねに",
+        "meaning": "항상; 늘",
+        "example": "作業中は常に安全を意識している。",
+        "exampleReading": "さぎょうちゅうはつねにあんぜんをいしきしている。",
+        "translation": "작업 중에는 항상 안전을 의식하고 있다."
+      },
+      {
+        "word": "めったに",
+        "reading": "めったに",
+        "meaning": "좀처럼; 드물게 (부정과 함께)",
+        "example": "忙しい兄とはめったに会えない。",
+        "exampleReading": "いそがしいあにとはめったにあえない。",
+        "translation": "바쁜 형과는 좀처럼 만날 수 없다."
+      },
+      {
+        "word": "たまに",
+        "reading": "たまに",
+        "meaning": "가끔; 이따금",
+        "example": "たまには別の道を歩いてみよう。",
+        "exampleReading": "たまにはべつのみちをあるいてみよう。",
+        "translation": "가끔은 다른 길을 걸어 보자."
+      },
+      {
+        "word": "次第に",
+        "reading": "しだいに",
+        "meaning": "점차; 차츰",
+        "example": "暗かった空が次第に明るくなった。",
+        "exampleReading": "くらかったそらがしだいにあかるくなった。",
+        "translation": "어두웠던 하늘이 점차 밝아졌다."
+      },
+      {
+        "word": "徐々に",
+        "reading": "じょじょに",
+        "meaning": "서서히; 점점",
+        "example": "新しい生活にも徐々に慣れてきた。",
+        "exampleReading": "あたらしいせいかつにもじょじょになれてきた。",
+        "translation": "새로운 생활에도 서서히 익숙해졌다."
+      },
+      {
+        "word": "一層",
+        "reading": "いっそう",
+        "meaning": "한층; 더욱",
+        "example": "雨の後、緑が一層鮮やかに見えた。",
+        "exampleReading": "あめのあと、みどりがいっそうあざやかにみえた。",
+        "translation": "비가 온 뒤 녹음이 한층 선명하게 보였다."
+      },
+      {
+        "word": "ますます",
+        "reading": "ますます",
+        "meaning": "점점 더; 더욱더",
+        "example": "練習するほど日本語がますます好きになる。",
+        "exampleReading": "れんしゅうするほどにほんごがますますすきになる。",
+        "translation": "연습할수록 일본어가 점점 더 좋아진다."
+      }
+    ]
+  },
+  {
+    "day": 54,
+    "title": "확신과 예상",
+    "subtitle": "예상대로 또는 뜻밖에",
+    "words": [
+      {
+        "word": "必ずしも",
+        "reading": "かならずしも",
+        "meaning": "반드시 (그런 것은 아니다)",
+        "example": "高い物が必ずしも長持ちするとは限らない。",
+        "exampleReading": "たかいものがかならずしもながもちするとはかぎらない。",
+        "translation": "비싼 물건이 반드시 오래가는 것은 아니다."
+      },
+      {
+        "word": "おそらく",
+        "reading": "おそらく",
+        "meaning": "아마; 필시",
+        "example": "この雲なら、おそらく夕方には雨になる。",
+        "exampleReading": "このくもなら、おそらくゆうがたにはあめになる。",
+        "translation": "이 구름이라면 아마 저녁에는 비가 올 것이다."
+      },
+      {
+        "word": "どうやら",
+        "reading": "どうやら",
+        "meaning": "아무래도; 보아하니",
+        "example": "外が静かなので、どうやら雨はやんだようだ。",
+        "exampleReading": "そとがしずかなので、どうやらあめはやんだようだ。",
+        "translation": "밖이 조용하니 아무래도 비가 그친 것 같다."
+      },
+      {
+        "word": "どうも",
+        "reading": "どうも",
+        "meaning": "아무래도; 왠지; 매우",
+        "example": "この説明はどうも納得できない。",
+        "exampleReading": "このせつめいはどうもなっとくできない。",
+        "translation": "이 설명은 아무래도 납득할 수 없다."
+      },
+      {
+        "word": "確かに",
+        "reading": "たしかに",
+        "meaning": "확실히; 틀림없이",
+        "example": "確かに便利だが、費用は高い。",
+        "exampleReading": "たしかにべんりだが、ひようはたかい。",
+        "translation": "확실히 편리하지만 비용은 비싸다."
+      },
+      {
+        "word": "まさか",
+        "reading": "まさか",
+        "meaning": "설마",
+        "example": "まさか今日ここで会うとは思わなかった。",
+        "exampleReading": "まさかきょうここであうとはおもわなかった。",
+        "translation": "설마 오늘 여기서 만날 줄은 몰랐다."
+      },
+      {
+        "word": "まさに",
+        "reading": "まさに",
+        "meaning": "바로; 그야말로",
+        "example": "これはまさに探していた形だ。",
+        "exampleReading": "これはまさにさがしていたかたちだ。",
+        "translation": "이것은 바로 찾고 있던 모양이다."
+      },
+      {
+        "word": "きっと",
+        "reading": "きっと",
+        "meaning": "분명; 꼭",
+        "example": "毎日続ければ、きっと自信がつく。",
+        "exampleReading": "まいにちつづければ、きっとじしんがつく。",
+        "translation": "매일 계속하면 분명 자신감이 생긴다."
+      },
+      {
+        "word": "案外",
+        "reading": "あんがい",
+        "meaning": "의외로; 뜻밖에",
+        "example": "初めて作った料理が案外おいしかった。",
+        "exampleReading": "はじめてつくったりょうりがあんがいおいしかった。",
+        "translation": "처음 만든 요리가 의외로 맛있었다."
+      },
+      {
+        "word": "意外に",
+        "reading": "いがいに",
+        "meaning": "의외로",
+        "example": "朝早い電車でも意外に混んでいた。",
+        "exampleReading": "あさはやいでんしゃでもいがいにこんでいた。",
+        "translation": "이른 아침 전철인데도 의외로 붐볐다."
+      },
+      {
+        "word": "さすが",
+        "reading": "さすが",
+        "meaning": "역시; 과연",
+        "example": "さすが専門家だけあって、説明が分かりやすい。",
+        "exampleReading": "さすがせんもんかだけあって、せつめいがわかりやすい。",
+        "translation": "역시 전문가답게 설명이 이해하기 쉽다."
+      },
+      {
+        "word": "やはり",
+        "reading": "やはり",
+        "meaning": "역시; 그래도",
+        "example": "実際に会うと、やはり印象が違った。",
+        "exampleReading": "じっさいにあうと、やはりいんしょうがちがった。",
+        "translation": "실제로 만나니 역시 인상이 달랐다."
+      },
+      {
+        "word": "いずれ",
+        "reading": "いずれ",
+        "meaning": "언젠가; 어느 쪽",
+        "example": "いずれ自分の店を開きたい。",
+        "exampleReading": "いずれじぶんのみせをひらきたい。",
+        "translation": "언젠가 내 가게를 열고 싶다."
+      },
+      {
+        "word": "やがて",
+        "reading": "やがて",
+        "meaning": "이윽고; 머지않아",
+        "example": "雪はやがて雨に変わった。",
+        "exampleReading": "ゆきはやがてあめにかわった。",
+        "translation": "눈은 이윽고 비로 바뀌었다."
+      },
+      {
+        "word": "ついに",
+        "reading": "ついに",
+        "meaning": "마침내; 끝내",
+        "example": "何度も挑戦して、ついに成功した。",
+        "exampleReading": "なんどもちょうせんして、ついにせいこうした。",
+        "translation": "여러 번 도전해서 마침내 성공했다."
+      },
+      {
+        "word": "とうとう",
+        "reading": "とうとう",
+        "meaning": "마침내; 결국",
+        "example": "古い時計がとうとう動かなくなった。",
+        "exampleReading": "ふるいとけいがとうとううごかなくなった。",
+        "translation": "오래된 시계가 결국 작동하지 않게 됐다."
+      },
+      {
+        "word": "ようやく",
+        "reading": "ようやく",
+        "meaning": "겨우; 드디어",
+        "example": "長い会議がようやく終わった。",
+        "exampleReading": "ながいかいぎがようやくおわった。",
+        "translation": "긴 회의가 드디어 끝났다."
+      },
+      {
+        "word": "せっかく",
+        "reading": "せっかく",
+        "meaning": "모처럼; 애써",
+        "example": "せっかく海に来たので、少し泳ぎたい。",
+        "exampleReading": "せっかくうみにきたので、すこしおよぎたい。",
+        "translation": "모처럼 바다에 왔으니 조금 수영하고 싶다."
+      },
+      {
+        "word": "あいにく",
+        "reading": "あいにく",
+        "meaning": "공교롭게도; 마침 운 나쁘게",
+        "example": "あいにく店主は外出しております。",
+        "exampleReading": "あいにくてんしゅはがいしゅつしております。",
+        "translation": "공교롭게도 주인은 외출 중입니다."
+      },
+      {
+        "word": "かえって",
+        "reading": "かえって",
+        "meaning": "오히려; 도리어",
+        "example": "急いで説明したら、かえって混乱させてしまった。",
+        "exampleReading": "いそいでせつめいしたら、かえってこんらんさせてしまった。",
+        "translation": "급하게 설명했더니 오히려 혼란스럽게 만들었다."
+      }
+    ]
+  },
+  {
+    "day": 55,
+    "title": "행동의 방식과 상태",
+    "subtitle": "어떻게 하는지 정확히 표현하기",
+    "words": [
+      {
+        "word": "そっと",
+        "reading": "そっと",
+        "meaning": "살며시; 가만히",
+        "example": "眠っている猫にそっと毛布を掛けた。",
+        "exampleReading": "ねむっているねこにそっともうふをかけた。",
+        "translation": "잠든 고양이에게 살며시 담요를 덮어 주었다."
+      },
+      {
+        "word": "じっと",
+        "reading": "じっと",
+        "meaning": "가만히; 꼼짝 않고",
+        "example": "鳥が飛び立つまでじっと待った。",
+        "exampleReading": "とりがとびたつまでじっとまった。",
+        "translation": "새가 날아오를 때까지 가만히 기다렸다."
+      },
+      {
+        "word": "ぐっと",
+        "reading": "ぐっと",
+        "meaning": "훨씬; 힘껏; 꾹",
+        "example": "図を加えると説明がぐっと分かりやすくなる。",
+        "exampleReading": "ずをくわえるとせつめいがぐっとわかりやすくなる。",
+        "translation": "그림을 더하면 설명이 훨씬 이해하기 쉬워진다."
+      },
+      {
+        "word": "ざっと",
+        "reading": "ざっと",
+        "meaning": "대충; 대략; 쏴 하고",
+        "example": "出発前に資料にざっと目を通した。",
+        "exampleReading": "しゅっぱつまえにしりょうにざっとめをとおした。",
+        "translation": "출발 전에 자료를 대충 훑어봤다."
+      },
+      {
+        "word": "さっと",
+        "reading": "さっと",
+        "meaning": "재빨리; 가볍게",
+        "example": "汚れた机を布でさっと拭いた。",
+        "exampleReading": "よごれたつくえをぬのでさっとふいた。",
+        "translation": "더러워진 책상을 천으로 재빨리 닦았다."
+      },
+      {
+        "word": "すっかり",
+        "reading": "すっかり",
+        "meaning": "완전히; 말끔히",
+        "example": "木の葉が落ちて、景色はすっかり冬らしくなった。",
+        "exampleReading": "きのはがおちて、けしきはすっかりふゆらしくなった。",
+        "translation": "나뭇잎이 떨어져 풍경이 완전히 겨울다워졌다."
+      },
+      {
+        "word": "うっかり",
+        "reading": "うっかり",
+        "meaning": "깜빡; 무심코",
+        "example": "うっかり定期券を家に置いてきた。",
+        "exampleReading": "うっかりていきけんをいえにおいてきた。",
+        "translation": "깜빡하고 정기권을 집에 두고 왔다."
+      },
+      {
+        "word": "思わず",
+        "reading": "おもわず",
+        "meaning": "무심코; 자기도 모르게",
+        "example": "美しい景色に思わず声が出た。",
+        "exampleReading": "うつくしいけしきにおもわずこえがでた。",
+        "translation": "아름다운 풍경에 나도 모르게 탄성이 나왔다."
+      },
+      {
+        "word": "わざと",
+        "reading": "わざと",
+        "meaning": "일부러; 고의로",
+        "example": "冗談だと分かるようにわざと大げさに言った。",
+        "exampleReading": "じょうだんだとわかるようにわざとおおげさにいった。",
+        "translation": "농담인 줄 알도록 일부러 과장해서 말했다."
+      },
+      {
+        "word": "わざわざ",
+        "reading": "わざわざ",
+        "meaning": "일부러 수고해서; 굳이",
+        "example": "わざわざ駅まで迎えに来てくれてありがとう。",
+        "exampleReading": "わざわざえきまでむかえにきてくれてありがとう。",
+        "translation": "일부러 역까지 마중 나와 줘서 고마워."
+      },
+      {
+        "word": "勝手に",
+        "reading": "かってに",
+        "meaning": "멋대로; 제 마음대로",
+        "example": "他人の荷物を勝手に動かしてはいけない。",
+        "exampleReading": "たにんのにもつをかってにうごかしてはいけない。",
+        "translation": "다른 사람의 짐을 멋대로 옮겨서는 안 된다."
+      },
+      {
+        "word": "適当に",
+        "reading": "てきとうに",
+        "meaning": "적당히; 대충",
+        "example": "余った野菜を適当に切って鍋に入れた。",
+        "exampleReading": "あまったやさいをてきとうにきってなべにいれた。",
+        "translation": "남은 채소를 적당히 잘라 냄비에 넣었다."
+      },
+      {
+        "word": "一応",
+        "reading": "いちおう",
+        "meaning": "일단; 우선; 대체로",
+        "example": "念のため、一応連絡しておいた。",
+        "exampleReading": "ねんのため、いちおうれんらくしておいた。",
+        "translation": "혹시 몰라 일단 연락해 두었다."
+      },
+      {
+        "word": "一斉に",
+        "reading": "いっせいに",
+        "meaning": "일제히; 한꺼번에",
+        "example": "合図と同時に全員が一斉に走り出した。",
+        "exampleReading": "あいずとどうじにぜんいんがいっせいにはしりだした。",
+        "translation": "신호와 동시에 모두가 일제히 달리기 시작했다."
+      },
+      {
+        "word": "別々に",
+        "reading": "べつべつに",
+        "meaning": "각각; 따로따로",
+        "example": "領収書は別々に出してください。",
+        "exampleReading": "りょうしゅうしょはべつべつにだしてください。",
+        "translation": "영수증은 따로따로 발급해 주세요."
+      },
+      {
+        "word": "順に",
+        "reading": "じゅんに",
+        "meaning": "차례로; 순서대로",
+        "example": "番号の小さい人から順に入ってください。",
+        "exampleReading": "ばんごうのちいさいひとからじゅんにはいってください。",
+        "translation": "번호가 작은 사람부터 차례로 들어오세요."
+      },
+      {
+        "word": "直接",
+        "reading": "ちょくせつ",
+        "meaning": "직접",
+        "example": "詳しい事情は本人に直接聞いた。",
+        "exampleReading": "くわしいじじょうはほんにんにちょくせつきいた。",
+        "translation": "자세한 사정은 본인에게 직접 들었다."
+      },
+      {
+        "word": "間接的に",
+        "reading": "かんせつてきに",
+        "meaning": "간접적으로",
+        "example": "その変化は私たちの生活にも間接的に影響する。",
+        "exampleReading": "そのへんかはわたしたちのせいかつにもかんせつてきにえいきょうする。",
+        "translation": "그 변화는 우리 생활에도 간접적으로 영향을 준다."
+      },
+      {
+        "word": "相変わらず",
+        "reading": "あいかわらず",
+        "meaning": "변함없이; 여전히",
+        "example": "久しぶりに会った先生は相変わらず元気だった。",
+        "exampleReading": "ひさしぶりにあったせんせいはあいかわらずげんきだった。",
+        "translation": "오랜만에 만난 선생님은 여전히 건강하셨다."
+      },
+      {
+        "word": "とっくに",
+        "reading": "とっくに",
+        "meaning": "벌써 오래전에; 진작에",
+        "example": "その店はとっくに閉店したと聞いた。",
+        "exampleReading": "そのみせはとっくにへいてんしたときいた。",
+        "translation": "그 가게는 진작에 문을 닫았다고 들었다."
+      }
+    ]
+  },
+  {
+    "day": 56,
+    "title": "연결과 논리",
+    "subtitle": "문장 사이의 관계 읽기",
+    "words": [
+      {
+        "word": "なお",
+        "reading": "なお",
+        "meaning": "덧붙여; 또한; 여전히",
+        "example": "受付は五時までです。なお、日曜は休みです。",
+        "exampleReading": "うけつけはごじまでです。なお、にちようはやすみです。",
+        "translation": "접수는 다섯 시까지입니다. 덧붙여 일요일은 쉽니다."
+      },
+      {
+        "word": "ただし",
+        "reading": "ただし",
+        "meaning": "단; 다만",
+        "example": "入場は無料です。ただし、予約が必要です。",
+        "exampleReading": "にゅうじょうはむりょうです。ただし、よやくがひつようです。",
+        "translation": "입장은 무료입니다. 단, 예약이 필요합니다."
+      },
+      {
+        "word": "もっとも",
+        "reading": "もっとも",
+        "meaning": "다만; 그렇기는 하지만",
+        "example": "海は近い。もっとも、歩くと三十分かかる。",
+        "exampleReading": "うみはちかい。もっとも、あるくとさんじゅっぷんかかる。",
+        "translation": "바다는 가깝다. 다만 걸으면 삼십 분 걸린다."
+      },
+      {
+        "word": "それとも",
+        "reading": "それとも",
+        "meaning": "아니면; 혹은",
+        "example": "お茶にしますか。それとも、水にしますか。",
+        "exampleReading": "おちゃにしますか。それとも、みずにしますか。",
+        "translation": "차로 하시겠어요? 아니면 물로 하시겠어요?"
+      },
+      {
+        "word": "あるいは",
+        "reading": "あるいは",
+        "meaning": "혹은; 어쩌면",
+        "example": "明日、あるいは明後日には届くはずだ。",
+        "exampleReading": "あした、あるいはあさってにはとどくはずだ。",
+        "translation": "내일 혹은 모레에는 도착할 것이다."
+      },
+      {
+        "word": "つまり",
+        "reading": "つまり",
+        "meaning": "즉; 요컨대",
+        "example": "参加費も交通費も不要、つまりお金はかからない。",
+        "exampleReading": "さんかひもこうつうひもふよう、つまりおかねはかからない。",
+        "translation": "참가비도 교통비도 필요 없다. 즉 돈이 들지 않는다."
+      },
+      {
+        "word": "すなわち",
+        "reading": "すなわち",
+        "meaning": "즉; 다시 말해",
+        "example": "全員が賛成した。すなわち、反対者はいなかった。",
+        "exampleReading": "ぜんいんがさんせいした。すなわち、はんたいしゃはいなかった。",
+        "translation": "전원이 찬성했다. 즉 반대자는 없었다."
+      },
+      {
+        "word": "したがって",
+        "reading": "したがって",
+        "meaning": "따라서",
+        "example": "電車が止まっている。したがって、別の方法で行く必要がある。",
+        "exampleReading": "でんしゃがとまっている。したがって、べつのほうほうでいくひつようがある。",
+        "translation": "전철 운행이 멈췄다. 따라서 다른 방법으로 가야 한다."
+      },
+      {
+        "word": "そのため",
+        "reading": "そのため",
+        "meaning": "그 때문에; 그를 위해",
+        "example": "道路が凍った。そのため、バスが遅れている。",
+        "exampleReading": "どうろがこおった。そのため、ばすがおくれている。",
+        "translation": "도로가 얼었다. 그 때문에 버스가 늦어지고 있다."
+      },
+      {
+        "word": "ところが",
+        "reading": "ところが",
+        "meaning": "그런데; 그러나",
+        "example": "晴れると思った。ところが、午後から雪になった。",
+        "exampleReading": "はれるとおもった。ところが、ごごからゆきになった。",
+        "translation": "맑을 줄 알았다. 그런데 오후부터 눈이 내렸다."
+      },
+      {
+        "word": "それなのに",
+        "reading": "それなのに",
+        "meaning": "그런데도; 그럼에도",
+        "example": "十分に寝た。それなのに、まだ眠い。",
+        "exampleReading": "じゅうぶんにねた。それなのに、まだねむい。",
+        "translation": "충분히 잤다. 그런데도 아직 졸리다."
+      },
+      {
+        "word": "それにしても",
+        "reading": "それにしても",
+        "meaning": "그렇다 해도; 그나저나",
+        "example": "今日は暑いね。それにしても、この部屋は特に暑い。",
+        "exampleReading": "きょうはあついね。それにしても、このへやはとくにあつい。",
+        "translation": "오늘 덥네. 그렇다 해도 이 방은 특히 덥다."
+      },
+      {
+        "word": "とはいえ",
+        "reading": "とはいえ",
+        "meaning": "그렇다고는 해도",
+        "example": "春になった。とはいえ、朝はまだ冷える。",
+        "exampleReading": "はるになった。とはいえ、あさはまだひえる。",
+        "translation": "봄이 됐다. 그렇다고는 해도 아침에는 아직 춥다."
+      },
+      {
+        "word": "一方",
+        "reading": "いっぽう",
+        "meaning": "한편; 한쪽",
+        "example": "駅前はにぎやかだ。一方、川沿いは静かだ。",
+        "exampleReading": "えきまえはにぎやかだ。いっぽう、かわぞいはしずかだ。",
+        "translation": "역 앞은 번화하다. 한편 강변은 조용하다."
+      },
+      {
+        "word": "反面",
+        "reading": "はんめん",
+        "meaning": "반면; 다른 측면",
+        "example": "この仕事は忙しい反面、学べることが多い。",
+        "exampleReading": "このしごとはいそがしいはんめん、まなべることがおおい。",
+        "translation": "이 일은 바쁜 반면 배울 것이 많다."
+      },
+      {
+        "word": "それどころか",
+        "reading": "それどころか",
+        "meaning": "그게 아니라 오히려; 그뿐만 아니라",
+        "example": "熱は下がらない。それどころか、昨日より高い。",
+        "exampleReading": "ねつはさがらない。それどころか、きのうよりたかい。",
+        "translation": "열은 내리지 않는다. 오히려 어제보다 높다."
+      },
+      {
+        "word": "むしろ",
+        "reading": "むしろ",
+        "meaning": "오히려; 차라리",
+        "example": "一人で悩むより、むしろ相談した方がいい。",
+        "exampleReading": "ひとりでなやむより、むしろそうだんしたほうがいい。",
+        "translation": "혼자 고민하기보다 차라리 의논하는 편이 좋다."
+      },
+      {
+        "word": "ちなみに",
+        "reading": "ちなみに",
+        "meaning": "참고로; 덧붙이자면",
+        "example": "この店は九時に開きます。ちなみに、朝食もあります。",
+        "exampleReading": "このみせはくじにあきます。ちなみに、ちょうしょくもあります。",
+        "translation": "이 가게는 아홉 시에 엽니다. 참고로 아침 식사도 있습니다."
+      },
+      {
+        "word": "しかも",
+        "reading": "しかも",
+        "meaning": "게다가; 더구나",
+        "example": "このかばんは軽い。しかも、雨に強い。",
+        "exampleReading": "このかばんはかるい。しかも、あめにつよい。",
+        "translation": "이 가방은 가볍다. 게다가 비에도 강하다."
+      },
+      {
+        "word": "そればかりか",
+        "reading": "そればかりか",
+        "meaning": "그뿐만 아니라",
+        "example": "道を教えてくれた。そればかりか、駅まで案内してくれた。",
+        "exampleReading": "みちをおしえてくれた。そればかりか、えきまであんないしてくれた。",
+        "translation": "길을 알려 주었다. 그뿐만 아니라 역까지 안내해 주었다."
+      }
+    ]
+  },
+  {
+    "day": 57,
+    "title": "의성어와 의태어",
+    "subtitle": "소리와 느낌이 살아 있는 일본어",
+    "words": [
+      {
+        "word": "どきどき",
+        "reading": "どきどき",
+        "meaning": "두근두근",
+        "example": "発表の順番が近づいて胸がどきどきする。",
+        "exampleReading": "はっぴょうのじゅんばんがちかづいてむねがどきどきする。",
+        "translation": "발표 차례가 다가와 가슴이 두근거린다."
+      },
+      {
+        "word": "わくわく",
+        "reading": "わくわく",
+        "meaning": "설레는 모양; 두근두근",
+        "example": "旅行の計画を立てるだけでわくわくする。",
+        "exampleReading": "りょこうのけいかくをたてるだけでわくわくする。",
+        "translation": "여행 계획을 세우는 것만으로도 설렌다."
+      },
+      {
+        "word": "いらいら",
+        "reading": "いらいら",
+        "meaning": "짜증 나는 모양; 초조한 모양",
+        "example": "何度も同じ音が鳴るのでいらいらした。",
+        "exampleReading": "なんどもおなじおとがなるのでいらいらした。",
+        "translation": "몇 번이나 같은 소리가 나서 짜증이 났다."
+      },
+      {
+        "word": "うろうろ",
+        "reading": "うろうろ",
+        "meaning": "서성서성; 어슬렁어슬렁",
+        "example": "出口が分からず建物の中をうろうろした。",
+        "exampleReading": "でぐちがわからずたてもののなかをうろうろした。",
+        "translation": "출구를 몰라 건물 안을 서성거렸다."
+      },
+      {
+        "word": "ぶらぶら",
+        "reading": "ぶらぶら",
+        "meaning": "어슬렁어슬렁; 빈둥빈둥",
+        "example": "休日は商店街をぶらぶら歩くのが好きだ。",
+        "exampleReading": "きゅうじつはしょうてんがいをぶらぶらあるくのがすきだ。",
+        "translation": "휴일에는 상점가를 느긋하게 돌아다니는 것을 좋아한다."
+      },
+      {
+        "word": "ぐっすり",
+        "reading": "ぐっすり",
+        "meaning": "푹; 깊이 잠든 모양",
+        "example": "静かな宿で朝までぐっすり眠った。",
+        "exampleReading": "しずかなやどであさまでぐっすりねむった。",
+        "translation": "조용한 숙소에서 아침까지 푹 잤다."
+      },
+      {
+        "word": "すやすや",
+        "reading": "すやすや",
+        "meaning": "새근새근",
+        "example": "赤ちゃんが毛布に包まれてすやすや眠っている。",
+        "exampleReading": "あかちゃんがもうふにつつまれてすやすやねむっている。",
+        "translation": "아기가 담요에 싸여 새근새근 자고 있다."
+      },
+      {
+        "word": "うとうと",
+        "reading": "うとうと",
+        "meaning": "꾸벅꾸벅; 깜빡 조는 모양",
+        "example": "暖かい電車でついうとうとしてしまった。",
+        "exampleReading": "あたたかいでんしゃでついうとうとしてしまった。",
+        "translation": "따뜻한 전철에서 나도 모르게 꾸벅꾸벅 졸았다."
+      },
+      {
+        "word": "ぼんやり",
+        "reading": "ぼんやり",
+        "meaning": "멍하니; 희미하게",
+        "example": "窓の外をぼんやり眺めていた。",
+        "exampleReading": "まどのそとをぼんやりながめていた。",
+        "translation": "창밖을 멍하니 바라보고 있었다."
+      },
+      {
+        "word": "はっきり",
+        "reading": "はっきり",
+        "meaning": "분명히; 똑똑히",
+        "example": "電話では名前をはっきり言ってください。",
+        "exampleReading": "でんわではなまえをはっきりいってください。",
+        "translation": "전화에서는 이름을 분명히 말해 주세요."
+      },
+      {
+        "word": "すっきり",
+        "reading": "すっきり",
+        "meaning": "상쾌하게; 말끔하게",
+        "example": "部屋を片付けたら気持ちもすっきりした。",
+        "exampleReading": "へやをかたづけたらきもちもすっきりした。",
+        "translation": "방을 정리했더니 기분도 상쾌해졌다."
+      },
+      {
+        "word": "しっかり",
+        "reading": "しっかり",
+        "meaning": "확실하게; 단단히; 제대로",
+        "example": "出発前に持ち物をしっかり確認しよう。",
+        "exampleReading": "しゅっぱつまえにもちものをしっかりかくにんしよう。",
+        "translation": "출발 전에 소지품을 제대로 확인하자."
+      },
+      {
+        "word": "ぴったり",
+        "reading": "ぴったり",
+        "meaning": "딱 맞게; 꼭",
+        "example": "この箱は贈り物の大きさにぴったりだ。",
+        "exampleReading": "このはこはおくりもののおおきさにぴったりだ。",
+        "translation": "이 상자는 선물 크기에 딱 맞다."
+      },
+      {
+        "word": "ぎっしり",
+        "reading": "ぎっしり",
+        "meaning": "빽빽하게; 가득",
+        "example": "棚には専門書がぎっしり並んでいる。",
+        "exampleReading": "たなにはせんもんしょがぎっしりならんでいる。",
+        "translation": "책장에는 전문 서적이 빽빽하게 꽂혀 있다."
+      },
+      {
+        "word": "がっかり",
+        "reading": "がっかり",
+        "meaning": "실망한 모양; 풀이 죽은 모양",
+        "example": "楽しみにしていた試合が中止になり、がっかりした。",
+        "exampleReading": "たのしみにしていたしあいがちゅうしになり、がっかりした。",
+        "translation": "기대하던 경기가 취소되어 실망했다."
+      },
+      {
+        "word": "にこにこ",
+        "reading": "にこにこ",
+        "meaning": "방긋방긋; 싱글벙글",
+        "example": "店主はいつもにこにこして客を迎える。",
+        "exampleReading": "てんしゅはいつもにこにこしてきゃくをむかえる。",
+        "translation": "주인은 항상 싱글벙글하며 손님을 맞는다."
+      },
+      {
+        "word": "にやにや",
+        "reading": "にやにや",
+        "meaning": "히죽히죽; 실실",
+        "example": "友人は何かを思い出してにやにやしている。",
+        "exampleReading": "ゆうじんはなにかをおもいだしてにやにやしている。",
+        "translation": "친구는 무언가 떠올리고 히죽히죽 웃고 있다."
+      },
+      {
+        "word": "ぺこぺこ",
+        "reading": "ぺこぺこ",
+        "meaning": "배가 몹시 고픈 모양; 굽실굽실",
+        "example": "朝から何も食べていないので、おなかがぺこぺこだ。",
+        "exampleReading": "あさからなにもたべていないので、おなかがぺこぺこだ。",
+        "translation": "아침부터 아무것도 먹지 않아서 배가 몹시 고프다."
+      },
+      {
+        "word": "ふらふら",
+        "reading": "ふらふら",
+        "meaning": "휘청휘청; 비틀비틀",
+        "example": "長く歩いたので足が疲れてふらふらだ。",
+        "exampleReading": "ながくあるいたのであしがつかれてふらふらだ。",
+        "translation": "오래 걸었더니 다리가 피곤해서 휘청거린다."
+      },
+      {
+        "word": "ばらばら",
+        "reading": "ばらばら",
+        "meaning": "제각각; 뿔뿔이; 흩어진 모양",
+        "example": "資料の順番がばらばらになってしまった。",
+        "exampleReading": "しりょうのじゅんばんがばらばらになってしまった。",
+        "translation": "자료의 순서가 뒤죽박죽이 되어 버렸다."
+      }
+    ]
+  },
+  {
+    "day": 58,
+    "title": "외래어: 일과 정보",
+    "subtitle": "업무와 디지털 환경의 단어",
+    "words": [
+      {
+        "word": "カテゴリー",
+        "reading": "かてごりー",
+        "meaning": "범주; 분류",
+        "example": "商品をカテゴリーごとに並べる。",
+        "exampleReading": "しょうひんをかてごりーごとにならべる。",
+        "translation": "상품을 범주별로 진열한다."
+      },
+      {
+        "word": "データ",
+        "reading": "でーた",
+        "meaning": "데이터; 자료",
+        "example": "調査のデータを図にまとめた。",
+        "exampleReading": "ちょうさのでーたをずにまとめた。",
+        "translation": "조사 데이터를 도표로 정리했다."
+      },
+      {
+        "word": "ファイル",
+        "reading": "ふぁいる",
+        "meaning": "파일",
+        "example": "必要なファイルを先に開いておいた。",
+        "exampleReading": "ひつようなふぁいるをさきにひらいておいた。",
+        "translation": "필요한 파일을 미리 열어 두었다."
+      },
+      {
+        "word": "フォルダー",
+        "reading": "ふぉるだー",
+        "meaning": "폴더",
+        "example": "写真を月ごとのフォルダーに分けた。",
+        "exampleReading": "しゃしんをつきごとのふぉるだーにわけた。",
+        "translation": "사진을 월별 폴더로 나눴다."
+      },
+      {
+        "word": "アクセス",
+        "reading": "あくせす",
+        "meaning": "접속; 접근; 교통편",
+        "example": "発表直後はサイトへのアクセスが集中した。",
+        "exampleReading": "はっぴょうちょくごはさいとへのあくせすがしゅうちゅうした。",
+        "translation": "발표 직후에는 사이트 접속이 몰렸다."
+      },
+      {
+        "word": "ダウンロード",
+        "reading": "だうんろーど",
+        "meaning": "다운로드; 내려받기",
+        "example": "出発前に地図をダウンロードしておこう。",
+        "exampleReading": "しゅっぱつまえにちずをだうんろーどしておこう。",
+        "translation": "출발 전에 지도를 내려받아 두자."
+      },
+      {
+        "word": "アップロード",
+        "reading": "あっぷろーど",
+        "meaning": "업로드; 올리기",
+        "example": "課題を指定された場所にアップロードした。",
+        "exampleReading": "かだいをしていされたばしょにあっぷろーどした。",
+        "translation": "과제를 지정된 곳에 업로드했다."
+      },
+      {
+        "word": "インストール",
+        "reading": "いんすとーる",
+        "meaning": "설치; 인스톨",
+        "example": "授業で使うアプリをインストールした。",
+        "exampleReading": "じゅぎょうでつかうあぷりをいんすとーるした。",
+        "translation": "수업에서 쓸 앱을 설치했다."
+      },
+      {
+        "word": "コピー",
+        "reading": "こぴー",
+        "meaning": "복사; 사본",
+        "example": "大切な書類はコピーも保管している。",
+        "exampleReading": "たいせつなしょるいはこぴーもほかんしている。",
+        "translation": "중요한 서류는 사본도 보관하고 있다."
+      },
+      {
+        "word": "チェック",
+        "reading": "ちぇっく",
+        "meaning": "확인; 점검",
+        "example": "提出前に数字をもう一度チェックした。",
+        "exampleReading": "ていしゅつまえにすうじをもういちどちぇっくした。",
+        "translation": "제출 전에 숫자를 한 번 더 확인했다."
+      },
+      {
+        "word": "キャンセル",
+        "reading": "きゃんせる",
+        "meaning": "취소",
+        "example": "予定が重なったため予約をキャンセルした。",
+        "exampleReading": "よていがかさなったためよやくをきゃんせるした。",
+        "translation": "일정이 겹쳐 예약을 취소했다."
+      },
+      {
+        "word": "スケジュール",
+        "reading": "すけじゅーる",
+        "meaning": "일정; 스케줄",
+        "example": "無理のないスケジュールを組みたい。",
+        "exampleReading": "むりのないすけじゅーるをくみたい。",
+        "translation": "무리 없는 일정을 짜고 싶다."
+      },
+      {
+        "word": "プロジェクト",
+        "reading": "ぷろじぇくと",
+        "meaning": "프로젝트; 기획 사업",
+        "example": "部署を越えて新しいプロジェクトを進める。",
+        "exampleReading": "ぶしょをこえてあたらしいぷろじぇくとをすすめる。",
+        "translation": "부서를 넘어 새로운 프로젝트를 진행한다."
+      },
+      {
+        "word": "プレゼンテーション",
+        "reading": "ぷれぜんてーしょん",
+        "meaning": "발표; 프레젠테이션",
+        "example": "プレゼンテーションでは結論を先に伝えた。",
+        "exampleReading": "ぷれぜんてーしょんではけつろんをさきにつたえた。",
+        "translation": "발표에서는 결론을 먼저 전달했다."
+      },
+      {
+        "word": "アピール",
+        "reading": "あぴーる",
+        "meaning": "어필; 강점 등을 드러냄",
+        "example": "面接では自分の経験を具体的にアピールした。",
+        "exampleReading": "めんせつではじぶんのけいけんをぐたいてきにあぴーるした。",
+        "translation": "면접에서 내 경험을 구체적으로 어필했다."
+      },
+      {
+        "word": "アポイント",
+        "reading": "あぽいんと",
+        "meaning": "면담 약속; 방문 약속",
+        "example": "訪問前に電話でアポイントを取った。",
+        "exampleReading": "ほうもんまえにでんわであぽいんとをとった。",
+        "translation": "방문 전에 전화로 면담 약속을 잡았다."
+      },
+      {
+        "word": "マニュアル",
+        "reading": "まにゅある",
+        "meaning": "설명서; 지침서",
+        "example": "操作に迷ったらマニュアルを読んでください。",
+        "exampleReading": "そうさにまよったらまにゅあるをよんでください。",
+        "translation": "조작이 헷갈리면 설명서를 읽어 주세요."
+      },
+      {
+        "word": "メディア",
+        "reading": "めでぃあ",
+        "meaning": "매체; 미디어",
+        "example": "一つのメディアだけでなく複数の記事を読む。",
+        "exampleReading": "ひとつのめでぃあだけでなくふくすうのきじをよむ。",
+        "translation": "한 매체만이 아니라 여러 기사를 읽는다."
+      },
+      {
+        "word": "インタビュー",
+        "reading": "いんたびゅー",
+        "meaning": "인터뷰; 면담 취재",
+        "example": "地元で働く人にインタビューを行った。",
+        "exampleReading": "じもとではたらくひとにいんたびゅーをおこなった。",
+        "translation": "지역에서 일하는 사람을 인터뷰했다."
+      },
+      {
+        "word": "アンケート",
+        "reading": "あんけーと",
+        "meaning": "설문 조사",
+        "example": "利用者の声をアンケートで集めた。",
+        "exampleReading": "りようしゃのこえをあんけーとであつめた。",
+        "translation": "이용자의 의견을 설문 조사로 모았다."
+      }
+    ]
+  },
+  {
+    "day": 59,
+    "title": "외래어: 생활과 태도",
+    "subtitle": "일상에 스며든 표현",
+    "words": [
+      {
+        "word": "ユニーク",
+        "reading": "ゆにーく",
+        "meaning": "독특함; 개성 있음",
+        "example": "彼女のユニークな発想が会議を明るくした。",
+        "exampleReading": "かのじょのゆにーくなはっそうがかいぎをあかるくした。",
+        "translation": "그녀의 독특한 발상이 회의 분위기를 밝게 했다."
+      },
+      {
+        "word": "シンプル",
+        "reading": "しんぷる",
+        "meaning": "단순함; 간결함",
+        "example": "使い方がシンプルな時計を選んだ。",
+        "exampleReading": "つかいかたがしんぷるなとけいをえらんだ。",
+        "translation": "사용법이 간단한 시계를 골랐다."
+      },
+      {
+        "word": "スムーズ",
+        "reading": "すむーず",
+        "meaning": "원활함; 매끄러움",
+        "example": "事前に準備したので受付がスムーズだった。",
+        "exampleReading": "じぜんにじゅんびしたのでうけつけがすむーずだった。",
+        "translation": "미리 준비해서 접수가 원활했다."
+      },
+      {
+        "word": "ルーズ",
+        "reading": "るーず",
+        "meaning": "느슨함; 칠칠치 못함",
+        "example": "時間にルーズだと信用を失う。",
+        "exampleReading": "じかんにるーずだとしんようをうしなう。",
+        "translation": "시간 약속을 제대로 지키지 않으면 신뢰를 잃는다."
+      },
+      {
+        "word": "デリケート",
+        "reading": "でりけーと",
+        "meaning": "섬세함; 민감함",
+        "example": "肌がデリケートなので布の素材に気をつける。",
+        "exampleReading": "はだがでりけーとなのでぬののそざいにきをつける。",
+        "translation": "피부가 민감해서 옷감 소재에 신경 쓴다."
+      },
+      {
+        "word": "スマート",
+        "reading": "すまーと",
+        "meaning": "날씬함; 세련됨",
+        "example": "相手を困らせないスマートな断り方を考えた。",
+        "exampleReading": "あいてをこまらせないすまーとなことわりかたをかんがえた。",
+        "translation": "상대를 난처하게 하지 않는 세련된 거절 방식을 생각했다."
+      },
+      {
+        "word": "カジュアル",
+        "reading": "かじゅある",
+        "meaning": "격식 없음; 편안한 옷차림",
+        "example": "説明会にはカジュアルな服装で参加できる。",
+        "exampleReading": "せつめいかいにはかじゅあるなふくそうでさんかできる。",
+        "translation": "설명회에는 편안한 옷차림으로 참가할 수 있다."
+      },
+      {
+        "word": "フォーマル",
+        "reading": "ふぉーまる",
+        "meaning": "격식 있음; 정식의",
+        "example": "式典にはフォーマルな服装が求められる。",
+        "exampleReading": "しきてんにはふぉーまるなふくそうがもとめられる。",
+        "translation": "기념식에는 격식을 갖춘 옷차림이 요구된다."
+      },
+      {
+        "word": "オリジナル",
+        "reading": "おりじなる",
+        "meaning": "독창적인 것; 원작; 원본",
+        "example": "店のオリジナル商品が人気を集めている。",
+        "exampleReading": "みせのおりじなるしょうひんがにんきをあつめている。",
+        "translation": "가게 자체 제작 상품이 인기를 얻고 있다."
+      },
+      {
+        "word": "プライバシー",
+        "reading": "ぷらいばしー",
+        "meaning": "사생활; 개인정보 보호",
+        "example": "共同生活でも互いのプライバシーを尊重したい。",
+        "exampleReading": "きょうどうせいかつでもたがいのぷらいばしーをそんちょうしたい。",
+        "translation": "공동생활에서도 서로의 사생활을 존중하고 싶다."
+      },
+      {
+        "word": "エチケット",
+        "reading": "えちけっと",
+        "meaning": "예절; 에티켓",
+        "example": "公共の場所では音に気を配るのもエチケットだ。",
+        "exampleReading": "こうきょうのばしょではおとにきをくばるのもえちけっとだ。",
+        "translation": "공공장소에서는 소리에 신경 쓰는 것도 예절이다."
+      },
+      {
+        "word": "センス",
+        "reading": "せんす",
+        "meaning": "감각; 센스",
+        "example": "姉は色を組み合わせるセンスがいい。",
+        "exampleReading": "あねはいろをくみあわせるせんすがいい。",
+        "translation": "누나는 색을 조합하는 감각이 좋다."
+      },
+      {
+        "word": "ショック",
+        "reading": "しょっく",
+        "meaning": "충격",
+        "example": "大切な写真を失ってショックを受けた。",
+        "exampleReading": "たいせつなしゃしんをうしなってしょっくをうけた。",
+        "translation": "소중한 사진을 잃어서 충격을 받았다."
+      },
+      {
+        "word": "チャンス",
+        "reading": "ちゃんす",
+        "meaning": "기회",
+        "example": "失敗を学び直すチャンスに変えよう。",
+        "exampleReading": "しっぱいをまなびなおすちゃんすにかえよう。",
+        "translation": "실패를 다시 배울 기회로 바꾸자."
+      },
+      {
+        "word": "ピンチ",
+        "reading": "ぴんち",
+        "meaning": "위기; 곤경",
+        "example": "店のピンチを常連客が救った。",
+        "exampleReading": "みせのぴんちをじょうれんきゃくがすくった。",
+        "translation": "단골손님이 위기에 처한 가게를 구해 주었다."
+      },
+      {
+        "word": "テンポ",
+        "reading": "てんぽ",
+        "meaning": "속도; 박자",
+        "example": "話すテンポを少し落とすと伝わりやすい。",
+        "exampleReading": "はなすてんぽをすこしおとすとつたわりやすい。",
+        "translation": "말하는 속도를 조금 늦추면 잘 전달된다."
+      },
+      {
+        "word": "バランス",
+        "reading": "ばらんす",
+        "meaning": "균형",
+        "example": "勉強と休息のバランスを大切にしよう。",
+        "exampleReading": "べんきょうときゅうそくのばらんすをたいせつにしよう。",
+        "translation": "공부와 휴식의 균형을 소중히 하자."
+      },
+      {
+        "word": "パターン",
+        "reading": "ぱたーん",
+        "meaning": "유형; 양식; 반복되는 방식",
+        "example": "よく間違える問題には共通のパターンがある。",
+        "exampleReading": "よくまちがえるもんだいにはきょうつうのぱたーんがある。",
+        "translation": "자주 틀리는 문제에는 공통된 유형이 있다."
+      },
+      {
+        "word": "タイプ",
+        "reading": "たいぷ",
+        "meaning": "유형; 종류",
+        "example": "持ち運びやすいタイプの椅子を買った。",
+        "exampleReading": "もちはこびやすいたいぷのいすをかった。",
+        "translation": "휴대하기 쉬운 종류의 의자를 샀다."
+      },
+      {
+        "word": "イメージ",
+        "reading": "いめーじ",
+        "meaning": "인상; 이미지; 마음속 모습",
+        "example": "話を聞くうちに完成形のイメージが浮かんだ。",
+        "exampleReading": "はなしをきくうちにかんせいけいのいめーじがうかんだ。",
+        "translation": "이야기를 듣는 동안 완성된 모습이 떠올랐다."
+      }
+    ]
+  },
+  {
+    "day": 60,
+    "title": "마지막 핵심 동사",
+    "subtitle": "독해의 뜻을 가르는 표현",
+    "words": [
+      {
+        "word": "怠る",
+        "reading": "おこたる",
+        "meaning": "게을리하다; 소홀히 하다",
+        "example": "確認を怠ると小さな誤りを見逃す。",
+        "exampleReading": "かくにんをおこたるとちいさなあやまりをみのがす。",
+        "translation": "확인을 게을리하면 작은 오류를 놓친다."
+      },
+      {
+        "word": "補う",
+        "reading": "おぎなう",
+        "meaning": "보충하다; 보완하다",
+        "example": "足りない説明を図で補った。",
+        "exampleReading": "たりないせつめいをずでおぎなった。",
+        "translation": "부족한 설명을 그림으로 보완했다."
+      },
+      {
+        "word": "省く",
+        "reading": "はぶく",
+        "meaning": "생략하다; 덜다",
+        "example": "時間がないので細かい説明は省きます。",
+        "exampleReading": "じかんがないのでこまかいせつめいははぶきます。",
+        "translation": "시간이 없어서 자세한 설명은 생략하겠습니다."
+      },
+      {
+        "word": "限る",
+        "reading": "かぎる",
+        "meaning": "한정하다; 제한하다",
+        "example": "募集は経験者に限ると書いてある。",
+        "exampleReading": "ぼしゅうはけいけんしゃにかぎるとかいてある。",
+        "translation": "모집은 경력자에 한한다고 적혀 있다."
+      },
+      {
+        "word": "兼ねる",
+        "reading": "かねる",
+        "meaning": "겸하다; 겸비하다",
+        "example": "この部屋は居間と書斎を兼ねている。",
+        "exampleReading": "このへやはいまとしょさいをかねている。",
+        "translation": "이 방은 거실과 서재를 겸하고 있다."
+      },
+      {
+        "word": "備える",
+        "reading": "そなえる",
+        "meaning": "대비하다; 갖추다",
+        "example": "停電に備えて懐中電灯を用意した。",
+        "exampleReading": "ていでんにそなえてかいちゅうでんとうをよういした。",
+        "translation": "정전에 대비해 손전등을 준비했다."
+      },
+      {
+        "word": "備わる",
+        "reading": "そなわる",
+        "meaning": "갖춰지다; 지니고 있다",
+        "example": "この施設には必要な設備が備わっている。",
+        "exampleReading": "このしせつにはひつようなせつびがそなわっている。",
+        "translation": "이 시설에는 필요한 설비가 갖춰져 있다."
+      },
+      {
+        "word": "応じる",
+        "reading": "おうじる",
+        "meaning": "응하다; 맞추다",
+        "example": "参加者の経験に応じて説明を変える。",
+        "exampleReading": "さんかしゃのけいけんにおうじてせつめいをかえる。",
+        "translation": "참가자의 경험에 맞춰 설명을 바꾼다."
+      },
+      {
+        "word": "従う",
+        "reading": "したがう",
+        "meaning": "따르다; 복종하다",
+        "example": "係員の指示に従って移動してください。",
+        "exampleReading": "かかりいんのしじにしたがっていどうしてください。",
+        "translation": "직원의 지시에 따라 이동해 주세요."
+      },
+      {
+        "word": "伴う",
+        "reading": "ともなう",
+        "meaning": "동반하다; 따르다",
+        "example": "新しい挑戦には不安が伴うこともある。",
+        "exampleReading": "あたらしいちょうせんにはふあんがともなうこともある。",
+        "translation": "새로운 도전에는 불안이 따를 때도 있다."
+      },
+      {
+        "word": "基づく",
+        "reading": "もとづく",
+        "meaning": "기초하다; 근거하다",
+        "example": "報告書は実際の調査に基づいている。",
+        "exampleReading": "ほうこくしょはじっさいのちょうさにもとづいている。",
+        "translation": "보고서는 실제 조사에 근거하고 있다."
+      },
+      {
+        "word": "関わる",
+        "reading": "かかわる",
+        "meaning": "관계되다; 관여하다",
+        "example": "多くの人がこの作品の制作に関わった。",
+        "exampleReading": "おおくのひとがこのさくひんのせいさくにかかわった。",
+        "translation": "많은 사람이 이 작품 제작에 참여했다."
+      },
+      {
+        "word": "携わる",
+        "reading": "たずさわる",
+        "meaning": "종사하다; 관여하다",
+        "example": "卒業後は地域の教育に携わりたい。",
+        "exampleReading": "そつぎょうごはちいきのきょういくにたずさわりたい。",
+        "translation": "졸업 후에는 지역 교육에 종사하고 싶다."
+      },
+      {
+        "word": "及ぼす",
+        "reading": "およぼす",
+        "meaning": "미치다; 끼치다",
+        "example": "睡眠不足は集中力に影響を及ぼす。",
+        "exampleReading": "すいみんぶそくはしゅうちゅうりょくにえいきょうをおよぼす。",
+        "translation": "수면 부족은 집중력에 영향을 미친다."
+      },
+      {
+        "word": "及ぶ",
+        "reading": "およぶ",
+        "meaning": "미치다; 달하다",
+        "example": "調査の対象は全国の学校に及ぶ。",
+        "exampleReading": "ちょうさのたいしょうはぜんこくのがっこうにおよぶ。",
+        "translation": "조사 대상은 전국의 학교에 걸친다."
+      },
+      {
+        "word": "至る",
+        "reading": "いたる",
+        "meaning": "이르다; 도달하다",
+        "example": "話し合いの結果、協力するという結論に至った。",
+        "exampleReading": "はなしあいのけっか、きょうりょくするというけつろんにいたった。",
+        "translation": "논의 결과 협력하겠다는 결론에 이르렀다."
+      },
+      {
+        "word": "通じる",
+        "reading": "つうじる",
+        "meaning": "통하다; 전달되다",
+        "example": "短い言葉でも気持ちは十分に通じた。",
+        "exampleReading": "みじかいことばでもきもちはじゅうぶんにつうじた。",
+        "translation": "짧은 말로도 마음은 충분히 전달됐다."
+      },
+      {
+        "word": "通す",
+        "reading": "とおす",
+        "meaning": "통과시키다; 내내 하다; 관철하다",
+        "example": "最後まで自分の考えを通すのは簡単ではない。",
+        "exampleReading": "さいごまでじぶんのかんがえをとおすのはかんたんではない。",
+        "translation": "끝까지 자기 생각을 관철하기는 쉽지 않다."
+      },
+      {
+        "word": "尽くす",
+        "reading": "つくす",
+        "meaning": "다하다; 있는 힘을 쏟다",
+        "example": "結果を恐れず、今できる最善を尽くそう。",
+        "exampleReading": "けっかをおそれず、いまできるさいぜんをつくそう。",
+        "translation": "결과를 두려워하지 말고 지금 할 수 있는 최선을 다하자."
+      },
+      {
+        "word": "見込む",
+        "reading": "みこむ",
+        "meaning": "예상하다; 기대하다",
+        "example": "準備には二週間ほどかかると見込んでいる。",
+        "exampleReading": "じゅんびにはにしゅうかんほどかかるとみこんでいる。",
+        "translation": "준비에는 이 주 정도 걸릴 것으로 예상하고 있다."
+      }
+    ]
+  }
+]

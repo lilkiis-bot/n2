@@ -1,0 +1,1 @@
+{"name":"n2-60-days","private":true,"type":"module","scripts":{"check":"node scripts/check.mjs","test":"node --test scripts/core.test.mjs"}}

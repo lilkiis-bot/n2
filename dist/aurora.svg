@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" fill="none">
+<defs>
+ <linearGradient id="forest" x1="100" y1="1200" x2="1500" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#183b2b" stop-opacity="0"/><stop offset=".45" stop-color="#64c097" stop-opacity=".5"/><stop offset=".7" stop-color="#c6e8d9" stop-opacity=".75"/><stop offset="1" stop-color="#419f75" stop-opacity="0"/></linearGradient>
+ <linearGradient id="jade" x1="100" y1="1000" x2="1450" y2="150" gradientUnits="userSpaceOnUse"><stop stop-color="#397c5e" stop-opacity="0"/><stop offset=".4" stop-color="#91dab9" stop-opacity=".8"/><stop offset=".7" stop-color="#6acb9f" stop-opacity=".1"/><stop offset="1" stop-color="#c6ecdb" stop-opacity="0"/></linearGradient>
+ <radialGradient id="haze"><stop stop-color="#7ccaa7" stop-opacity=".5"/><stop offset="1" stop-color="#398b66" stop-opacity="0"/></radialGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="24"/></filter><filter id="soft"><feGaussianBlur stdDeviation="5"/></filter>
+</defs>
+<ellipse cx="1090" cy="250" rx="700" ry="500" fill="url(#haze)"/>
+<path d="M-180 1170C150 1150 370 630 640 650S1170 1010 1660-120" stroke="url(#forest)" stroke-width="180" filter="url(#blur)"/>
+<path d="M-180 1160C150 1140 370 620 640 640S1170 1000 1660-130" stroke="url(#forest)" stroke-width="6"/>
+<path d="M-100 1000C220 1210 350 890 530 710S1070 730 1690-140" stroke="url(#jade)" stroke-width="26" filter="url(#soft)"/>
+<path d="M-100 1000C220 1210 350 890 530 710S1070 730 1690-140" stroke="url(#jade)" stroke-width="1.4"/>
+<path d="M120 1300C370 1150 540 1250 1000 700S1490 470 1740 170" stroke="url(#forest)" stroke-width="75" filter="url(#blur)"/>
+<path d="M120 1300C370 1150 540 1250 1000 700S1490 470 1740 170" stroke="url(#forest)" stroke-width="2"/>
+<g fill="#e7f5ef"><circle cx="1300" cy="140" r="1.3" opacity=".7"/><circle cx="1220" cy="200" r="2" opacity=".3"/><circle cx="370" cy="500" r="1.2" opacity=".7"/><circle cx="220" cy="960" r="1.7" opacity=".4"/><circle cx="1460" cy="630" r="1.5" opacity=".6"/><circle cx="690" cy="1080" r="1.5" opacity=".5"/></g>
+</svg>
