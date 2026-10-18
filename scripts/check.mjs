@@ -30,6 +30,15 @@ if(fs.existsSync('dist/audio-manifest.json')){
 }
 // Version the app shell so an already-open, older service worker cannot serve a
 // mismatched script when the new HTML arrives on the first refresh.
+// Imported modules need their own versions too: browser HTTP caches can still
+// hold the old progress schema even when the entry script has a fresh URL.
+let app=fs.readFileSync('dist/app.js','utf8');
+for(const dependency of ['core.js','listening.js']){
+  const version=createHash('sha256').update(fs.readFileSync('dist/'+dependency)).digest('hex').slice(0,12);
+  const pattern=new RegExp(`(\\./${dependency.replace('.','\\.')})(?:\\?v=[^"']+)?(?=["'])`,'g');
+  app=app.replace(pattern,`$1?v=${version}`);
+}
+fs.writeFileSync('dist/app.js',app);
 const shellHash=createHash('sha256');
 for(const file of ['style.css','aero.css','study.css','fonts.css','boot.js','app.js','core.js','listening.js'])shellHash.update(fs.readFileSync('dist/'+file));
 const shellVersion=shellHash.digest('hex').slice(0,12);
