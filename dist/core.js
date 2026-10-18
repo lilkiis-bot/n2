@@ -1,5 +1,5 @@
 export const STORAGE_KEY = 'yuzuki-n2-v1';
-export const defaults = () => ({version:1,currentDay:1,cursors:{},seen:{},completed:{},bookmarks:[],wrong:[],history:[],session:null,settings:{voice:'recorded',rate:1,pitch:1.17,showReadings:true}});
+export const defaults = () => ({version:1,currentDay:1,cursors:{},seen:{},completed:{},bookmarks:[],wrong:[],history:[],session:null,listening:{scope:'day',start:1,trackId:null,position:0,loop:true},settings:{voice:'recorded',rate:1,pitch:1.17,showReadings:true}});
 export const shuffle = (items) => { const a=[...items]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
 export function makeQuestions(pool, all, count) {
   return shuffle(pool).slice(0,Math.min(count,pool.length)).map((w,i)=>{
@@ -45,6 +45,7 @@ export function validateState(raw, all) {
   s.wrong=[...new Set((Array.isArray(raw.wrong)?raw.wrong:[]).filter(id=>ids.has(id)))];
   s.history=raw.history.filter(h=>scoreOK(h)&&dateOK(h.at)&&typeof h.id==='string'&&['daily','all','wrong','bookmarks'].includes(h.mode)&&typeof h.label==='string'&&(h.mode!=='daily'||dayOK(h.day))).slice(0,200).map(h=>({...h,label:h.label.slice(0,100),wrongIds:(h.wrongIds||[]).filter(id=>ids.has(id))}));
   if(raw.settings){s.settings={voice:typeof raw.settings.voice==='string'?raw.settings.voice:'recorded',rate:Math.min(1.4,Math.max(.7,Number(raw.settings.rate)||1)),pitch:Math.min(1.5,Math.max(.7,Number(raw.settings.pitch)||1.17)),showReadings:raw.settings.showReadings!==false};}
+  if(raw.listening){const l=raw.listening;s.listening={scope:['day','five','all'].includes(l.scope)?l.scope:'day',start:dayOK(l.start)?Number(l.start):1,trackId:typeof l.trackId==='string'&&/^(day-\d{2}|five-\d{2}|all)$/.test(l.trackId)?l.trackId:null,position:Number.isFinite(l.position)?Math.max(0,Math.min(86400,l.position)):0,loop:l.loop!==false};}
   const q=raw.session;
   if(q&&typeof q.id==='string'&&['daily','all','wrong','bookmarks'].includes(q.mode)&&typeof q.label==='string'&&Array.isArray(q.questions)&&q.questions.length>0&&q.questions.length<=all.length&&Number.isInteger(q.index)&&q.index>=0&&q.index<q.questions.length){
     const valid=q.questions.every(v=>ids.has(v.wordId)&&['reading','meaning'].includes(v.kind)&&Array.isArray(v.options)&&v.options.length===4&&v.options.every(o=>typeof o==='string')&&v.options.includes(v.answer)&&(v.selected===null||v.options.includes(v.selected))&&all.find(w=>w.id===v.wordId)[v.kind]===v.answer);

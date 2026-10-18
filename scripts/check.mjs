@@ -31,12 +31,12 @@ if(fs.existsSync('dist/audio-manifest.json')){
 // Version the app shell so an already-open, older service worker cannot serve a
 // mismatched script when the new HTML arrives on the first refresh.
 const shellHash=createHash('sha256');
-for(const file of ['style.css','aero.css','boot.js','app.js','core.js'])shellHash.update(fs.readFileSync('dist/'+file));
+for(const file of ['style.css','aero.css','study.css','fonts.css','boot.js','app.js','core.js','listening.js'])shellHash.update(fs.readFileSync('dist/'+file));
 const shellVersion=shellHash.digest('hex').slice(0,12);
-const html=fs.readFileSync('dist/index.html','utf8').replace(/(\.\/(?:style\.css|aero\.css|boot\.js|app\.js))(?:\?v=[^"']+)?(?=["'])/g,`$1?v=${shellVersion}`);
+const html=fs.readFileSync('dist/index.html','utf8').replace(/(\.\/(?:style\.css|aero\.css|study\.css|fonts\.css|boot\.js|app\.js))(?:\?v=[^"']+)?(?=["'])/g,`$1?v=${shellVersion}`);
 fs.writeFileSync('dist/index.html',html);
 const stamp=createHash('sha256');
-for(const file of ['index.html','style.css','aero.css','aurora.svg','phone-qr.svg','icon-192.png','icon-512.png','apple-touch-icon.png','boot.js','app.js','core.js','vocabulary.json','audio-manifest.json','icon.svg','manifest.webmanifest'])if(fs.existsSync('dist/'+file))stamp.update(fs.readFileSync('dist/'+file));
+for(const file of ['index.html','study.css','fonts.css','listening.js','listening-manifest.json','fonts/noto-serif-jp-vocabulary.woff2','style.css','aero.css','aurora.svg','phone-qr.svg','icon-192.png','icon-512.png','apple-touch-icon.png','boot.js','app.js','core.js','vocabulary.json','audio-manifest.json','icon.svg','manifest.webmanifest'])if(fs.existsSync('dist/'+file))stamp.update(fs.readFileSync('dist/'+file));
 stamp.update(fs.readFileSync('dist/sw.js','utf8').replace(/const CACHE='[^']+';/,"const CACHE='';"));
 const cache='yuzuki-n2-'+stamp.digest('hex').slice(0,12);
 const sw=fs.readFileSync('dist/sw.js','utf8').replace(/const CACHE='[^']+';/,`const CACHE='${cache}';`);
