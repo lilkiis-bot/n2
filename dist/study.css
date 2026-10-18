@@ -88,3 +88,24 @@
   .listening-panel{padding-top:17px}
   .listening-panel .listen-now strong{line-height:1.3}
 }
+
+/* Let the page scroll as one surface; keep a steady space for each day's examples. */
+.word-card{height:auto;min-height:600px;max-height:none;grid-template-rows:44px 224px minmax(var(--example-height,150px),1fr) 42px 35px}
+.word-main .reading{min-height:0}
+.word-card>.example{overflow:visible;overscroll-behavior:auto;display:grid;grid-template-columns:minmax(0,1fr) 30px;grid-template-rows:30px auto auto auto;align-content:start;gap:4px 8px}
+.word-card .example-label{grid-column:1;grid-row:1;align-self:center;margin:0}
+.word-card .example .icon-button{position:static;grid-column:2;grid-row:1;width:30px;min-width:30px;height:30px;min-height:30px;padding:5px}
+.word-card .example p{grid-column:1/-1;margin:0;padding-right:0;min-width:0;overflow-wrap:anywhere}
+.word-card .example-jp{grid-row:2}.word-card .example-reading{grid-row:3}.word-card .example-ko{grid-row:4}
+.word-nav{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px}
+.word-nav .button{min-width:0;white-space:nowrap;gap:6px}.word-index{white-space:nowrap}
+.word-audio-controls .stop-audio{justify-self:center;padding:5px}.word-audio-controls .stop-audio svg{width:16px;height:16px}
+@media(max-width:700px){
+  .word-card{min-height:calc(var(--study-vh,100vh) - 200px);grid-template-rows:32px 158px minmax(var(--example-height,150px),1fr) 34px 30px}
+  .word-nav{gap:8px}.word-nav .button{padding-left:8px;padding-right:8px}
+  .sidebar .nav-item{margin-left:0;margin-right:0}
+  .app-shell{padding-bottom:calc(95px + env(safe-area-inset-bottom))}
+  html{scroll-padding-bottom:calc(95px + env(safe-area-inset-bottom))}
+}
+@media(max-width:700px) and (max-height:600px){.word-card{min-height:calc(var(--study-vh,100vh) - 186px);grid-template-rows:28px 132px minmax(var(--example-height,150px),1fr) 32px 28px;gap:6px}}
+@media(max-width:700px) and (max-height:520px){.word-card{min-height:calc(var(--study-vh,100vh) - 174px);grid-template-rows:24px 116px minmax(var(--example-height,150px),1fr) 32px 26px;gap:6px}}

@@ -54,6 +54,22 @@ function exampleMarkup(w){return `<div class="example"><div class="example-label
 function setupStudyCard(){
   const card=$('.word-card');if(!card)return;
   card.style.setProperty('--word-width',Math.max(180,card.querySelector('.word-main').clientWidth-8)+'px');
+  const example=card.querySelector('.example'),style=getComputedStyle(example),jpStyle=getComputedStyle(example.querySelector('.example-jp'));
+  const key=[state.currentDay,example.clientWidth,style.padding,jpStyle.fontSize,state.settings.showReadings].join(':');
+  if(card.dataset.layoutKey===key)return;
+  card.dataset.layoutKey=key;
+  // Reserve the tallest example in this lesson once, so swapping words cannot
+  // move the controls and long sentences never need their own scroll area.
+  const probe=example.cloneNode(true);
+  probe.setAttribute('aria-hidden','true');
+  probe.style.cssText=`position:absolute;visibility:hidden;pointer-events:none;width:${example.getBoundingClientRect().width}px;height:auto;min-height:0;left:0;top:0;`;
+  card.append(probe);
+  let height=0;
+  for(const word of current().words){
+    for(const [selector,field] of [['.example-jp','example'],['.example-reading','exampleReading'],['.example-ko','translation']])probe.querySelector(selector).textContent=word[field];
+    height=Math.max(height,probe.getBoundingClientRect().height);
+  }
+  probe.remove();card.style.setProperty('--example-height',Math.ceil(height)+2+'px');
 }
 function selectWord(index){
   const d=current();index=Math.max(0,Math.min(19,Number(index)||0));
