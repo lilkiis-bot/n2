@@ -1,12 +1,36 @@
 export const STORAGE_KEY = 'yuzuki-n2-v1';
 export const defaults = () => ({version:1,currentDay:1,cursors:{},seen:{},completed:{},bookmarks:[],wrong:[],history:[],session:null,listening:{scope:'day',start:1,trackId:null,position:0,loop:true},settings:{voice:'recorded',rate:1,pitch:1.17,showReadings:true}});
 export const shuffle = (items) => { const a=[...items]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
-export function makeQuestions(pool, all, count) {
+const contrastGroups=[
+  ['移す','移る'],['戻す','戻る'],['上げる','上がる'],['下げる','下がる'],['落とす','落ちる'],['倒す','倒れる'],['整える','整う'],['加える','加わる'],['減らす','減る'],['延ばす','延びる'],['縮める','縮む'],['広げる','広がる'],['固める','固まる'],['混ぜる','混ざる'],['進める','進む'],['備える','備わる'],['通じる','通す'],
+  ['収入','支出'],['需要','供給'],['輸出','輸入'],['円高','円安'],['増加','減少'],['上昇','下降'],['原因','結果'],['目的','手段'],['主観','客観'],['抽象','具体'],['賛成','反対'],['権利','義務'],['賞味期限','消費期限'],['診察','診断','治療'],['製品','商品','品物'],['性格','性質'],['粗い','荒い'],['わざと','わざわざ'],['うっかり','すっかり'],['見落とす','見直す','見送る'],['取り出す','取り入れる','取り除く']
+];
+const meaningParts=w=>w.meaning.split(/[;,，、·/()（）]/).map(s=>s.replace(/\s/g,'')).filter(Boolean);
+const indexCache=new WeakMap();
+function questionIndex(all){
+  if(indexCache.has(all))return indexCache.get(all);
+  const buckets=new Map(),groups=new Map();
+  for(const group of contrastGroups)for(const word of group)groups.set(word,new Set(group));
+  const keys=w=>[`day:${w.day}`,`sound:${w.reading.slice(0,2)}`,...[...new Set(w.word.match(/[一-龯]/g)||[])].map(c=>'kanji:'+c)];
+  for(const w of all)for(const key of keys(w)){if(!buckets.has(key))buckets.set(key,[]);buckets.get(key).push(w);}
+  const byWord=new Map(all.map(w=>[w.word,w]));
+  const result={candidates(w){const paired=groups.get(w.word)||new Set();const found=new Set([...paired].map(word=>byWord.get(word)).filter(Boolean));for(const key of keys(w))for(const v of buckets.get(key)||[])found.add(v);return [...found].filter(v=>v.id!==w.id).map(v=>({w:v,score:(paired.has(v.word)?100:0)+[...(w.word.match(/[一-龯]/g)||[])].filter(c=>v.word.includes(c)).length*8+(w.reading.slice(0,2)===v.reading.slice(0,2)?6:0)+(w.day===v.day?3:0)})).sort((a,b)=>b.score-a.score).map(v=>v.w);}};
+  indexCache.set(all,result);return result;
+}
+export function makeQuestions(pool, all, count, {confusable=false}={}) {
+  const index=confusable?questionIndex(all):null;
   return shuffle(pool).slice(0,Math.min(count,pool.length)).map((w,i)=>{
     const kind=i%3===1?'reading':'meaning';
     const answer=w[kind];
-    const others=[...new Set(shuffle(all).map(x=>x[kind]).filter(x=>x!==answer))].slice(0,3);
-    return {wordId:w.id,kind,answer,options:shuffle([answer,...others]),selected:null};
+    const parts=meaningParts(w),seen=new Set([answer]);
+    const eligible=v=>v.id!==w.id&&!seen.has(v[kind])&&(kind!=='meaning'||!meaningParts(v).some(p=>parts.includes(p)));
+    const close=index?index.candidates(w).filter(eligible):[];
+    const choices=[w];
+    for(const v of [...close.slice(0,1),...shuffle(close.slice(1,9)),...shuffle(all)]){
+      if(!eligible(v))continue;choices.push(v);seen.add(v[kind]);if(choices.length===4)break;
+    }
+    const ordered=shuffle(choices);
+    return {wordId:w.id,kind,answer,options:ordered.map(v=>v[kind]),selected:null,...(confusable?{choiceIds:ordered.map(v=>v.id)}:{})};
   });
 }
 export function finishSession(state, session, now = new Date().toISOString()) {

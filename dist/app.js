@@ -1,14 +1,15 @@
-import {STORAGE_KEY,defaults,shuffle,makeQuestions,finishSession,reviewPool,validateState} from './core.js?v=7034fdce1b22';
-import {ListeningPlayer,listeningSelection,formatTime,entryAt} from './listening.js?v=7f06d9f71199';
+import {WordAudio} from './audio.js?v=e393fa0a5c95';
+import {STORAGE_KEY,defaults,shuffle,makeQuestions,finishSession,reviewPool,validateState} from './core.js?v=ef39529dcb64';
+import {ListeningPlayer,listeningSelection,formatTime,entryAt} from './listening.js?v=0783d7a1315a';
 
 const paths={home:'M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z',book:'M3 4h6a4 4 0 0 1 3 2 4 4 0 0 1 3-2h6v15h-6a4 4 0 0 0-3 2 4 4 0 0 0-3-2H3Zm9 2v15',grid:'M3 3h7v7H3Zm11 0h7v7h-7ZM3 14h7v7H3Zm11 0h7v7h-7Z',repeat:'M20 7H7a4 4 0 0 0-4 4m17-4-4-4m4 4-4 4M4 17h13a4 4 0 0 0 4-4M4 17l4-4m-4 4 4 4',chart:'M4 20h17M7 16v-5m5 5V5m5 11V8',settings:'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0-6v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2',sound:'M4 9h4l5-4v14l-5-4H4Zm12-1a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14',arrow:'M4 12h16m-6-6 6 6-6 6',left:'M20 12H4m6-6-6 6 6 6',star:'m12 3 2.8 5.8 6.4.9-4.6 4.5 1.1 6.3L12 17.5l-5.7 3 1.1-6.3L2.8 9.7l6.4-.9Z',check:'m5 12 4 4L19 6',close:'m6 6 12 12M6 18 18 6',search:'M10 3a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm5 12 6 6',spark:'m12 2 2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6Z',download:'M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5',upload:'M12 16V4m-5 5 5-5 5 5M4 16v5h16v-5',list:'M9 5h12M9 12h12M9 19h12M3 5h1M3 12h1M3 19h1',clock:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4v5l3 2',flag:'M5 22V3m0 0c5-4 9 4 15 0v10c-6 4-10-4-15 0',heart:'M12 20S2 14 2 8a5 5 0 0 1 10-1 5 5 0 0 1 10 1c0 6-10 12-10 12Z'};
 const icon=(name)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${paths[name]||paths.spark}"/></svg>`;
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const pad=n=>String(n).padStart(2,'0');
 const $=s=>document.querySelector(s);
-let days=[],all=[],byId={},audioManifest={},state,route='today',reviewKind='all',reviewCount='20',courseFilter='all',search='',lastResult=null,voices=[],audio=null,speech=null,toastTimer,storageError=false,playToken=0,pendingImport=null;
+let days=[],all=[],byId={},audioManifest={},state,route='today',reviewKind='all',reviewCount='20',courseFilter='all',search='',lastResult=null,voices=[],speech=null,toastTimer,storageError=false,playToken=0,pendingImport=null;
 const main=$('#main'),dialog=$('#dialog');
-let saveTimer=0,listenManifest=null,listenPromise=null,listener=null;
+let saveTimer=0,listenManifest=null,listenPromise=null,listener=null,wordAudio=null,audioWarmTimer=0,audioNoticeTimer=0;
 function saveSoon(){clearTimeout(saveTimer);saveTimer=setTimeout(save,180);}
 const labels={listen:'듣기',today:'오늘의 학습',course:'60일 커리큘럼',review:'복습 시험',records:'나의 기록',quiz:'오늘의 시험',result:'시험 결과',daylist:'단어 모아보기'};
 const nav=[['today','book','오늘의 학습'],['course','grid','60일 커리큘럼'],['listen','sound','듣기'],['review','repeat','복습 시험'],['records','chart','나의 기록']];
@@ -35,6 +36,7 @@ function render(next=location.hash.slice(1)||'today'){
   main.innerHTML=warning+(route==='quiz'?'':banner)+views[route]();
   document.body.dataset.view=route;
   if(route==='today')setupStudyCard();
+  warmAudio();
   updateListeningButton();
   if(route==='listen'&&listener?.track)updateListeningUI(listener.snapshot());
 }
@@ -60,21 +62,20 @@ function setupStudyCard(){
   card.dataset.layoutKey=key;
   // Reserve the tallest example in this lesson once, so swapping words cannot
   // move the controls and long sentences never need their own scroll area.
-  const probe=example.cloneNode(true);
-  probe.setAttribute('aria-hidden','true');
-  probe.style.cssText=`position:absolute;visibility:hidden;pointer-events:none;width:${example.getBoundingClientRect().width}px;height:auto;min-height:0;left:0;top:0;`;
-  card.append(probe);
-  let height=0;
-  for(const word of current().words){
+  const fragment=document.createDocumentFragment(),probes=current().words.map(word=>{
+    const probe=example.cloneNode(true);probe.setAttribute('aria-hidden','true');
+    probe.style.cssText=`position:absolute;visibility:hidden;pointer-events:none;width:${example.getBoundingClientRect().width}px;height:auto;min-height:0;left:0;top:0;`;
     for(const [selector,field] of [['.example-jp','example'],['.example-reading','exampleReading'],['.example-ko','translation']])probe.querySelector(selector).textContent=word[field];
-    height=Math.max(height,probe.getBoundingClientRect().height);
-  }
-  probe.remove();card.style.setProperty('--example-height',Math.ceil(height)+2+'px');
+    fragment.append(probe);return probe;
+  });
+  card.append(fragment);
+  const height=Math.max(...probes.map(probe=>probe.getBoundingClientRect().height));
+  probes.forEach(probe=>probe.remove());card.style.setProperty('--example-height',Math.ceil(height)+2+'px');
 }
 function selectWord(index){
   const d=current();index=Math.max(0,Math.min(19,Number(index)||0));
   if(index===(state.cursors[d.day]||0))return;
-  state.cursors[d.day]=index;stopAudio();updateWordContent();saveSoon();
+  state.cursors[d.day]=index;stopAudio();updateWordContent();saveSoon();warmAudio();
 }
 function updateWordContent(){
   const card=$('.word-card');if(!card)return;
@@ -105,16 +106,47 @@ function courseResults(){const q=search.toLowerCase().trim();const filtered=days
 function wordRow(w){return `<article class="vocab-row glass"><span class="row-index">D${pad(w.day)}</span><div><button class="word-inline" lang="ja" data-action="open-word" data-id="${w.id}">${esc(w.word)}</button><div class="row-reading" lang="ja">${esc(w.reading)}</div></div><span class="row-meaning">${esc(w.meaning)}</span><button class="icon-button" data-action="speak" data-id="${w.id}" data-kind="word" aria-label="${esc(w.word)} 듣기">${icon('sound')}</button></article>`;}
 function renderDayList(){const d=current();return heading(`DAY ${pad(d.day)} · WORD COLLECTION`,`${d.day}일차 · ${esc(d.title)}`,esc(d.subtitle),'<button class="button secondary" data-action="today">카드로 보기</button>')+`<div class="vocab-list">${d.words.map(wordRow).join('')}</div><div class="result-actions"><button class="button" data-action="daily-quiz">오늘의 시험 보기 ${icon('arrow')}</button></div>`;}
 function statsMarkup(){return `<div class="stats-grid"><section class="stat-card glass"><span class="stat-label">완료한 일차</span><strong>${completedCount()}<small>/ 60일</small></strong><p>시험을 마친 일차</p></section><section class="stat-card glass"><span class="stat-label">복습할 오답</span><strong>${state.wrong.length}<small>단어</small></strong><p>다시 맞히면 오답에서 빠져요</p></section><section class="stat-card glass"><span class="stat-label">저장한 단어</span><strong>${state.bookmarks.length}<small>단어</small></strong><p>별표로 모아 둔 나만의 단어</p></section></div>`;}
-function renderReview(){const pool=reviewPool(state,all,reviewKind),completed=Object.keys(state.completed).map(Number).sort((a,b)=>a-b);return heading('REMEMBER A LITTLE LONGER','기억이 오래 머물도록','배운 단어들을 다시 만나면, 조금 더 단단히 기억돼요.')+statsMarkup()+`<section class="review-panel glass"><div class="eyebrow">MIX & REVIEW</div><h2>지금까지의 나를 위한 복습 시험</h2><p>한국어 뜻과 히라가나 읽기 문제를 섞어서 출제해요.</p><div class="review-types">${[['all','repeat','전체 시험',`${completed.length}일차 · ${reviewPool(state,all,'all').length}단어`],['wrong','flag','오답만 다시',`${state.wrong.length}단어`],['bookmarks','star','저장한 단어',`${state.bookmarks.length}단어`]].map(([key,i,title,sub])=>`<button class="review-type ${reviewKind===key?'active':''}" data-action="review-kind" data-kind="${key}" aria-pressed="${reviewKind===key}">${icon(i)}<strong>${title}</strong><span>${sub}</span></button>`).join('')}</div><div class="review-scope">${reviewKind==='all'?(completed.length?`출제 범위: ${completed.map(x=>`${x}일차`).join(', ')}`:'아직 완료한 일차가 없어요. 일차별 시험을 먼저 마쳐 주세요.'):reviewKind==='wrong'?'최근 시험에서 틀린 단어가 모여 있어요. 정답을 맞히면 자동으로 빠져요.':'학습 카드에서 별표를 누른 단어만 출제해요.'}</div><div class="review-controls"><label for="review-count">문제 수</label><select id="review-count"><option value="20" ${reviewCount==='20'?'selected':''}>20문제</option><option value="50" ${reviewCount==='50'?'selected':''}>50문제</option><option value="all" ${reviewCount==='all'?'selected':''}>전체 ${pool.length}문제</option></select><button class="button" data-action="review-start" ${pool.length?'':'disabled'}>복습 시작하기 ${icon('arrow')}</button></div><p style="font-size:10px;margin-top:15px">${pool.length?`${Math.min(reviewCount==='all'?pool.length:Number(reviewCount),pool.length)}문제를 출제해요. 중간에 닫아도 이어서 풀 수 있어요.`:'학습을 시작하고 나만의 복습 범위를 만들어 보세요.'}</p></section>${reviewKind!=='all'&&pool.length?`<div class="section-head"><h2>${reviewKind==='wrong'?'다시 만날 단어':'별표 단어장'} <small>${pool.length}개</small></h2></div><div class="vocab-list">${pool.map(wordRow).join('')}</div>`:''}`;}
+function renderReview(){const pool=reviewPool(state,all,reviewKind),completed=Object.keys(state.completed).map(Number).sort((a,b)=>a-b);return heading('REMEMBER A LITTLE LONGER','기억이 오래 머물도록','배운 단어들을 다시 만나면, 조금 더 단단히 기억돼요.')+statsMarkup()+`<section class="review-panel glass"><div class="eyebrow">MIX & REVIEW</div><h2>지금까지의 나를 위한 복습 시험</h2><p>한자·발음이 비슷하거나 같은 주제의 단어를 보기로 섞어서 출제해요.</p><div class="review-types">${[['all','repeat','전체 시험',`${completed.length}일차 · ${reviewPool(state,all,'all').length}단어`],['wrong','flag','오답만 다시',`${state.wrong.length}단어`],['bookmarks','star','저장한 단어',`${state.bookmarks.length}단어`]].map(([key,i,title,sub])=>`<button class="review-type ${reviewKind===key?'active':''}" data-action="review-kind" data-kind="${key}" aria-pressed="${reviewKind===key}">${icon(i)}<strong>${title}</strong><span>${sub}</span></button>`).join('')}</div><div class="review-scope">${reviewKind==='all'?(completed.length?`출제 범위: ${completed.map(x=>`${x}일차`).join(', ')}`:'아직 완료한 일차가 없어요. 일차별 시험을 먼저 마쳐 주세요.'):reviewKind==='wrong'?'최근 시험에서 틀린 단어가 모여 있어요. 정답을 맞히면 자동으로 빠져요.':'학습 카드에서 별표를 누른 단어만 출제해요.'}</div><div class="review-controls"><label for="review-count">문제 수</label><select id="review-count"><option value="20" ${reviewCount==='20'?'selected':''}>20문제</option><option value="50" ${reviewCount==='50'?'selected':''}>50문제</option><option value="all" ${reviewCount==='all'?'selected':''}>전체 ${pool.length}문제</option></select><button class="button" data-action="review-start" ${pool.length?'':'disabled'}>복습 시작하기 ${icon('arrow')}</button></div><p style="font-size:10px;margin-top:15px">${pool.length?`${Math.min(reviewCount==='all'?pool.length:Number(reviewCount),pool.length)}문제를 출제해요. 중간에 닫아도 이어서 풀 수 있어요.`:'학습을 시작하고 나만의 복습 범위를 만들어 보세요.'}</p></section>${reviewKind!=='all'&&pool.length?`<div class="section-head"><h2>${reviewKind==='wrong'?'다시 만날 단어':'별표 단어장'} <small>${pool.length}개</small></h2></div><div class="vocab-list">${pool.map(wordRow).join('')}</div>`:''}`;}
 function empty(title,description){return `<div class="empty-state glass">${icon('book')}<h2>${title}</h2><p>${description}</p><button class="button" data-action="today">오늘의 학습으로 ${icon('arrow')}</button></div>`;}
 function renderRecords(){const attempts=state.history.length,correct=state.history.reduce((sum,h)=>sum+h.score,0),total=state.history.reduce((sum,h)=>sum+h.total,0);return heading('YOUR LITTLE ACHIEVEMENTS','차곡차곡 쌓이는 나의 기록','잘한 날도, 조금 어려웠던 날도. 모든 한 걸음이 여기에 남아요.',`<button class="button secondary" data-action="export">${icon('download')} 백업</button>`)+`<div class="stats-grid"><section class="stat-card glass"><span class="stat-label">완료한 일차</span><strong>${completedCount()}<small>/ 60일</small></strong><p>${completedCount()*20}개 어휘 시험 완료</p></section><section class="stat-card glass"><span class="stat-label">누적 시험</span><strong>${attempts}<small>회</small></strong><p>최근 200회까지 보관해요</p></section><section class="stat-card glass"><span class="stat-label">기록 평균 정답률</span><strong>${total?Math.round(correct/total*100):0}<small>%</small></strong><p>반복할수록 더 단단해져요</p></section></div><div class="section-head"><h2>나의 시험 일지</h2><span class="list-subtitle">최신 기록부터</span></div>${state.history.length?`<div class="glass history-list">${state.history.map(h=>`<article class="history-item"><div class="history-symbol">${icon(h.mode==='daily'?'check':'repeat')}</div><div><h3>${esc(h.label)}${h.mode==='daily'?' · 일차 완료':''}</h3><p>${new Date(h.at).toLocaleString('ko-KR',{month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'})} · ${h.total}문제</p></div><div class="history-score">${Math.round(h.score/h.total*100)}<small>점 · ${h.score}/${h.total}</small></div></article>`).join('')}</div>`:empty('첫 기록을 기다리고 있어요','시험을 끝까지 풀면 점수와 함께 일차가 저장돼요.')}`;}
-function startQuiz(mode,pool,count,day=null){if(!pool.length){toast('아직 출제할 단어가 없어요.');return;}const launch=()=>{state.session={id:crypto.randomUUID?.()||`${Date.now()}-${Math.random()}`,mode,day,label:mode==='daily'?`${day}일차 시험`:mode==='all'?'전체 복습 시험':mode==='wrong'?'오답 복습 시험':'별표 단어 시험',index:0,questions:makeQuestions(pool,all,count)};save();closeDialog();go('quiz');window.scrollTo(0,0);};if(state.session){showDialog('풀던 시험이 남아 있어요',`<p class="dialog-copy">${esc(state.session.label)} ${state.session.index+1}번 문제에서 이어할 수 있어요. 새 시험을 시작하면 진행 중인 시험만 사라져요.</p><div class="dialog-actions"><button class="button secondary" data-action="resume">이어서 풀기</button><button class="button" id="new-quiz">새 시험 시작</button></div>`);$('#new-quiz').onclick=launch;}else launch();}
-function renderQuiz(){const s=state.session,q=s.questions[s.index],w=byId[q.wordId],answered=q.selected!==null;return `<div class="quiz-wrap"><div class="quiz-top"><strong>${esc(s.label)}</strong><button class="text-button" data-action="today">저장하고 나가기 ${icon('close')}</button></div><div class="quiz-progress" aria-label="${s.index} / ${s.questions.length}문제 풀이"><span style="width:${s.index/s.questions.length*100}%"></span></div><section class="quiz-card glass"><div class="quiz-type">QUESTION ${pad(s.index+1)} / ${s.questions.length} · ${q.kind==='meaning'?'MEANING':'READING'}</div><div class="quiz-question" lang="ja">${esc(w.word)}</div><p class="quiz-instruction">${q.kind==='meaning'?'이 단어의 알맞은 뜻을 골라 주세요.':'이 단어의 올바른 히라가나 읽기를 골라 주세요.'}</p><div class="answers">${q.options.map((a,i)=>`<button class="answer ${answered?(a===q.answer?'correct':a===q.selected?'incorrect':'muted'):''}" data-action="answer" data-index="${i}" ${answered?'disabled':''}><span>${i+1}</span>${esc(a)}${answered&&a===q.answer?icon('check'):''}</button>`).join('')}</div>${answered?`<div class="quiz-feedback"><div class="feedback-heading ${q.answer===q.selected?'':'incorrect'}">${q.answer===q.selected?'잘했어요! 정확히 기억했네요.':'괜찮아요. 지금 한 번 더 기억해요.'}</div><p>${esc(w.word)} · ${esc(w.reading)} · ${esc(w.meaning)} <button class="icon-button" data-action="speak" data-id="${w.id}" data-kind="word" aria-label="정답 발음 듣기">${icon('sound')}</button></p>${exampleMarkup(w)}</div>`:''}<div class="quiz-bottom"><span>${answered?'답과 예문을 확인하고 넘어가세요.':'숫자 1–4 키로도 선택할 수 있어요.'}</span><button class="button" data-action="quiz-next" ${answered?'':'disabled'}>${s.index===s.questions.length-1?'결과 보기':'다음 문제'} ${icon('arrow')}</button></div></section><p class="list-subtitle" style="text-align:center;margin:20px">${s.mode==='daily'?'점수와 관계없이 끝까지 풀면 오늘 일차가 완료돼요.':'문제를 풀 때마다 자동으로 저장돼요.'}</p></div>`;}
+function startQuiz(mode,pool,count,day=null){if(!pool.length){toast('아직 출제할 단어가 없어요.');return;}const launch=()=>{state.session={id:crypto.randomUUID?.()||`${Date.now()}-${Math.random()}`,mode,day,label:mode==='daily'?`${day}일차 시험`:mode==='all'?'전체 복습 시험':mode==='wrong'?'오답 복습 시험':'별표 단어 시험',index:0,questions:makeQuestions(pool,all,count,{confusable:mode!=='daily'})};save();closeDialog();go('quiz');window.scrollTo(0,0);};if(state.session){showDialog('풀던 시험이 남아 있어요',`<p class="dialog-copy">${esc(state.session.label)} ${state.session.index+1}번 문제에서 이어할 수 있어요. 새 시험을 시작하면 진행 중인 시험만 사라져요.</p><div class="dialog-actions"><button class="button secondary" data-action="resume">이어서 풀기</button><button class="button" id="new-quiz">새 시험 시작</button></div>`);$('#new-quiz').onclick=launch;}else launch();}
+function contrastMarkup(question){
+  if(!Array.isArray(question.choiceIds))return '';
+  const words=question.choiceIds.map(id=>byId[id]).filter(Boolean);
+  return `<div class="quiz-contrasts"><h3>함께 구별해 보기</h3>${words.map(w=>`<div><strong lang="ja">${esc(w.word)}</strong><span lang="ja">${esc(w.reading)}</span><p>${esc(w.meaning)}</p></div>`).join('')}</div>`;
+}
+function renderQuiz(){const s=state.session,q=s.questions[s.index],w=byId[q.wordId],answered=q.selected!==null;return `<div class="quiz-wrap"><div class="quiz-top"><strong>${esc(s.label)}</strong><button class="text-button" data-action="today">저장하고 나가기 ${icon('close')}</button></div><div class="quiz-progress" aria-label="${s.index} / ${s.questions.length}문제 풀이"><span style="width:${s.index/s.questions.length*100}%"></span></div><section class="quiz-card glass"><div class="quiz-type">QUESTION ${pad(s.index+1)} / ${s.questions.length} · ${q.kind==='meaning'?'MEANING':'READING'}</div><div class="quiz-question" lang="ja">${esc(w.word)}</div><p class="quiz-instruction">${q.kind==='meaning'?'이 단어의 알맞은 뜻을 골라 주세요.':'이 단어의 올바른 히라가나 읽기를 골라 주세요.'}</p><div class="answers">${q.options.map((a,i)=>`<button class="answer ${answered?(a===q.answer?'correct':a===q.selected?'incorrect':'muted'):''}" data-action="answer" data-index="${i}" ${answered?'disabled':''}><span>${i+1}</span>${esc(a)}${answered&&a===q.answer?icon('check'):''}</button>`).join('')}</div>${answered?`<div class="quiz-feedback"><div class="feedback-heading ${q.answer===q.selected?'':'incorrect'}">${q.answer===q.selected?'잘했어요! 정확히 기억했네요.':'괜찮아요. 지금 한 번 더 기억해요.'}</div><p>${esc(w.word)} · ${esc(w.reading)} · ${esc(w.meaning)} <button class="icon-button" data-action="speak" data-id="${w.id}" data-kind="word" aria-label="정답 발음 듣기">${icon('sound')}</button></p>${exampleMarkup(w)}${contrastMarkup(q)}</div>`:''}<div class="quiz-bottom"><span>${answered?'답과 예문을 확인하고 넘어가세요.':'숫자 1–4 키로도 선택할 수 있어요.'}</span><button class="button" data-action="quiz-next" ${answered?'':'disabled'}>${s.index===s.questions.length-1?'결과 보기':'다음 문제'} ${icon('arrow')}</button></div></section><p class="list-subtitle" style="text-align:center;margin:20px">${s.mode==='daily'?'점수와 관계없이 끝까지 풀면 오늘 일차가 완료돼요.':'문제를 풀 때마다 자동으로 저장돼요.'}</p></div>`;}
 function answer(index){const s=state.session;if(!s)return;const q=s.questions[s.index];if(q.selected!==null||!q.options[index])return;q.selected=q.options[index];save();render('quiz');$('.quiz-bottom .button')?.focus({preventScroll:true});}
 function quizNext(){const s=state.session;if(!s||s.questions[s.index].selected===null)return;if(s.index<s.questions.length-1){s.index++;save();render('quiz');$('.quiz-type')?.scrollIntoView({block:'center'});}else{lastResult=finishSession(state,s);save();go('result');window.scrollTo(0,0);}}
 function renderResult(){const r=lastResult;return `<div class="quiz-wrap">${heading('ONE STEP FORWARD','오늘도 한 걸음, 해냈어요.','작은 성취를 오래 기억해 주세요.')}<section class="glass result-panel"><div class="result-seal">✓</div><h1>${r.mode==='daily'?`${r.day}일차 학습 완료!`:'복습 시험 완료!'}</h1><p>${r.mode==='daily'?'점수와 함께 오늘의 진도를 저장했어요.':'오늘 만난 단어들이 조금 더 익숙해졌을 거예요.'}</p><div class="result-number">${Math.round(r.score/r.total*100)}<small>점</small></div><p>${r.total}문제 중 ${r.score}개 정답 · ${r.total-r.score}개 다시 보기</p><div class="result-actions"><button class="button" data-action="${r.mode==='daily'?'continue':'review'}">${r.mode==='daily'&&completedCount()<60?'다음 학습으로':'복습하러 가기'} ${icon('arrow')}</button>${r.wrongIds.length?'<button class="button secondary" data-action="retry-wrong">틀린 단어 다시 풀기</button>':''}</div></section>${r.wrongIds.length?`<div class="section-head"><h2>한 번 더 기억할 단어</h2></div><section class="glass">${r.wrongIds.map(id=>{const w=byId[id];return `<div class="mistake-item"><strong lang="ja">${esc(w.word)}</strong><span>${esc(w.reading)} · ${esc(w.meaning)}</span><button class="icon-button" data-action="speak" data-id="${id}" data-kind="word" aria-label="발음 듣기">${icon('sound')}</button></div>`;}).join('')}</section>`:'<div class="tip-card" style="margin-top:20px;text-align:center">모두 맞혔어요! 조금 뒤에 다시 복습하면 더 오래 기억할 수 있어요.</div>'}</div>`;}
-function stopAudio(){playToken++;if(audio){audio.pause();audio=null;}try{window.speechSynthesis?.cancel?.();}catch{}speech=null;}
-async function speak(id,kind='word'){const w=byId[id];if(!w)return;listener?.pause();stopAudio();const token=playToken;if(state.settings.voice==='recorded'&&audioManifest[id]?.[kind]){audio=new Audio(new URL(audioManifest[id][kind],location.href).href);audio.playbackRate=state.settings.rate;audio.preservesPitch=true;try{await audio.play();return;}catch{if(token!==playToken)return;toast('기본 음성을 불러오지 못해 기기 음성으로 읽을게요.');}}speakDevice(kind==='word'?w.reading:w.example,token);}
+function prepareWordAudio(){
+  const element=document.createElement('audio');element.id='word-audio';element.preload='auto';element.setAttribute('playsinline','');element.hidden=true;document.body.append(element);
+  wordAudio=new WordAudio(element,{onState:status=>{
+    clearTimeout(audioNoticeTimer);
+    if(status==='loading')audioNoticeTimer=setTimeout(()=>toast('음성을 준비하고 있어요…'),500);
+    else if($('#toast').textContent==='음성을 준비하고 있어요…')$('#toast').classList.remove('visible');
+  }});
+}
+function warmAudio(){
+  clearTimeout(audioWarmTimer);audioWarmTimer=setTimeout(()=>{
+    if(!wordAudio||!state||state.settings.voice!=='recorded'||document.hidden)return;
+    const words=route==='quiz'?[byId[state.session?.questions[state.session.index]?.wordId]]:route==='today'?current().words.slice(state.cursors[state.currentDay]||0,(state.cursors[state.currentDay]||0)+3):[];
+    wordAudio.warm(words.filter(Boolean).flatMap(w=>[audioManifest[w.id]?.word,audioManifest[w.id]?.example]));
+  },180);
+}
+function stopAudio(){playToken++;wordAudio?.stop();try{window.speechSynthesis?.cancel?.();}catch{}speech=null;}
+function speak(id,kind='word'){
+  const w=byId[id];if(!w)return;
+  listener?.pause();stopAudio();const token=playToken;
+  if(state.settings.voice==='recorded'&&audioManifest[id]?.[kind]){
+    wordAudio.play(audioManifest[id][kind],state.settings.rate,error=>{
+      if(token!==playToken)return;
+      if(error?.name==='NotAllowedError'){toast('음성 버튼을 한 번 더 눌러 주세요.');return;}
+      toast('연결이 늦어 기기 음성으로 읽을게요.');speakDevice(kind==='word'?w.reading:w.example,token);
+    });return;
+  }
+  speakDevice(kind==='word'?w.reading:w.example,token);
+}
 function speakDevice(text,token=playToken){if(!('speechSynthesis'in window)){toast('이 브라우저에서는 음성을 재생할 수 없어요. 인터넷 연결과 기본 음성 설정을 확인해 주세요.');return;}if(token!==playToken)return;const jp=voices.filter(v=>/^ja([-_]|$)/i.test(v.lang));speech=new SpeechSynthesisUtterance(text);speech.lang='ja-JP';speech.voice=jp.find(v=>v.voiceURI===state.settings.voice)||jp.find(v=>/Nanami|Kyoko|Haruka|Sayaka|O-Ren/i.test(v.name))||jp[0]||null;speech.rate=state.settings.rate*.88;speech.pitch=state.settings.pitch;speech.onerror=e=>{if(!['interrupted','canceled'].includes(e.error))toast('일본어 음성을 재생하지 못했어요. 설정에서 기본 음성을 선택해 주세요.');};speechSynthesis.speak(speech);}
 function showDialog(title,body){dialog.dataset.panel='';dialog.innerHTML=`<div class="dialog-head"><h2>${title}</h2><button class="icon-button" data-action="close-dialog" aria-label="닫기">${icon('close')}</button></div>${body}`;if(!dialog.open){if(typeof dialog.showModal==='function')dialog.showModal();else{dialog.setAttribute('open','');dialog.classList.add('dialog-fallback');}}}
 function closeDialog(){if(typeof dialog.close==='function')dialog.close();else{dialog.removeAttribute('open');dialog.classList.remove('dialog-fallback');}}
@@ -208,8 +240,10 @@ document.addEventListener('pointerdown',event=>{if(event.pointerType==='mouse'||
 document.addEventListener('pointerup',event=>{if(!cardTouch||event.pointerId!==cardTouch.id)return;const dx=event.clientX-cardTouch.x,dy=event.clientY-cardTouch.y;cardTouch=null;if(route==='today'&&Math.abs(dx)>36&&Math.abs(dx)>Math.abs(dy)*1.5)selectWord((state.cursors[state.currentDay]||0)+(dx<0?1:-1));},{passive:true});
 document.addEventListener('pointercancel',()=>{cardTouch=null;},{passive:true});
 function updateStudyViewport(){document.documentElement.style.setProperty('--study-vh',(window.visualViewport?.height||window.innerHeight)+'px');if(route==='today')setupStudyCard();}
-window.addEventListener('resize',updateStudyViewport,{passive:true});
-window.visualViewport?.addEventListener('resize',updateStudyViewport,{passive:true});
+let viewportFrame=0;
+function queueStudyViewport(){if(!viewportFrame)viewportFrame=requestAnimationFrame(()=>{viewportFrame=0;updateStudyViewport();});}
+window.addEventListener('resize',queueStudyViewport,{passive:true});
+window.visualViewport?.addEventListener('resize',queueStudyViewport,{passive:true});
 updateStudyViewport();
 
 // Voice enumeration is optional: older Safari exposes speechSynthesis without
@@ -250,10 +284,12 @@ async function init(){
     state=defaults();
     try{const stored=localStorage.getItem(STORAGE_KEY);if(stored)state=validateState(JSON.parse(stored),all);}
     catch{storageError=true;toast('저장 기록을 읽지 못했어요. 백업이 있다면 설정에서 가져와 주세요.');}
+    audioManifest=Object.fromEntries(all.filter(w=>w.audio).map(w=>[w.id,w.audio]));
+    prepareWordAudio();
     prepareListening();
     render();
     window.N2Boot?.ready();
-    fetchJSON('./audio-manifest.json').then(m=>audioManifest=m).catch(()=>{});
+    if(!Object.keys(audioManifest).length)fetchJSON('./audio-manifest.json').then(m=>{audioManifest=m;warmAudio();}).catch(()=>{});
     prepareVoices();
     if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
   }catch(err){

@@ -36,7 +36,7 @@ export class ListeningPlayer{
     try{if(navigator.audioSession)navigator.audioSession.type='playback';}catch{}
     try{await this.audio.play();}catch(error){if(error.name!=='AbortError')this.onError('재생 버튼을 다시 눌러 주세요. 인터넷 연결도 확인해 주세요.');}
   }
-  pause(){this.audio.pause();this.update(true);}
+  pause(){if(!this.audio.paused){this.audio.pause();this.update(true);}}
   clear(){this.pause();this.track=null;this.pendingSeek=null;this.audio.removeAttribute('src');this.audio.load();}
   seek(time){
     if(!this.track)return;

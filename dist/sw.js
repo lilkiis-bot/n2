@@ -1,5 +1,5 @@
-const CACHE='yuzuki-n2-86d150fb86a4';
-const SHELL=['./','./index.html','./study.css','./fonts.css','./fonts/noto-serif-jp-vocabulary.woff2','./listening.js','./listening-manifest.json','./style.css','./aero.css','./aurora.svg','./phone-qr.svg','./icon-192.png','./icon-512.png','./apple-touch-icon.png','./boot.js','./app.js','./core.js','./vocabulary.json','./audio-manifest.json','./icon.svg','./manifest.webmanifest'];
+const CACHE='yuzuki-n2-87ecc7cabe0a';
+const SHELL=['./audio.js','./','./index.html','./study.css','./fonts.css','./fonts/noto-serif-jp-vocabulary.woff2','./listening.js','./listening-manifest.json','./style.css','./aero.css','./aurora.svg','./phone-qr.svg','./icon-192.png','./icon-512.png','./apple-touch-icon.png','./boot.js','./app.js','./core.js','./vocabulary.json','./audio-manifest.json','./icon.svg','./manifest.webmanifest'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL.map(url=>new Request(url,{cache:'reload'})))).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('yuzuki-n2-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('message',event=>{if(event.data==='app-cache-version')event.ports[0]?.postMessage(CACHE);});
@@ -12,7 +12,7 @@ self.addEventListener('fetch',event=>{
   if(url.pathname.includes('/listening/'))return;
   if(!/\.(js|css|json|svg|png|webmanifest|mp3|woff2)$/.test(url.pathname))return;
   const fromNetwork=()=>fetch(req).then(response=>{
-    if(response.ok&&!response.redirected){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(req,copy));}return response;
+    if(response.ok&&!response.redirected){const copy=response.clone();event.waitUntil(caches.open(CACHE).then(cache=>cache.put(req,copy)).catch(()=>{}));}return response;
   });
   if(url.pathname.endsWith('.mp3')){
     event.respondWith(caches.open(CACHE).then(cache=>cache.match(req)).then(cached=>cached||fromNetwork()));

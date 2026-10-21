@@ -21,6 +21,8 @@ console.log(`Validated ${days.length} days, ${words.length} unique words, all re
 if(fs.existsSync('dist/audio-manifest.json')){
   const audio=JSON.parse(fs.readFileSync('dist/audio-manifest.json','utf8'));
   let count=0;
+  for(const day of days)for(const [i,w] of day.words.entries())w.audio=audio[`d${String(day.day).padStart(2,'0')}-${String(i+1).padStart(2,'0')}`];
+  fs.writeFileSync('dist/vocabulary.json',JSON.stringify(days));
   for(const [index,day] of days.entries())for(const [i] of day.words.entries()){
     const id=`d${String(index+1).padStart(2,'0')}-${String(i+1).padStart(2,'0')}`;
     for(const kind of ['word','example'])if(audio[id]?.[kind]){assert.ok(fs.statSync('dist/'+audio[id][kind]).size>1000);count++;}
@@ -33,19 +35,19 @@ if(fs.existsSync('dist/audio-manifest.json')){
 // Imported modules need their own versions too: browser HTTP caches can still
 // hold the old progress schema even when the entry script has a fresh URL.
 let app=fs.readFileSync('dist/app.js','utf8');
-for(const dependency of ['core.js','listening.js']){
+for(const dependency of ['core.js','listening.js','audio.js']){
   const version=createHash('sha256').update(fs.readFileSync('dist/'+dependency)).digest('hex').slice(0,12);
   const pattern=new RegExp(`(\\./${dependency.replace('.','\\.')})(?:\\?v=[^"']+)?(?=["'])`,'g');
   app=app.replace(pattern,`$1?v=${version}`);
 }
 fs.writeFileSync('dist/app.js',app);
 const shellHash=createHash('sha256');
-for(const file of ['style.css','aero.css','study.css','fonts.css','boot.js','app.js','core.js','listening.js'])shellHash.update(fs.readFileSync('dist/'+file));
+for(const file of ['style.css','aero.css','study.css','fonts.css','boot.js','app.js','core.js','listening.js','audio.js'])shellHash.update(fs.readFileSync('dist/'+file));
 const shellVersion=shellHash.digest('hex').slice(0,12);
 const html=fs.readFileSync('dist/index.html','utf8').replace(/(\.\/(?:style\.css|aero\.css|study\.css|fonts\.css|boot\.js|app\.js))(?:\?v=[^"']+)?(?=["'])/g,`$1?v=${shellVersion}`);
 fs.writeFileSync('dist/index.html',html);
 const stamp=createHash('sha256');
-for(const file of ['index.html','study.css','fonts.css','listening.js','listening-manifest.json','fonts/noto-serif-jp-vocabulary.woff2','style.css','aero.css','aurora.svg','phone-qr.svg','icon-192.png','icon-512.png','apple-touch-icon.png','boot.js','app.js','core.js','vocabulary.json','audio-manifest.json','icon.svg','manifest.webmanifest'])if(fs.existsSync('dist/'+file))stamp.update(fs.readFileSync('dist/'+file));
+for(const file of ['audio.js','index.html','study.css','fonts.css','listening.js','listening-manifest.json','fonts/noto-serif-jp-vocabulary.woff2','style.css','aero.css','aurora.svg','phone-qr.svg','icon-192.png','icon-512.png','apple-touch-icon.png','boot.js','app.js','core.js','vocabulary.json','audio-manifest.json','icon.svg','manifest.webmanifest'])if(fs.existsSync('dist/'+file))stamp.update(fs.readFileSync('dist/'+file));
 stamp.update(fs.readFileSync('dist/sw.js','utf8').replace(/const CACHE='[^']+';/,"const CACHE='';"));
 const cache='yuzuki-n2-'+stamp.digest('hex').slice(0,12);
 const sw=fs.readFileSync('dist/sw.js','utf8').replace(/const CACHE='[^']+';/,`const CACHE='${cache}';`);
