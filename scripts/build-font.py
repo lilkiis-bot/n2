@@ -20,6 +20,9 @@ if 'fvar' in font:
 cmap=font.getBestCmap()
 days=json.loads((ROOT/'dist/vocabulary.json').read_text(encoding='utf-8'))
 text=''.join(w[key] for d in days for w in d['words'] for key in ['word','reading','example','exampleReading'])
+if (ROOT/'dist/math-vocabulary.json').exists():
+    math=json.loads((ROOT/'dist/math-vocabulary.json').read_text(encoding='utf8'))
+    text+=''.join(w[key] for g in math['groups'] for w in g['words'] for key in ['word','reading','example','exampleReading'])
 required=set(map(ord,text))
 missing=required-set(cmap)
 assert not missing,'Missing glyphs: '+repr(''.join(map(chr,missing)))

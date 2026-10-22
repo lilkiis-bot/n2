@@ -1,5 +1,13 @@
 export const STORAGE_KEY = 'yuzuki-n2-v1';
-export const defaults = () => ({version:1,currentDay:1,cursors:{},seen:{},completed:{},bookmarks:[],wrong:[],history:[],session:null,listening:{scope:'day',start:1,trackId:null,position:0,loop:true},settings:{voice:'recorded',rate:1,pitch:1.17,showReadings:true}});
+export const MATH_GROUP_IDS=['instructions','sets','algebra','equations','functions','geometry','trigonometry','logarithms','probability','statistics','sequences','calculus'];
+export function validateMathProgress(raw){
+  const p={group:'instructions',cursors:{},known:[]};if(!raw||typeof raw!=='object')return p;
+  if(MATH_GROUP_IDS.includes(raw.group))p.group=raw.group;
+  for(const group of MATH_GROUP_IDS){const i=raw.cursors?.[group];if(Number.isInteger(i)&&i>=0&&i<12)p.cursors[group]=i;}
+  const ids=new Set(MATH_GROUP_IDS.flatMap(g=>Array.from({length:12},(_,i)=>`math-${g}-${String(i+1).padStart(2,'0')}`)));
+  if(Array.isArray(raw.known))p.known=[...new Set(raw.known.filter(id=>ids.has(id)))];return p;
+}
+export const defaults = () => ({version:1,currentDay:1,cursors:{},seen:{},completed:{},bookmarks:[],wrong:[],history:[],session:null,math:validateMathProgress(),listening:{scope:'day',start:1,trackId:null,position:0,loop:true},settings:{voice:'recorded',rate:1,pitch:1.17,showReadings:true}});
 export const shuffle = (items) => { const a=[...items]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
 const contrastGroups=[
   ['移す','移る'],['戻す','戻る'],['上げる','上がる'],['下げる','下がる'],['落とす','落ちる'],['倒す','倒れる'],['整える','整う'],['加える','加わる'],['減らす','減る'],['延ばす','延びる'],['縮める','縮む'],['広げる','広がる'],['固める','固まる'],['混ぜる','混ざる'],['進める','進む'],['備える','備わる'],['通じる','通す'],
@@ -70,6 +78,7 @@ export function validateState(raw, all) {
   s.history=raw.history.filter(h=>scoreOK(h)&&dateOK(h.at)&&typeof h.id==='string'&&['daily','all','wrong','bookmarks'].includes(h.mode)&&typeof h.label==='string'&&(h.mode!=='daily'||dayOK(h.day))).slice(0,200).map(h=>({...h,label:h.label.slice(0,100),wrongIds:(h.wrongIds||[]).filter(id=>ids.has(id))}));
   if(raw.settings){s.settings={voice:typeof raw.settings.voice==='string'?raw.settings.voice:'recorded',rate:Math.min(1.4,Math.max(.7,Number(raw.settings.rate)||1)),pitch:Math.min(1.5,Math.max(.7,Number(raw.settings.pitch)||1.17)),showReadings:raw.settings.showReadings!==false};}
   if(raw.listening){const l=raw.listening;s.listening={scope:['day','five','all'].includes(l.scope)?l.scope:'day',start:dayOK(l.start)?Number(l.start):1,trackId:typeof l.trackId==='string'&&/^(day-\d{2}|five-\d{2}|all)$/.test(l.trackId)?l.trackId:null,position:Number.isFinite(l.position)?Math.max(0,Math.min(86400,l.position)):0,loop:l.loop!==false};}
+  s.math=validateMathProgress(raw.math);
   const q=raw.session;
   if(q&&typeof q.id==='string'&&['daily','all','wrong','bookmarks'].includes(q.mode)&&typeof q.label==='string'&&Array.isArray(q.questions)&&q.questions.length>0&&q.questions.length<=all.length&&Number.isInteger(q.index)&&q.index>=0&&q.index<q.questions.length){
     const valid=q.questions.every(v=>ids.has(v.wordId)&&['reading','meaning'].includes(v.kind)&&Array.isArray(v.options)&&v.options.length===4&&v.options.every(o=>typeof o==='string')&&v.options.includes(v.answer)&&(v.selected===null||v.options.includes(v.selected))&&all.find(w=>w.id===v.wordId)[v.kind]===v.answer);

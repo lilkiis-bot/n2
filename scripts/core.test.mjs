@@ -54,3 +54,26 @@ test('a stalled word request times out and is unloaded instead of playing late',
   await new Promise(resolve=>setTimeout(resolve,40));assert.equal(errors,1);assert.equal(audio.src,'');assert.equal(audio.paused,true);
   audio.requests[0].reject(new Error('late'));await Promise.resolve();assert.equal(errors,1);
 });
+
+test('hidden math progress survives reload and backup independently of N2 progress',()=>{
+  const s=defaults();s.currentDay=41;s.cursors[41]=9;s.math={group:'calculus',cursors:{calculus:11,geometry:4},known:['math-calculus-01','math-geometry-05']};
+  const clean=validateState(JSON.parse(JSON.stringify(s)),all);
+  assert.deepEqual(clean.math,s.math);assert.equal(clean.currentDay,41);assert.equal(clean.cursors[41],9);assert.deepEqual(clean.completed,{});
+  delete s.math;assert.deepEqual(validateState(s,all).math,{group:'instructions',cursors:{},known:[]});
+  s.math={group:'unknown',cursors:{calculus:99,geometry:4},known:['math-geometry-05','math-geometry-05','d01-01','math-calculus-99']};
+  assert.deepEqual(validateState(s,all).math,{group:'instructions',cursors:{geometry:4},known:['math-geometry-05']});
+});
+
+test('seven real taps open the notebook; scrolling, long presses and slow taps do not',async()=>{
+  const {installSevenTap}=await import('../dist/math.js');
+  const listeners=new Map(),doc={addEventListener(type,fn){if(!listeners.has(type))listeners.set(type,[]);listeners.get(type).push(fn);}};
+  let time=0,opens=0;installSevenTap(()=>{opens++;},{document:doc,now:()=>time});
+  const emit=(type,extra={})=>{const event={pointerId:1,button:0,isPrimary:true,clientX:25,clientY:30,...extra};for(const fn of listeners.get(type)||[])fn(event);};
+  const tap=(delay=130)=>{time+=delay;emit('pointerdown');time+=45;emit('pointerup');};
+  for(let i=0;i<6;i++)tap();assert.equal(opens,0);tap();assert.equal(opens,1);
+  let blocked=false;emit('click',{preventDefault(){blocked=true;},stopImmediatePropagation(){}});assert.equal(blocked,true);
+  time+=1000;for(let i=0;i<7;i++)tap(900);assert.equal(opens,1);
+  emit('pointercancel');for(let i=0;i<6;i++)tap();emit('pointerdown');emit('pointermove',{clientX:70});emit('pointerup',{clientX:70});tap();assert.equal(opens,1);
+  emit('pointercancel');for(let i=0;i<6;i++)tap();emit('pointerdown');time+=700;emit('pointerup');tap();assert.equal(opens,1);
+  emit('pointercancel');for(let i=0;i<7;i++)tap();assert.equal(opens,2);
+});
