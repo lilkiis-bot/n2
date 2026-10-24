@@ -56,12 +56,19 @@ test('a stalled word request times out and is unloaded instead of playing late',
 });
 
 test('hidden math progress survives reload and backup independently of N2 progress',()=>{
-  const s=defaults();s.currentDay=41;s.cursors[41]=9;s.math={group:'calculus',cursors:{calculus:11,geometry:4},known:['math-calculus-01','math-geometry-05']};
+  const s=defaults();s.currentDay=41;s.cursors[41]=9;s.math={version:2,group:'dice',cursors:{dice:11,solids:4},known:['math-dice-01','math-solids-05']};
   const clean=validateState(JSON.parse(JSON.stringify(s)),all);
   assert.deepEqual(clean.math,s.math);assert.equal(clean.currentDay,41);assert.equal(clean.cursors[41],9);assert.deepEqual(clean.completed,{});
-  delete s.math;assert.deepEqual(validateState(s,all).math,{group:'instructions',cursors:{},known:[]});
-  s.math={group:'unknown',cursors:{calculus:99,geometry:4},known:['math-geometry-05','math-geometry-05','d01-01','math-calculus-99']};
-  assert.deepEqual(validateState(s,all).math,{group:'instructions',cursors:{geometry:4},known:['math-geometry-05']});
+  delete s.math;assert.deepEqual(validateState(s,all).math,{version:2,group:'solids',cursors:{},known:[]});
+  s.math={version:2,group:'unknown',cursors:{dice:99,solids:4},known:['math-solids-05','math-solids-05','d01-01','math-dice-99']};
+  assert.deepEqual(validateState(s,all).math,{version:2,group:'solids',cursors:{solids:4},known:['math-solids-05']});
+});
+
+test('old concept notebook records migrate by word without marking replacement words as learned',()=>{
+  const s=defaults();s.math={group:'geometry',cursors:{geometry:0},known:['math-geometry-01','math-calculus-01','math-instructions-09','math-functions-05']};
+  const next=validateState(s,all).math;
+  assert.deepEqual(next,{version:2,group:'solids',cursors:{positions:5},known:['math-positions-06','math-conditions-04','math-parts-04']});
+  assert.deepEqual(validateState({...s,math:next},all).math,next);
 });
 
 test('seven real taps open the notebook; scrolling, long presses and slow taps do not',async()=>{

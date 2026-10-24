@@ -2,8 +2,8 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {MATH_GROUP_IDS} from '../dist/core.js';
-const math={version:1,groups:[]};
-for(const line of fs.readFileSync('content/math.tsv','utf8').split(/\r?\n/).filter(l=>l.trim()&&!l.startsWith('#'))){
+const math={version:2,groups:[]};
+for(const line of fs.readFileSync('content/math-practical.tsv','utf8').split(/\r?\n/).filter(l=>l.trim()&&!l.startsWith('#'))){
   if(line.startsWith('@')){const [id,title,scope]=line.slice(1).split('|');math.groups.push({id,title,scope,words:[]});continue;}
   const row=line.split('|'),group=math.groups.at(-1);assert.equal(row.length,6,line);
   const w=Object.fromEntries(['word','reading','meaning','example','exampleReading','translation'].map((k,i)=>[k,row[i]]));
@@ -14,11 +14,18 @@ for(const line of fs.readFileSync('content/math.tsv','utf8').split(/\r?\n/).filt
 }
 assert.deepEqual(math.groups.map(g=>g.id),MATH_GROUP_IDS);
 assert.ok(math.groups.every(g=>g.words.length===12));
-assert.equal(new Set(math.groups.flatMap(g=>g.words.map(w=>w.word))).size,144);
+assert.equal(new Set(math.groups.flatMap(g=>g.words.map(w=>w.word))).size,156);
+// Migrate existing math bookmarks by the actual word, never by a reused position.
+const currentMath=new Map(math.groups.flatMap(g=>g.words.map(w=>[w.word,w.id]))),legacy={};let oldGroup='',oldIndex=0;
+for(const line of fs.readFileSync('content/math.tsv','utf8').split(/\r?\n/).filter(l=>l.trim()&&!l.startsWith('#'))){
+  if(line.startsWith('@')){oldGroup=line.slice(1).split('|')[0];oldIndex=0;continue;}
+  oldIndex++;const id=currentMath.get(line.split('|')[0]);if(id)legacy[`math-${oldGroup}-${String(oldIndex).padStart(2,'0')}`]=id;
+}
+fs.writeFileSync('dist/core.js',fs.readFileSync('dist/core.js','utf8').replace(/const MATH_LEGACY_IDS=.*;/,`const MATH_LEGACY_IDS=${JSON.stringify(legacy)};`));
 const mathJSON=JSON.stringify(math);fs.writeFileSync('dist/math-vocabulary.json',mathJSON);
 const mathVersion=createHash('sha256').update(mathJSON).digest('hex').slice(0,12);
 fs.writeFileSync('dist/math.js',fs.readFileSync('dist/math.js','utf8').replace(/(\.\/math-vocabulary\.json)(?:\?v=[^"']+)?(?=["'])/g,`$1?v=${mathVersion}`));
-console.log('Validated 144 math terms in 12 groups.');
+console.log(`Validated ${currentMath.size} practical math terms in ${math.groups.length} groups.`);
 const files=fs.readdirSync('content').filter(f=>/^days-.*\.json$/.test(f)).sort();
 const days=files.flatMap(file=>JSON.parse(fs.readFileSync('content/'+file,'utf8').replace(/^\uFEFF/,''))).sort((a,b)=>a.day-b.day);
 assert.equal(days.length,60,'60 days required');

@@ -1,4 +1,4 @@
-const CACHE='yuzuki-n2-47cad13fa11c';
+const CACHE='yuzuki-n2-b2de95fcfd10';
 const SHELL=['./math.js','./math.css','./math-vocabulary.json','./audio.js','./','./index.html','./study.css','./fonts.css','./fonts/noto-serif-jp-vocabulary.woff2','./listening.js','./listening-manifest.json','./style.css','./aero.css','./aurora.svg','./phone-qr.svg','./icon-192.png','./icon-512.png','./apple-touch-icon.png','./boot.js','./app.js','./core.js','./vocabulary.json','./audio-manifest.json','./icon.svg','./manifest.webmanifest'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL.map(url=>new Request(url,{cache:'reload'})))).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('yuzuki-n2-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));

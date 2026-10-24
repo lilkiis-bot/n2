@@ -1,5 +1,5 @@
 // The hidden notebook loads its vocabulary only when opened.
-const DATA_URL='./math-vocabulary.json?v=d57101965e5b';
+const DATA_URL='./math-vocabulary.json?v=de1e45d862ab';
 
 export function installSevenTap(open,{document:doc=document,now=()=>performance.now()}={}){
   let pointer=null,count=0,last=0,first=0,blockClickUntil=0;
@@ -40,7 +40,7 @@ export class MathNotebook{
       if(!r.ok)throw new Error('수학 단어장을 불러오지 못했어요. 연결 후 다시 눌러 주세요.');
       return r.json();
     }).then(data=>{
-      if(data.version!==1||data.groups.length!==12||data.groups.some(g=>g.words.length!==12))throw new Error('수학 자료를 다시 불러와 주세요.');
+      if(data.version!==2||!Array.isArray(data.groups)||data.groups.length!==13||data.groups.some(g=>g.words.length!==12))throw new Error('수학 자료를 다시 불러와 주세요.');
       this.data=data;this.words=new Map(data.groups.flatMap(g=>g.words.map(w=>[w.id,w])));
     }).catch(error=>{this.error=error.name==='AbortError'?'연결이 늦어요. 인터넷 연결 후 다시 눌러 주세요.':error.message;})
       .finally(()=>{clearTimeout(timer);this.promise=null;this.refresh();});
@@ -53,15 +53,15 @@ export class MathNotebook{
   warmWords(){return this.group()?.words.slice(this.index(),this.index()+3)||[];}
   render(){
     const {esc,icon}=this;
-    const head=`<div class="math-heading"><div><div class="eyebrow">HIDDEN NOTEBOOK · MUSABI</div><h1>수학을 읽는 일본어</h1><p>무사시노미술대 · 영상 / 크리에이티브 이노베이션</p></div><button class="button secondary" data-action="math-close">${icon('left')} 돌아가기</button></div>`;
+    const head=`<div class="math-heading"><div><div class="eyebrow">HIDDEN NOTEBOOK · MUSABI</div><h1>수학 문제를 읽는 말</h1><p>원뿔·주사위부터 문제의 조건과 동작까지</p></div><button class="button secondary" data-action="math-close">${icon('left')} 돌아가기</button></div>`;
     if(!this.data){if(!this.promise&&!this.error)this.load();return head+`<section class="glass math-loading" role="status"><p>${esc(this.error||'수학 단어장을 펼치고 있어요…')}</p>${this.error?'<button class="button" data-action="math-retry">다시 불러오기</button>':''}</section>`;}
     const progress=this.getProgress(),g=this.group(),idx=this.index(),w=this.word();
-    return head+`<div class="math-workspace"><div class="math-toolbar"><label for="math-group">공부할 분야<select id="math-group">${this.data.groups.map(group=>`<option value="${group.id}" ${g.id===group.id?'selected':''}>${esc(group.title)} · 12단어</option>`).join('')}</select></label><p id="math-progress" aria-live="polite">외운 단어 ${progress.known.length} / 144</p></div>
+    return head+`<div class="math-workspace"><div class="math-toolbar"><label for="math-group">공부할 분야<select id="math-group">${this.data.groups.map(group=>`<option value="${group.id}" ${g.id===group.id?'selected':''}>${esc(group.title)} · ${group.words.length}단어</option>`).join('')}</select></label><p id="math-progress" aria-live="polite">외운 단어 ${progress.known.length} / ${this.words.size}</p></div>
       <section class="word-card glass math-word-card" aria-label="수학 단어"><div class="word-card-top"><div class="word-meta"><span class="tag">MATH</span><span class="word-counter">WORD ${String(idx+1).padStart(2,'0')}</span></div><button class="math-known" data-action="math-known" aria-pressed="${progress.known.includes(w.id)}">${icon('check')}<span>${progress.known.includes(w.id)?'외웠어요':'외움 표시'}</span></button></div>
       <div class="word-main"><p class="reading" lang="ja">${this.getSettings().showReadings?esc(w.reading):'· · ·'}</p><button class="kanji-button" lang="ja" data-action="speak" data-id="${w.id}" data-kind="word" aria-label="${esc(w.word)} 발음 듣기" style="--word-chars:${[...w.word].length*1.09}">${esc(w.word)}</button><p class="word-meaning">${esc(w.meaning)}</p><div class="word-audio-controls"><button class="word-play" data-action="speak" data-id="${w.id}" data-kind="word">${icon('sound')} 단어만 듣기</button><button class="icon-button stop-audio" data-action="stop-audio" aria-label="음성 멈추기">${icon('close')}</button></div></div>
       ${this.exampleMarkup(w)}<div class="word-nav"><button class="button secondary" data-action="math-prev" ${idx===0?'disabled':''}>${icon('left')} 이전</button><span class="word-index"><b>${String(idx+1).padStart(2,'0')}</b> / 12</span><button class="button secondary" data-action="math-next" ${idx===11?'disabled':''}>다음 ${icon('arrow')}</button></div><label class="math-scrubber"><input id="math-scrub" type="range" min="0" max="11" value="${idx}" step="1" aria-label="수학 단어 넘기기" aria-valuetext="${idx+1}번째 단어 ${esc(w.word)}"><span>좌우로 쓸어서 넘기기</span></label></section>
       <p class="math-scope">${esc(g.scope)} <span>· 학습 위치와 외움 표시 자동 저장</span></p>
-      <details class="math-source"><summary>시험 범위와 자료 안내</summary><p>2027학년도 조형구상학부 학부통일 방식: 영어＋수학 선택. 각 60분·100점, 객관식입니다.</p><p>수학Ⅰ·Ⅱ, 수학A(도형의 성질·경우의 수와 확률), 수학B(수열) 범위에서 고른 핵심 용어 144개와 자체 예문이에요. 공식 지정 단어 목록은 아니며, 문제 풀이도 함께 연습해 주세요.</p><a href="https://www.musabi.ac.jp/wp-content/uploads/2026/07/2027_ba_guideline.pdf#page=12" target="_blank" rel="noopener">2027 공식 모집요강 · 11쪽 ↗</a><p>화면 어디든 빠르게 7번 탭하면 다시 열 수 있어요.</p></details></div>`;
+      <details class="math-source"><summary>기출과 자료 안내</summary><p>무사시노미술대 영상·크리에이티브 이노베이션학과의 학부통일 방식 수학을 읽기 위한 단어장이에요.</p><p>2025·2026년 공식 기출의 원뿔·문자 배열·주사위·도형 문제를 참고해, 관련 문제에서 사물과 조건을 이해하는 데 필요한 말 ${this.words.size}개를 골랐어요. 모든 단어가 기출에 등장한 것은 아니며, 예문은 직접 만든 연습 문장입니다.</p><p><a href="https://www.musabi.ac.jp/wp-content/uploads/2025/06/ba_2025_ctsi_u_ma.pdf" target="_blank" rel="noopener">2025 수학 기출 ↗</a> · <a href="https://www.musabi.ac.jp/wp-content/uploads/2026/06/ba_2026_ctsi_u_ma.pdf" target="_blank" rel="noopener">2026 수학 기출 ↗</a></p><a href="https://www.musabi.ac.jp/wp-content/uploads/2026/07/2027_ba_guideline.pdf#page=12" target="_blank" rel="noopener">2027 공식 시험 범위 ↗</a><p>화면 어디든 빠르게 7번 탭하면 다시 열 수 있어요.</p></details></div>`;
   }
   select(index){
     if(!this.data)return;
@@ -87,7 +87,7 @@ export class MathNotebook{
     card.querySelector('.word-counter').textContent='WORD '+String(idx+1).padStart(2,'0');card.querySelector('.word-index b').textContent=String(idx+1).padStart(2,'0');
     card.querySelector('[data-action="math-prev"]').disabled=idx===0;card.querySelector('[data-action="math-next"]').disabled=idx===11;
     const known=card.querySelector('.math-known');known.setAttribute('aria-pressed',p.known.includes(w.id));known.querySelector('span').textContent=p.known.includes(w.id)?'외웠어요':'외움 표시';
-    document.querySelector('#math-progress').textContent=`외운 단어 ${p.known.length} / 144`;
+    document.querySelector('#math-progress').textContent=`외운 단어 ${p.known.length} / ${this.words.size}`;
     const scrub=card.querySelector('#math-scrub');scrub.value=idx;scrub.setAttribute('aria-valuetext',`${idx+1}번째 단어 ${w.word}`);
   }
   layout(){
